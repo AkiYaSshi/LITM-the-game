@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class DetactCollision: MonoBehaviour
 {
+    [SerializeField] private Vector3 pointToMark; // 要標記的點
+    [SerializeField] private float sphereRadius = 0.1f; // 球的半徑
+    [SerializeField] private Color pointColor = Color.red; // 點的顏色
+
     [SerializeField]
     private LayerMask layerMask = 1 << 8; //不可重疊的圖層
 
     private static readonly float boxSize = GridMovement.unit * 0.5f;
     private Vector3 size = new Vector3(boxSize, boxSize, boxSize);
+
 
     private ObjectData data;
 
@@ -52,12 +57,18 @@ public class DetactCollision: MonoBehaviour
 
                     //將中心點加上偏移，得到世界座標
                     Vector3 pointToWorld = gridpos + pointWithRotate;
-
                     point.Add(pointToWorld);
+
+                    pointToMark = pointToWorld;
                 }
             }
         }
         return point;
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = pointColor;
+        Gizmos.DrawSphere(pointToMark, sphereRadius);
     }
     private void Start()
     {

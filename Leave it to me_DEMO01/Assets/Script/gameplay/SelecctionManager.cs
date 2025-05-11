@@ -37,21 +37,31 @@ public class SelecctionManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, distance, unselectLayer))
         {
-            hit.transform.tag = focusTag;
-
-            hit.transform.gameObject.layer = selectIndex;
-            //將物件內所有子物件圖層都設為selectLayer
-            foreach(Transform transform in hit.transform)
-            {
-                GameObject child = transform.gameObject;
-                child.layer = selectIndex;
-            }
+            SwitchSelection(hit.transform.gameObject, focusTag, selectIndex);
         }
         else
         {
             UnselectAll();
         }
         Debug.DrawRay(cam.transform.position, ray.direction * 100, RayColor, 0.5f);
+    }
+
+    /// <summary>
+    /// 當選擇狀態改變，改變物件的標籤及圖層
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <param name="Tag"></param>
+    /// <param name="LayerIndex"></param>
+    private void SwitchSelection(GameObject obj, string Tag, int LayerIndex)
+    {
+        obj.tag = Tag;
+        obj.layer = LayerIndex;
+        //將物件內所有子物件圖層都設為selectLayer
+        foreach (Transform transform in obj.transform)
+        {
+            GameObject child = transform.gameObject;
+            child.layer = LayerIndex;
+        }
     }
 
     /// <summary>
@@ -62,20 +72,8 @@ public class SelecctionManager : MonoBehaviour
         GameObject[] focusObjects = GameObject.FindGameObjectsWithTag(focusTag);
         foreach (GameObject obj in focusObjects)
         {
-            obj.tag = noLapTag;
-            obj.layer = Mathf.RoundToInt(Mathf.Log(unselectIndex, 2));
-            foreach (Transform child in obj.transform)
-            {
-                GameObject childObj = child.gameObject;
-                childObj.tag = noLapTag;
-                childObj.layer = unselectIndex;
-            }
+            SwitchSelection(obj, noLapTag, unselectIndex);
         }
-
-        //GameObject[] ObjectInLayer = FindObjectByLayer(selectLayer);
-        //foreach (GameObject obj in ObjectInLayer)
-        //{
-        //}
     }
 
     /// <summary>

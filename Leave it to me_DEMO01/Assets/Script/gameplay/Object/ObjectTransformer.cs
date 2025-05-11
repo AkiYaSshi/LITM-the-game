@@ -55,7 +55,6 @@ public class ObjectTransformer : MonoBehaviour
         PositionSnapToGrid = DraggingObject.Invoke(PositionMouseToFloor);
         if (CheckCollision.Invoke(PositionSnapToGrid))
         {
-            Debug.Log("lapping with collider");
             return;
         }
 
