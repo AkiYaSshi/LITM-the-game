@@ -8,8 +8,6 @@ using UnityEngine.Rendering.Universal;
 /// </summary>
 public class SummonObjectManager : MonoBehaviour
 {
-    public static event Func<Vector3> getPosition;
-
     [SerializeField] 
     private Grid grid;
     [SerializeField] 
@@ -97,7 +95,6 @@ public class SummonObjectManager : MonoBehaviour
         void setChildComponent(Transform childTransform)
         {
             GameObject child2 = childTransform.gameObject;
-            child2.AddComponent<DecollideOthers>();
             child2.layer = objectLayerMask;
             Collider collider = child2.AddComponent<BoxCollider>();
             collider.isTrigger = true;

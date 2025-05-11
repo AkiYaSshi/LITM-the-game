@@ -74,7 +74,7 @@ public class SelectionRaycast : MonoBehaviour
                                     Vector3 RayDirection,
                                     List<Transform> hitList)
     {
-        hitList.Clear();
+        hitList.Clear(); //清空放置hit的List
         for (int i = 0; i < Size1; i++)
         {
             for (int j = 0; j < Size2; j++)

@@ -29,7 +29,7 @@ public class IsAsideWall : MonoBehaviour
             for (int i = 0; i < _hitArray?.Count; i++)
             {
                 //Debug.Log("Aside a wall: " + _hitArray[i].name);
-                target.GetComponent<IsDisplay>().enabled = (((1 << _hitArray[i].gameObject.layer) & WallLayer) != 0);
+                //target.GetComponent<IsDisplay>().enabled = (((1 << _hitArray[i].gameObject.layer) & WallLayer) != 0);
             }
         }
     }

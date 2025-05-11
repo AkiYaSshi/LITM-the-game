@@ -2,12 +2,14 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 /// <summary>
 /// 物件的位移、旋轉行為
 /// </summary>
 public class ObjectTransformer : MonoBehaviour
 {
+    #region 變數宣告
     private ObjectInteract objectInteract;
     private InputAction rotation;
 
@@ -15,6 +17,11 @@ public class ObjectTransformer : MonoBehaviour
     /// 得到滑鼠位置投影到地板的事件
     /// </summary>
     public static event Func<Vector3> mousePosition;
+
+    /// <summary>
+    /// 偵測Vector3座標上有無碰撞體<br />Vector3: 偵測座標<br />bool: 碰撞偵測結果
+    /// </summary>
+    public static event Func<Vector3, bool> CheckCollision;
 
     /// <summary>
     /// 觸發物件吸附網格的事件 <br />
@@ -26,11 +33,12 @@ public class ObjectTransformer : MonoBehaviour
     private Camera mainCam;
 
     private float screenPosZ;
-    private Vector3 lastPos, screenOffset;
+    private Vector3 PositionMouseToFloor, screenOffset;
 
     [SerializeField] float animTime = 0.4f;
     Vector3 oneSpin = new Vector3(0, 90, 0);
-    Vector3 mouseToObject;
+    Vector3 PositionSnapToGrid;
+    #endregion
 
     private void OnMouseDown()
     {
@@ -41,13 +49,20 @@ public class ObjectTransformer : MonoBehaviour
     /// </summary>
     private void OnMouseDrag()
     {
-        lastPos = mousePosition.Invoke();
-        lastPos += screenOffset;
+        PositionMouseToFloor = mousePosition.Invoke();
+        PositionMouseToFloor += screenOffset;
 
-        mouseToObject = DraggingObject.Invoke(lastPos);
-        iTween.MoveUpdate(gameObject, mouseToObject, 0.1f);
+        PositionSnapToGrid = DraggingObject.Invoke(PositionMouseToFloor);
+        CheckCollision?.Invoke(PositionSnapToGrid);
+
+        //移動物件位置
+        iTween.MoveUpdate(gameObject, PositionSnapToGrid, 0.1f);
     }
 
+    /// <summary>
+    /// 物件旋轉
+    /// </summary>
+    /// <param name="context"></param>
     private void Rotate(InputAction.CallbackContext context)
     {
         if(gameObject.tag != "Focus")
@@ -72,9 +87,11 @@ public class ObjectTransformer : MonoBehaviour
     /// <returns>偏差值</returns>
     public Vector3 GetOffset()
     {
-        lastPos = mousePosition.Invoke();
-        return transform.position - lastPos;
+        PositionMouseToFloor = mousePosition.Invoke();
+        return transform.position - PositionMouseToFloor;
     }
+
+
     /// <summary>
     /// 當選擇中物件與其他物件重疊，Y軸的Offset往上一單位
     /// </summary>
@@ -96,7 +113,6 @@ public class ObjectTransformer : MonoBehaviour
         rotation = objectInteract.ObjectTransform.rotation;
         rotation.performed += Rotate;
         rotation.Enable();
-        DecollideOthers.OverLap += AddOffset;
     }
 
 
@@ -104,7 +120,21 @@ public class ObjectTransformer : MonoBehaviour
     {
         rotation.performed -= Rotate;
         rotation.Disable();
-        DecollideOthers.OverLap -= AddOffset;
     }
 
+}
+public class DetactCollision: MonoBehaviour
+{
+    [SerializeField]
+    private LayerMask layerMask;
+    private void OnEnable()
+    {
+        ObjectTransformer.CheckCollision += ObjectTransformer_CheckCollision;
+    }
+
+    private bool ObjectTransformer_CheckCollision(Vector3 pos)
+    {
+
+        throw new NotImplementedException();
+    }
 }

@@ -44,12 +44,10 @@ public class positionOnFloor : MonoBehaviour
      
     private void OnEnable()
     {
-        SummonObjectManager.getPosition += MouseToFloorPosition;
         ObjectTransformer.mousePosition += MouseToFloorPosition;
     }
     private void OnDisable()
     {
-        SummonObjectManager.getPosition -= MouseToFloorPosition;
         ObjectTransformer.mousePosition -= MouseToFloorPosition;
     }
 }

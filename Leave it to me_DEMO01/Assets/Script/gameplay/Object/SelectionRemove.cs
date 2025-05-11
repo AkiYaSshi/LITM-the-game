@@ -2,6 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// 刪除所選的物件
+/// </summary>
 public class SelectionRemove : MonoBehaviour
 {
     #region Var
