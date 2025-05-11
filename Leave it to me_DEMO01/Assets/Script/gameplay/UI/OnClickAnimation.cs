@@ -85,10 +85,8 @@ public class OnClickAnimation : MonoBehaviour
     /// </summary>
     public void AnimationStart()
     {
-        Debug.Log("startAnimation", gameObject);
         if (!reverse)
         {
-            Debug.Log("Positive, the Canvas display is " + reverse);
             foreach (GameObject item in Targets)
             {
                 LastTransform = ToScreenMovement(item);
@@ -102,14 +100,12 @@ public class OnClickAnimation : MonoBehaviour
                         iTween.ScaleBy(item, hashtable);
                         break;
                 }
-            Debug.Log("===============The Tab is show============== " + item.name, item);
             }
             reverse = true;
             return;
         }
         else //設定相反方向的改變
         {
-            Debug.Log("Negative, the Canvas display is " + reverse);
 
             foreach (GameObject item in Targets)
             {
@@ -124,7 +120,6 @@ public class OnClickAnimation : MonoBehaviour
                         iTween.ScaleBy(item, hashtable);
                         break;
                 }
-                Debug.Log("===============The Tab is hidden============== " + item.name, item);
             }
             reverse = false;
         }

@@ -11,7 +11,15 @@ public class ObjectTransformer : MonoBehaviour
     private ObjectInteract objectInteract;
     private InputAction rotation;
 
+    /// <summary>
+    /// 得到滑鼠位置投影到地板的事件
+    /// </summary>
     public static event Func<Vector3> mousePosition;
+
+    /// <summary>
+    /// 觸發物件吸附網格的事件 <br />
+    /// Vector3: 原始位置, 網格化後位置
+    /// </summary>
     public static event Func<Vector3, Vector3> DraggingObject;
 
     [SerializeField]

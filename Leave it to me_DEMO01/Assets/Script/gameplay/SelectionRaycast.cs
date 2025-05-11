@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -5,123 +8,137 @@ using UnityEngine;
 /// </summary>
 public class SelectionRaycast : MonoBehaviour
 {
-    [SerializeField]
-    private LayerMask targetLayer;
-    [SerializeField]
-    private string raycastObjTag = "Focus";
-    [SerializeField]
-    private Color[] RayColor = new Color[3];
+    public static LayerMask targetLayer;
 
+    /// <summary>
+    /// 所有軸向為x的射線
+    /// </summary>
+    public static List<Transform> hitx = new List<Transform>();
+    /// <summary>
+    /// 所有軸向為y的射線
+    /// </summary>
+    public static List<Transform> hity = new List<Transform>();
+    /// <summary>
+    /// 所有軸向為z的射線
+    /// </summary>
+    public static List<Transform> hitz = new List<Transform>();
 
-    ObjectData inheritData;
-    private void FixedUpdate()
+    public static Color[] rayColors;
+
+    private void Start()
     {
-        StartRayCast();
+        targetLayer = LayerMask.GetMask("As Grid");
     }
-    private void StartRayCast()
+
+    /// <summary>
+    /// 從六個方向發射射線進行探測
+    /// </summary>
+    /// <param name="inheritData">物件的數據</param>
+    /// <param name="layerMask">目標層</param>
+    /// <param name="rayColors">射線顏色陣列</param>
+    public static GameObject StartRayCast(GameObject obj, ObjectData inheritData)
     {
-        GameObject obj = GameObject.FindGameObjectWithTag(raycastObjTag);
         if (obj != null)
         {
             Vector3 position = obj.transform.position;
-            inheritData = obj.GetComponent<ObjectRef>().objectData;
-            RaycastHit hit;
 
-            //x軸
-            for (int i = 0; i < inheritData.Size.z; i++)
+            // x軸
+            AxisRayCast(obj, position, inheritData.Size.z, inheritData.Size.y, inheritData.Size.x, obj.transform.right, hitx);
+
+            // y軸
+            AxisRayCast(obj, position, inheritData.Size.z, inheritData.Size.x, inheritData.Size.y, obj.transform.up, hity);
+
+            // z軸
+            AxisRayCast(obj, position, inheritData.Size.y, inheritData.Size.x, inheritData.Size.z, obj.transform.forward, hitz);
+
+            return obj;
+        }
+        Debug.LogError("There are no object RC able");
+        return null;
+    }
+
+    /// <summary>
+    /// 從某軸向射出正反方向的射線
+    /// </summary>
+    /// <param name="obj">射出射線的物件</param>
+    /// <param name="position">物件位置</param>
+    /// <param name="Size1"></param>
+    /// <param name="Size2"></param>
+    /// <param name="CurAxis">射線進行方向</param>
+    /// <param name="RayDirection"></param>
+    private static void AxisRayCast(GameObject obj,
+                                    Vector3 position,
+                                    int Size1,
+                                    int Size2,
+                                    int CurAxis,
+                                    Vector3 RayDirection,
+                                    List<Transform> hitList)
+    {
+        hitList.Clear();
+        for (int i = 0; i < Size1; i++)
+        {
+            for (int j = 0; j < Size2; j++)
             {
-                for (int j = 0; j < inheritData.Size.y; j++)
+                Vector3 localOffset = new(); //將射線開始點移動到每個unit中心
+                if ((RayDirection == obj.transform.right))
                 {
-                    // 計算相對於 obj 中心的局部偏移
-                    Vector3 localOffset = new Vector3(0, j * GridMovement.unit, i * GridMovement.unit);
-
-                    Vector3 pivot = PivotWithRotateOffset(obj, position, localOffset);
-
-                    Physics.Raycast(pivot,
-                                    obj.transform.right,
-                                    out hit,
-                                    inheritData.Size.x * GridMovement.unit,
-                                    targetLayer); //positive
-                    Physics.Raycast(pivot,
-                                    -obj.transform.right,
-                                    GridMovement.unit,
-                                    targetLayer);//negative
-                    DebugDrawRays(pivot, obj.transform.right, inheritData.Size.x, 0);
+                    localOffset = new Vector3(0, j * GridMovement.unit, i * GridMovement.unit);
                 }
-            }
-            //y軸
-            for (int i = 0; i < inheritData.Size.z; i++)
-            {
-                for (int j = 0; j < inheritData.Size.x; j++)
+                else if ((RayDirection == obj.transform.up))
                 {
-                    // 計算相對於 obj 中心的局部偏移
-                    Vector3 localOffset = new Vector3(j * GridMovement.unit, 0, i * GridMovement.unit);
-
-                    Vector3 pivot = PivotWithRotateOffset(obj, position, localOffset);
-
-                    Physics.Raycast(pivot,
-                                    obj.transform.up,
-                                    out hit,
-                                    inheritData.Size.y * GridMovement.unit,
-                                    targetLayer); //positive
-                    Physics.Raycast(pivot,
-                                    -obj.transform.up,
-                                    GridMovement.unit,
-                                    targetLayer);//negative
-                    DebugDrawRays(pivot, obj.transform.up, inheritData.Size.y, 1);
+                    localOffset = new Vector3(j * GridMovement.unit, 0, i * GridMovement.unit);
                 }
-            }
-            //z軸
-            for (int i = 0; i < inheritData.Size.y; i++)
-            {
-                for (int j = 0; j < inheritData.Size.x; j++)
+                else if (RayDirection == obj.transform.forward)
                 {
-                    // 計算相對於 obj 中心的局部偏移
-                    Vector3 localOffset = new Vector3(j * GridMovement.unit, i * GridMovement.unit, 0);
-
-                    Vector3 pivot = PivotWithRotateOffset(obj, position, localOffset);
-
-                    Physics.Raycast(pivot,
-                                    obj.transform.forward,
-                                    out hit,
-                                    inheritData.Size.z * GridMovement.unit,
-                                    targetLayer); //positive
-                    Physics.Raycast(pivot,
-                                    -obj.transform.forward,
-                                    GridMovement.unit,
-                                    targetLayer);//negative
-                    DebugDrawRays(pivot, obj.transform.forward, inheritData.Size.z, 2);
+                    localOffset = new Vector3(j * GridMovement.unit,i * GridMovement.unit, 0);
                 }
+                Vector3 pivot = PivotWithRotateOffset(obj, position, localOffset);
+
+                Physics.Raycast(pivot, RayDirection, out RaycastHit hit, CurAxis * GridMovement.unit, targetLayer); // positive
+                if (hit.transform != null)
+                {
+                    Debug.Log(hit.transform.name);
+                    hitList.Add(hit.transform);
+                }
+
+                Physics.Raycast(pivot, -RayDirection, out hit, GridMovement.unit, targetLayer); // negative
+                if (hit.transform != null)
+                {
+                    Debug.Log(hit.transform.name);
+                    hitList.Add(hit.transform);
+                }
+
+                DebugDrawRays(pivot, RayDirection, CurAxis, 0);
             }
         }
     }
 
     /// <summary>
-    /// 將pivot相對於obj中心的局部偏移旋轉到全局座標
+    /// 將 pivot 相對於 obj 中心的局部偏移旋轉到全局座標
     /// </summary>
     /// <param name="obj">物件</param>
     /// <param name="position">物件位置</param>
-    /// <param name="localOffset"></param>
-    /// <returns></returns>
+    /// <param name="localOffset">局部偏移量</param>
+    /// <returns>旋轉後的 pivot 位置</returns>
     private static Vector3 PivotWithRotateOffset(GameObject obj, Vector3 position, Vector3 localOffset)
     {
-        // 將局部偏移旋轉到全局座標（考慮 obj 的旋轉）
         Vector3 rotatedOffset = obj.transform.rotation * localOffset;
-
-        // 計算最終的 pivot 位置（中心 + 旋轉後的偏移）
         Vector3 pivot = position + rotatedOffset;
         return pivot;
     }
 
-    private void DebugDrawRays(Vector3 pivot, Vector3 _Dir, int _Dist, int _colorIndex)
+    /// <summary>
+    /// 繪製射線用於除錯
+    /// </summary>
+    /// <param name="pivot">射線起點</param>
+    /// <param name="_Dir">射線方向</param>
+    /// <param name="_Dist">射線距離</param>
+    /// <param name="_colorIndex">顏色索引</param>
+    /// <param name="rayColors">射線顏色陣列</param>
+    private static void DebugDrawRays(Vector3 pivot, Vector3 _Dir, int _Dist, int _colorIndex)
     {
-        Debug.DrawRay(pivot, _Dir * _Dist * GridMovement.unit, RayColor[_colorIndex], 1 / 30f);
-        Debug.DrawRay(pivot, -_Dir * GridMovement.unit, RayColor[_colorIndex], 1 / 30f);
+        Debug.DrawRay(pivot, _Dir * _Dist * GridMovement.unit, Color.black, 1 / 30f);
+        Debug.DrawRay(pivot, -_Dir * GridMovement.unit, Color.black, 1 / 30f);
     }
-
-
-    private void Start()
-    {
-        targetLayer = LayerMask.GetMask("Insantiated");
-    }
+    
 }
