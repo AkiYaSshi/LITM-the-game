@@ -39,7 +39,6 @@ public class SummonObjectManager : MonoBehaviour
         }
 
         Vector3Int gridPos = grid.WorldToCell(objectSpawnAt.transform.position);
-
         GameObject newObject = Instantiate(ObjectData.objectsData[selectedObjectIndex].Prefab, objectParentTo.transform);
 
         SetObjectData(newObject, ObjectData.objectsData[selectedObjectIndex]);
@@ -62,6 +61,11 @@ public class SummonObjectManager : MonoBehaviour
         //將所需component附加到生成的物件
         newObject.AddComponent<SnapToGrid>();
         newObject.AddComponent<ObjectTransformer>();
+
+        //TODO: 處理旋轉時fowardAxis跑掉的問題
+        //IsDisplay isDisplay = newObject.AddComponent<IsDisplay>();
+        //isDisplay.fowardAxis = origin.FowardAxis;
+
         Rigidbody body = newObject.AddComponent<Rigidbody>();
         body.useGravity = false;
     }

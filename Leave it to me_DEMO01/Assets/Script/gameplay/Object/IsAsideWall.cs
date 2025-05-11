@@ -12,39 +12,25 @@ public class IsAsideWall : MonoBehaviour
     ObjectData objectData;
     GameObject target;
 
-    /// <summary>
-    /// Add is Display to object
-    /// </summary>
-    private void AddComponent()
-    {
-        IsDisplay isDisplay = gameObject.AddComponent<IsDisplay>();
-    }
-
     private void FixedUpdate()
     {
         GetFocus();
         if ((target != null))
         {
             SelectionRaycast.StartRayCast(target, objectData);
-            if (SelectionRaycast.hitx != null)
+            DetactHit(SelectionRaycast.hitx);
+            DetactHit(SelectionRaycast.hitz);
+
+        }
+
+        //Detact if focus hit walls
+        void DetactHit(System.Collections.Generic.List<Transform> _hitArray)
+        {
+            for (int i = 0; i < _hitArray?.Count; i++)
             {
-                for (int i = 0; i < SelectionRaycast.hitx.Count; i++)
-                {
-                    Debug.Log(((1 << SelectionRaycast.hitx[i].gameObject.layer) & WallLayer) != 0, SelectionRaycast.hitx[i].gameObject);
-                    if (((1 << SelectionRaycast.hitx[i].gameObject.layer) & WallLayer) != 0)
-                    {
-                        Debug.Log("Aside a wall: " + SelectionRaycast.hitx[i].name);
-                    }
-                }
+                //Debug.Log("Aside a wall: " + _hitArray[i].name);
+                target.GetComponent<IsDisplay>().enabled = (((1 << _hitArray[i].gameObject.layer) & WallLayer) != 0);
             }
-            for(int i = 0; i < SelectionRaycast.hitz?.Count; i++)
-            {
-                if (((1 << SelectionRaycast.hitz[i].gameObject.layer) & WallLayer) != 0)
-                {
-                    Debug.Log("Aside a wall: " + SelectionRaycast.hitz[i].name);
-                }
-            }
-            
         }
     }
 

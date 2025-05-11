@@ -18,10 +18,10 @@ public class IsDisplay : MonoBehaviour
     public FowardAxis fowardAxis;
 
     [SerializeField]
-    float maxDistance = 3f;
+    float maxDistance = 30f;
 
     [SerializeField]
-    private LayerMask targetLayer;
+    private LayerMask targetLayer = 1 << 6;
 
     Vector3 direction;
     Vector3 delta;
