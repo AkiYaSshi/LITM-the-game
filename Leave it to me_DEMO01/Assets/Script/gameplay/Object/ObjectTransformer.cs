@@ -53,10 +53,14 @@ public class ObjectTransformer : MonoBehaviour
         PositionMouseToFloor += screenOffset;
 
         PositionSnapToGrid = DraggingObject.Invoke(PositionMouseToFloor);
-        CheckCollision?.Invoke(PositionSnapToGrid);
+        if (CheckCollision.Invoke(PositionSnapToGrid))
+        {
+            Debug.Log("lapping with collider");
+            return;
+        }
 
         //移動物件位置
-        iTween.MoveUpdate(gameObject, PositionSnapToGrid, 0.1f);
+        iTween.MoveUpdate(gameObject, PositionSnapToGrid, 0.2f);
     }
 
     /// <summary>
@@ -65,7 +69,7 @@ public class ObjectTransformer : MonoBehaviour
     /// <param name="context"></param>
     private void Rotate(InputAction.CallbackContext context)
     {
-        if(gameObject.tag != "Focus")
+        if(!gameObject.CompareTag("Focus"))
         {
             return;
         }
@@ -73,7 +77,8 @@ public class ObjectTransformer : MonoBehaviour
 
         if(_dir == "-1")
         {
-        iTween.RotateAdd(gameObject, oneSpin, animTime);
+            iTween.RotateAdd(gameObject, oneSpin, animTime);
+
         }
         if (_dir == "1")
         {
@@ -91,14 +96,6 @@ public class ObjectTransformer : MonoBehaviour
         return transform.position - PositionMouseToFloor;
     }
 
-
-    /// <summary>
-    /// 當選擇中物件與其他物件重疊，Y軸的Offset往上一單位
-    /// </summary>
-    private void AddOffset()
-    {
-        screenOffset.y += GridMovement.unit;
-    }
     private void Awake()
     {
         objectInteract = new ObjectInteract();
@@ -114,27 +111,10 @@ public class ObjectTransformer : MonoBehaviour
         rotation.performed += Rotate;
         rotation.Enable();
     }
-
-
     private void OnDisable()
     {
         rotation.performed -= Rotate;
         rotation.Disable();
     }
 
-}
-public class DetactCollision: MonoBehaviour
-{
-    [SerializeField]
-    private LayerMask layerMask;
-    private void OnEnable()
-    {
-        ObjectTransformer.CheckCollision += ObjectTransformer_CheckCollision;
-    }
-
-    private bool ObjectTransformer_CheckCollision(Vector3 pos)
-    {
-
-        throw new NotImplementedException();
-    }
 }

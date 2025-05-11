@@ -105,8 +105,6 @@ public class SelectionRaycast : MonoBehaviour
                 {
                     hitList.Add(hit.transform);
                 }
-
-                DebugDrawRays(pivot, RayDirection, CurAxis, 0);
             }
         }
     }
@@ -123,20 +121,6 @@ public class SelectionRaycast : MonoBehaviour
         Vector3 rotatedOffset = obj.transform.rotation * localOffset;
         Vector3 pivot = position + rotatedOffset;
         return pivot;
-    }
-
-    /// <summary>
-    /// 繪製射線用於除錯
-    /// </summary>
-    /// <param name="pivot">射線起點</param>
-    /// <param name="_Dir">射線方向</param>
-    /// <param name="_Dist">射線距離</param>
-    /// <param name="_colorIndex">顏色索引</param>
-    /// <param name="rayColors">射線顏色陣列</param>
-    private static void DebugDrawRays(Vector3 pivot, Vector3 _Dir, int _Dist, int _colorIndex)
-    {
-        Debug.DrawRay(pivot, _Dir * _Dist * GridMovement.unit, Color.black, 1 / 30f);
-        Debug.DrawRay(pivot, -_Dir * GridMovement.unit, Color.black, 1 / 30f);
     }
     
 }

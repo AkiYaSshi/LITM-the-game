@@ -59,6 +59,7 @@ public class SummonObjectManager : MonoBehaviour
         //將所需component附加到生成的物件
         newObject.AddComponent<SnapToGrid>();
         newObject.AddComponent<ObjectTransformer>();
+        newObject.AddComponent<DetactCollision>();
 
         //TODO: 處理旋轉時fowardAxis跑掉的問題
         //IsDisplay isDisplay = newObject.AddComponent<IsDisplay>();
