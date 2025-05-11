@@ -15,7 +15,7 @@ public class positionOnFloor : MonoBehaviour
     [SerializeField]
     private const float rayCastingDistance = 20;
     [SerializeField]
-    private const float objToCameraRange = 17;
+    private const float objToCameraRange = 7;
 
     /// <summary>
     /// 滑鼠所在位置投影到地板上
