@@ -6,7 +6,8 @@ using UnityEngine;
 public class IsAsideWall : MonoBehaviour
 {
     [SerializeField] string focusTag = "Focus";
-    [SerializeField] LayerMask WallLayer;
+    [SerializeField] 
+    private LayerMask WallLayer;
 
     ObjectData objectData;
     GameObject target;
@@ -29,7 +30,8 @@ public class IsAsideWall : MonoBehaviour
             {
                 for (int i = 0; i < SelectionRaycast.hitx.Count; i++)
                 {
-                    if (SelectionRaycast.hitx[i].gameObject.layer == WallLayer)
+                    Debug.Log(((1 << SelectionRaycast.hitx[i].gameObject.layer) & WallLayer) != 0, SelectionRaycast.hitx[i].gameObject);
+                    if (((1 << SelectionRaycast.hitx[i].gameObject.layer) & WallLayer) != 0)
                     {
                         Debug.Log("Aside a wall: " + SelectionRaycast.hitx[i].name);
                     }
@@ -37,9 +39,9 @@ public class IsAsideWall : MonoBehaviour
             }
             for(int i = 0; i < SelectionRaycast.hitz?.Count; i++)
             {
-                if (SelectionRaycast.hitz[i].gameObject.layer == WallLayer)
+                if (((1 << SelectionRaycast.hitz[i].gameObject.layer) & WallLayer) != 0)
                 {
-                    Debug.Log("Aside a wall: " + SelectionRaycast.hitx[i].name);
+                    Debug.Log("Aside a wall: " + SelectionRaycast.hitz[i].name);
                 }
             }
             

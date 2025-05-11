@@ -97,14 +97,12 @@ public class SelectionRaycast : MonoBehaviour
                 Physics.Raycast(pivot, RayDirection, out RaycastHit hit, CurAxis * GridMovement.unit, targetLayer); // positive
                 if (hit.transform != null)
                 {
-                    Debug.Log(hit.transform.name);
                     hitList.Add(hit.transform);
                 }
 
                 Physics.Raycast(pivot, -RayDirection, out hit, GridMovement.unit, targetLayer); // negative
                 if (hit.transform != null)
                 {
-                    Debug.Log(hit.transform.name);
                     hitList.Add(hit.transform);
                 }
 
