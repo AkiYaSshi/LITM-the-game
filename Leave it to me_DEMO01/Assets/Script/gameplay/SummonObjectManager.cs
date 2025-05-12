@@ -66,7 +66,10 @@ public class SummonObjectManager : MonoBehaviour
         //isDisplay.fowardAxis = origin.FowardAxis;
 
         Rigidbody body = newObject.AddComponent<Rigidbody>();
+        body.constraints = RigidbodyConstraints.FreezeAll;
+
         body.useGravity = false;
+        body.isKinematic = true;
     }
 
     /// <summary>
@@ -97,8 +100,6 @@ public class SummonObjectManager : MonoBehaviour
         {
             GameObject child2 = childTransform.gameObject;
             child2.layer = objectLayerMask;
-            Collider collider = child2.AddComponent<BoxCollider>();
-            collider.isTrigger = true;
         }
     }
 

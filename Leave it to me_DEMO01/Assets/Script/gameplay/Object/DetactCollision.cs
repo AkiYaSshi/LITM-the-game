@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DetactCollision: MonoBehaviour
 {
-    [SerializeField] private Vector3 pointToMark; // 要標記的點
     [SerializeField] private float sphereRadius = 0.1f; // 球的半徑
     [SerializeField] private Color pointColor = Color.red; // 點的顏色
+    private List<Vector3> pointToMark = new();
 
     [SerializeField]
-    private LayerMask layerMask = 1 << 8; //不可重疊的圖層
+    private LayerMask layerMask = 1 << 7; //不可重疊的圖層
 
     private static readonly float boxSize = GridMovement.unit * 0.5f;
     private Vector3 size = new Vector3(boxSize, boxSize, boxSize);
@@ -23,13 +23,19 @@ public class DetactCollision: MonoBehaviour
     /// 檢查指定座標是否有 Collider
     /// </summary>
     /// <param name="pos">中心點座標</param>
-    private bool ObjectTransformer_CheckCollision(Vector3 pos)
+    public bool ObjectTransformer_CheckCollision(Vector3 pos)
     {
-        List<Vector3> points = CalObjectPoint(pos);
-        foreach (var point in points)
+        if (gameObject.CompareTag("Focus"))
         {
-            Collider[] hitColliders = Physics.OverlapBox(point, size, Quaternion.Euler(0, 0, 0), layerMask);
-            return hitColliders.Length > 0;
+            List<Vector3> points = CalObjectPoint(pos);
+            foreach (var point in points)
+            {
+                Collider[] hitColliders = Physics.OverlapBox(point, size, Quaternion.Euler(0, 0, 0), layerMask);
+                if(hitColliders.Length > 0) //沒有任何point碰到碰撞箱才可回傳False
+                {
+                    return true;
+                }
+            }
         }
         return false;
     }
@@ -40,13 +46,14 @@ public class DetactCollision: MonoBehaviour
     /// <param name="gridpos">中心點座標</param>
     private List<Vector3> CalObjectPoint(Vector3 gridpos)
     {
-        List<Vector3> point = new(); //物件內每個單位的中心點
+        List<Vector3> pointInObj = new(); //物件內每個單位的中心點
         for (int i = 0; i < data.Size.x; i++)
         {
             for (int j = 0; j < data.Size.y; j++)
             {
                 for(int k = 0; k < data.Size.z; k++)
                 {
+                    //TODO: 搞懂為什麼大型物件算出的點數量不符要求
                     //得到物件內各單位距離中心點的偏移
                     Vector3 childpoint = new(i * GridMovement.unit, 
                                              j * GridMovement.unit, 
@@ -57,30 +64,27 @@ public class DetactCollision: MonoBehaviour
 
                     //將中心點加上偏移，得到世界座標
                     Vector3 pointToWorld = gridpos + pointWithRotate;
-                    point.Add(pointToWorld);
+                    pointInObj.Add(pointToWorld);
 
-                    pointToMark = pointToWorld;
                 }
             }
         }
-        return point;
+        pointToMark = pointInObj;
+        return pointInObj;
     }
-    private void OnDrawGizmos()
+    private void FixedUpdate()
     {
-        Gizmos.color = pointColor;
-        Gizmos.DrawSphere(pointToMark, sphereRadius);
+        foreach (Vector3 point in pointToMark)
+        {
+            Debug.DrawRay(point, Vector3.up * sphereRadius, pointColor, 1/60f);
+            Debug.DrawRay(point, Vector3.forward * sphereRadius, pointColor, 1 / 60f);
+            Debug.DrawRay(point, Vector3.right * sphereRadius, pointColor, 1 / 60f);
+        }
+        pointToMark.Clear();
     }
     private void Start()
     {
         //取得選取物件的大小
         data = gameObject.GetComponent<ObjectRef>().objectData;
-    }
-    private void OnEnable()
-    {
-        ObjectTransformer.CheckCollision += ObjectTransformer_CheckCollision;
-    }
-    private void OnDisable()
-    {
-        ObjectTransformer.CheckCollision -= ObjectTransformer_CheckCollision;
     }
 }

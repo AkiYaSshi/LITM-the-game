@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 8645087643545132961}
   - component: {fileID: 4635997308145586180}
   - component: {fileID: 7472221325839279310}
+  - component: {fileID: 7604447637739188956}
   m_Layer: 0
   m_Name: warddrope (original)
   m_TagString: Untagged
@@ -205,3 +206,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7604447637739188956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8985338510736098587}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.13175412, y: 0.023201484, z: 0.018601406}
+  m_Center: {x: -0.000000007450583, y: 0, z: -1.0587912e-22}

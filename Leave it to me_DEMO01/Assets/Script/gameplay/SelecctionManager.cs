@@ -56,11 +56,23 @@ public class SelecctionManager : MonoBehaviour
     {
         obj.tag = Tag;
         obj.layer = LayerIndex;
-        //將物件內所有子物件圖層都設為selectLayer
+
+        //改變物件內所有子物件的圖層
         foreach (Transform transform in obj.transform)
         {
             GameObject child = transform.gameObject;
             child.layer = LayerIndex;
+
+            //若子物件沒有Mesh Renderer，判斷旗下還有子物件
+            MeshRenderer meshRenderer;
+            if (!child.TryGetComponent(out meshRenderer))
+            {
+                foreach (Transform childTransform2 in child.transform)
+                {
+                    GameObject child2 = childTransform2.gameObject;
+                    child2.layer = LayerIndex;
+                }
+            }
         }
     }
 

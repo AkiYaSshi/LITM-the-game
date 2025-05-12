@@ -12,16 +12,12 @@ public class ObjectTransformer : MonoBehaviour
     #region 變數宣告
     private ObjectInteract objectInteract;
     private InputAction rotation;
+    private DetactCollision DetactCollision; //物件本身的DetactCollision
 
     /// <summary>
     /// 得到滑鼠位置投影到地板的事件
     /// </summary>
     public static event Func<Vector3> mousePosition;
-
-    /// <summary>
-    /// 偵測Vector3座標上有無碰撞體<br />Vector3: 偵測座標<br />bool: 碰撞偵測結果
-    /// </summary>
-    public static event Func<Vector3, bool> CheckCollision;
 
     /// <summary>
     /// 觸發物件吸附網格的事件 <br />
@@ -53,13 +49,13 @@ public class ObjectTransformer : MonoBehaviour
         PositionMouseToFloor += screenOffset;
 
         PositionSnapToGrid = DraggingObject.Invoke(PositionMouseToFloor);
-        if (CheckCollision.Invoke(PositionSnapToGrid))
+        bool isOverLap = DetactCollision.ObjectTransformer_CheckCollision(PositionSnapToGrid);
+        if (!isOverLap)
         {
-            return;
+            //移動物件位置
+            iTween.MoveUpdate(gameObject, PositionSnapToGrid, 0.2f);
         }
-
-        //移動物件位置
-        iTween.MoveUpdate(gameObject, PositionSnapToGrid, 0.2f);
+        
     }
 
     /// <summary>
@@ -102,6 +98,7 @@ public class ObjectTransformer : MonoBehaviour
     private void Start()
     {
         mainCam = Camera.main;
+        DetactCollision = gameObject.GetComponent<DetactCollision>();
     }
 
     private void OnEnable()

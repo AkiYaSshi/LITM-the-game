@@ -2632,7 +2632,7 @@ MonoBehaviour:
   objectSpawnAt: {fileID: 718510055}
   objectLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 128
   ObjectData: {fileID: 11400000, guid: c3c8a319c2450ed41bcbc217d6910fbb, type: 2}
 --- !u!4 &733019691
 Transform:

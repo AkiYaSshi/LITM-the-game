@@ -147,7 +147,6 @@ public class OnClickAnimation : MonoBehaviour
     /// <returns>返回配置好的 Hash 表</returns>
     private Hashtable SetHash()
     {
-        Debug.Log(LastTransform);
         return new()
         {
             { "amount", LastTransform },
