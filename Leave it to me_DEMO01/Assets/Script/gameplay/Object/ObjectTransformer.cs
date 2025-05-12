@@ -25,14 +25,15 @@ public class ObjectTransformer : MonoBehaviour
     /// </summary>
     public static event Func<Vector3, Vector3> DraggingObject;
 
+    public static event Action<GameObject, Vector3> RotateAnimation;
     [SerializeField]
     private Camera mainCam;
 
     private float screenPosZ;
     private Vector3 PositionMouseToFloor, screenOffset;
 
-    [SerializeField] float animTime = 0.4f;
-    Vector3 oneSpin = new Vector3(0, 90, 0);
+    public const float animTime = 0.4f;
+    readonly Vector3 oneSpin = new Vector3(0, 90, 0);
     Vector3 PositionSnapToGrid;
     #endregion
 
@@ -64,21 +65,28 @@ public class ObjectTransformer : MonoBehaviour
     /// <param name="context"></param>
     private void Rotate(InputAction.CallbackContext context)
     {
-        if(!gameObject.CompareTag("Focus"))
+        if (!gameObject.CompareTag("Focus"))
         {
             return;
         }
-        string _dir = rotation.ReadValueAsObject()?.ToString();
 
-        if(_dir == "-1")
-        {
-            iTween.RotateAdd(gameObject, oneSpin, animTime);
+        float direction = context.ReadValue<float>();
 
-        }
-        if (_dir == "1")
+        // 計算旋轉角度
+        Vector3 rotationAngle = oneSpin * direction; // direction 可為 -1 或 1
+        Quaternion targetRotation = Quaternion.Euler(rotationAngle);
+
+        // 檢查碰撞並旋轉
+        if (!DetactCollision.ObjectTransformer_CheckCollision(gameObject.transform.position, targetRotation))
         {
-            iTween.RotateAdd(gameObject, -oneSpin, animTime);
+            iTween.RotateAdd(gameObject, rotationAngle, animTime);
         }
+        else
+        {
+            TransformerAnimation animation = gameObject.AddComponent<TransformerAnimation>();
+            RotateAnimation?.Invoke(gameObject, rotationAngle);
+        }
+        InputSleep(animTime);
     }
 
     /// <summary>
@@ -91,6 +99,22 @@ public class ObjectTransformer : MonoBehaviour
         return transform.position - PositionMouseToFloor;
     }
 
+    #region Input Sleep Functions
+    private void InputSleep(float time)
+    {
+        Debug.Log($"Disable rotate button");
+        rotation.Disable();
+        Invoke("InputAwake", time + 0.01f);
+    }
+    void InputAwake()
+    {
+        rotation.Enable();
+        Debug.Log($"Enable rotate button");
+
+    }
+    #endregion
+
+    #region StartUp
     private void Awake()
     {
         objectInteract = new ObjectInteract();
@@ -112,5 +136,56 @@ public class ObjectTransformer : MonoBehaviour
         rotation.performed -= Rotate;
         rotation.Disable();
     }
+    #endregion
+}
 
+/// <summary>
+/// 執行物件的動畫
+/// </summary>
+public class TransformerAnimation : MonoBehaviour
+{
+    float animTime = ObjectTransformer.animTime;
+    Vector3 originalRotation = new();
+
+
+    private void PlayCollisionAnimation(GameObject target, Vector3 rotationAngle)
+    {
+        originalRotation = target.transform.rotation.eulerAngles;
+        // 計算 0.2 倍的旋轉角度
+        Vector3 partialRotationAngle = rotationAngle * 0.2f;
+        Quaternion partialRotation = Quaternion.Euler(partialRotationAngle);
+
+        // 第一步：旋轉到 0.2 倍角度
+        iTween.RotateAdd(target, iTween.Hash(
+            "amount", partialRotationAngle,
+            "time", animTime * 0.5f, // 縮短動畫時間
+            "easetype", iTween.EaseType.easeInOutQuad,
+            "oncomplete", "ReturnToOriginalRotation", // 完成後調用返回動畫
+            "oncompletetarget", target
+        ));
+        Invoke("DeleteComponent", animTime);
+    }
+
+    private void DeleteComponent()
+    {
+        TransformerAnimation.Destroy(this);
+    }
+
+    private void ReturnToOriginalRotation()
+    {
+        // 第二步：旋轉回原始角度
+        iTween.RotateTo(gameObject, iTween.Hash(
+            "rotation", originalRotation,
+            "time", animTime * 0.5f,
+            "easetype", iTween.EaseType.easeInOutQuad
+        ));
+    }
+    private void OnEnable()
+    {
+        ObjectTransformer.RotateAnimation += PlayCollisionAnimation;
+    }
+    private void OnDisable()
+    {
+        ObjectTransformer.RotateAnimation -= PlayCollisionAnimation;
+    }
 }

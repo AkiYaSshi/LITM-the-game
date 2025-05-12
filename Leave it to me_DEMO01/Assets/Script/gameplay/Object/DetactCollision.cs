@@ -9,7 +9,7 @@ public class DetactCollision: MonoBehaviour
     private List<Vector3> pointToMark = new();
 
     [SerializeField]
-    private LayerMask layerMask = 1 << 7; //不可重疊的圖層
+    private LayerMask layerMask = 1 << 8; //不可重疊的圖層: As Grid&Insantiate
 
     private static readonly float boxSize = GridMovement.unit * 0.5f;
     private Vector3 size = new Vector3(boxSize, boxSize, boxSize);
@@ -23,11 +23,11 @@ public class DetactCollision: MonoBehaviour
     /// 檢查指定座標是否有 Collider
     /// </summary>
     /// <param name="pos">中心點座標</param>
-    public bool ObjectTransformer_CheckCollision(Vector3 pos)
+    public bool ObjectTransformer_CheckCollision(Vector3 pos, Quaternion? quaternion = null)
     {
         if (gameObject.CompareTag("Focus"))
         {
-            List<Vector3> points = CalObjectPoint(pos);
+            List<Vector3> points = CalObjectPoint(pos, quaternion);
             foreach (var point in points)
             {
                 Collider[] hitColliders = Physics.OverlapBox(point, size, Quaternion.Euler(0, 0, 0), layerMask);
@@ -44,7 +44,8 @@ public class DetactCollision: MonoBehaviour
     /// </summary>
     /// <returns>座標值</returns>
     /// <param name="gridpos">中心點座標</param>
-    private List<Vector3> CalObjectPoint(Vector3 gridpos)
+    /// <param name="quaternion">物件旋轉量(用於ObjectTransFormer.Rotate)</param>
+    private List<Vector3> CalObjectPoint(Vector3 gridpos, Quaternion? quaternion = null)
     {
         List<Vector3> pointInObj = new(); //物件內每個單位的中心點
         for (int i = 0; i < data.Size.x; i++)
@@ -53,7 +54,6 @@ public class DetactCollision: MonoBehaviour
             {
                 for(int k = 0; k < data.Size.z; k++)
                 {
-                    //TODO: 搞懂為什麼大型物件算出的點數量不符要求
                     //得到物件內各單位距離中心點的偏移
                     Vector3 childpoint = new(i * GridMovement.unit, 
                                              j * GridMovement.unit, 
@@ -61,6 +61,9 @@ public class DetactCollision: MonoBehaviour
 
                     //將單位內中心點加入物件的旋轉
                     Vector3 pointWithRotate = gameObject.transform.rotation * childpoint;
+
+                    if(quaternion.HasValue)pointWithRotate = quaternion.Value * pointWithRotate;
+
 
                     //將中心點加上偏移，得到世界座標
                     Vector3 pointToWorld = gridpos + pointWithRotate;
@@ -88,3 +91,4 @@ public class DetactCollision: MonoBehaviour
         data = gameObject.GetComponent<ObjectRef>().objectData;
     }
 }
+
