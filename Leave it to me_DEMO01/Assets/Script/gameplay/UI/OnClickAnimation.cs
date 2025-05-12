@@ -79,7 +79,6 @@ public class OnClickAnimation : MonoBehaviour
     [SerializeField]
     private GameObject ShowObjStandard;
     #endregion
-
     /// <summary>
     /// 啟動動畫執行
     /// </summary>

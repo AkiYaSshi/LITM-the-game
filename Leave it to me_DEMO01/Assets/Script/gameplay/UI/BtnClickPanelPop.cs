@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 /// <summary>
@@ -15,20 +16,23 @@ public class BtnClickPanelPop : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] GameObject button;
     [SerializeField] GameObject[] hideWhileClick;
+    [SerializeField] bool alwaysShowTarget = false;
     [SerializeField]
     private List<OnClickAnimation> AnimationList;
     private Button btn;
+
+    [SerializeField]
+    private InputAction pressButton;
+
     /// <summary>
     /// 需隱藏的面板是否顯示
     /// </summary>
-    private bool IsHiddenShow;
+    private bool IsHiddenShow = true;
 
     void Start()
     {
-        btn = button.GetComponent<Button>();
+        btn = gameObject.GetComponent<Button>();
         btn.onClick.AddListener(OnButtonClick);
-
-        IsHiddenShow = target.GetComponent<Canvas>().enabled;
 
     }
     
@@ -37,19 +41,15 @@ public class BtnClickPanelPop : MonoBehaviour
     /// </summary>
     void OnButtonClick()
     {
-        target.GetComponent<Canvas>().enabled = !target.GetComponent<Canvas>().enabled;
+        if (!alwaysShowTarget)
+        {
+            target.GetComponent<Canvas>().enabled = !target.GetComponent<Canvas>().enabled;
+        }
 
         if (hideWhileClick?.Length > 0) //確認隱藏清單內有物件
         {
-            foreach (GameObject obj in hideWhileClick)
-            {
-                obj.SetActive(false);
-            }
+            SwitchVisible();
 
-            if (IsHiddenShow == false)//代表此按鈕是展開面板狀態，再按一次按鈕回到初始狀態
-            {
-                ShowHidden();
-            }
         }
         if (AnimationList != null)
         {
@@ -59,27 +59,38 @@ public class BtnClickPanelPop : MonoBehaviour
             }
         }
     }
+    private void OnKeyClick(InputAction.CallbackContext context)
+    {
+        OnButtonClick();
+    }
 
     /// <summary>
-    /// 面板隱藏後顯示List內物件
+    /// 切換List內物件
     /// </summary>
-    void ShowHidden()
+    void SwitchVisible()
     {
         if (hideWhileClick?.Length > 0) 
         { 
             foreach (GameObject obj in hideWhileClick)
             {
-                obj?.SetActive(true);
+                obj?.SetActive(!obj.activeSelf);
             }
+            IsHiddenShow = !IsHiddenShow;
         }
     }
     private void OnEnable()
     {
-        HideListAfterButtonClick.ShowHidden += ShowHidden;
+        pressButton?.Enable();
+        pressButton.performed += OnKeyClick;
+        HideListAfterButtonClick.ShowHidden += SwitchVisible;
     }
+
 
     private void OnDisable()
     {
-        HideListAfterButtonClick.ShowHidden -= ShowHidden;
+        pressButton?.Disable();
+        pressButton.performed -= OnKeyClick;
+        HideListAfterButtonClick.ShowHidden -= SwitchVisible;
+        btn.onClick?.RemoveListener(OnButtonClick);
     }
 }
