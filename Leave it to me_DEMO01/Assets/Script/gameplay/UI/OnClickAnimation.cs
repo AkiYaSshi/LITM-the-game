@@ -9,15 +9,16 @@ using UnityEngine;
 public class OnClickAnimation : MonoBehaviour
 {
     #region 變數宣告
-    /// <summary>
-    /// 動畫化的目標物件陣列
-    /// </summary>
+    [Header("動畫目標")]
+    [Tooltip("選擇要應用動畫的目標物件陣列")]
     [SerializeField]
     private GameObject[] Targets;
 
-    /// <summary>
-    /// 動畫類型列舉
-    /// </summary>
+    [Header("動畫類型與設置")]
+    [Tooltip("選擇動畫的類型：滑動或縮放")]
+    [SerializeField]
+    private AnimationType animationType;
+
     public enum AnimationType
     {
         /// <summary>
@@ -30,55 +31,48 @@ public class OnClickAnimation : MonoBehaviour
         SCALE
     }
 
-    /// <summary>
-    /// 當前選擇的動畫類型
-    /// </summary>
-    [SerializeField]
-    private AnimationType animationType;
-
-    /// <summary>
-    /// 動畫的漸變類型
-    /// </summary>
+    [Tooltip("選擇動畫的漸變類型（例如線性、緩入緩出等）")]
     [SerializeField]
     private iTween.EaseType BetweenType;
-    private Space space;
 
-    /// <summary>
-    /// 動畫的方向和改變量
-    /// </summary>
+    [Header("動畫參數")]
+    [Tooltip("動畫的方向和改變量（例如滑動距離或縮放比例）")]
     [SerializeField]
     private Vector3 Direction;
-    private Vector3 LastTransform;
-    private Vector3 BackDirection;
 
-    /// <summary>
-    /// 動畫的執行時間
-    /// </summary>
+    [Tooltip("動畫的執行時間（單位：秒）")]
     [SerializeField]
     private float AnimationTime;
 
-    /// <summary>
-    /// 動畫延遲開始時間
-    /// </summary>
+    [Tooltip("動畫開始前的延遲時間（單位：秒）")]
     [SerializeField]
     private float Delay = 0;
 
-    /// <summary>
-    /// 是否基於螢幕座標計算移動
-    /// </summary>
+    [Header("座標與空間")]
+    [Tooltip("是否基於螢幕座標計算移動（而不是世界座標）")]
     [SerializeField]
     private bool moveInScreenSpace = true;
+
+    [Tooltip("是否使用全局位置（影響座標計算方式）")]
     [SerializeField]
     private bool UseGlobalPosition = true;
-    bool reverse = false;
 
-    /// <summary>
-    /// 攝影機參考
-    /// </summary>
+    [Header("攝影機與參考物件")]
+    [Tooltip("用於計算螢幕座標的攝影機（若為空則使用主攝影機）")]
+    [SerializeField]
     private Camera cam;
+
+    [Tooltip("用於基準顯示的參考物件（例如顯示的標準位置）")]
     [SerializeField]
     private GameObject ShowObjStandard;
     #endregion
+
+    // 其他私有變數（不會出現在 Inspector 中）
+    private Space space;
+    private Vector3 LastTransform;
+    private Vector3 BackDirection;
+    private bool reverse = false;
+
     /// <summary>
     /// 啟動動畫執行
     /// </summary>

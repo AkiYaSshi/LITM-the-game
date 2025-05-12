@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class clickAnyToExit : MonoBehaviour
 {
-    [SerializeField] GameObject panel;
+    [SerializeField] GameObject target;
     private Button btn;
     [SerializeField]
     private List<OnClickAnimation> onClickAnimation;
+    [SerializeField]
+    private bool alwaysShowTarget = false;
     void Start()
     {
         btn = gameObject.GetComponent<Button>();
@@ -28,7 +30,7 @@ public class clickAnyToExit : MonoBehaviour
                 onClickAnimation.AnimationStart();
             }
         }
-        panel.GetComponent<Canvas>().enabled = false;
+        if(!alwaysShowTarget) target.GetComponent<Canvas>().enabled = false;
     }
 
 }

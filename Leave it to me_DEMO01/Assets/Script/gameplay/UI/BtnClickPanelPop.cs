@@ -13,20 +13,38 @@ using UnityEngine.UI;
 /// </summary>
 public class BtnClickPanelPop : MonoBehaviour
 {
-    [SerializeField] GameObject target;
-    [SerializeField] GameObject button;
-    [SerializeField] GameObject[] hideWhileClick;
-    [SerializeField] bool alwaysShowTarget = false;
+    #region 變數宣告
+    [Header("面板與按鈕設置")]
+    [Tooltip("顯示或隱藏的目標面板物件（需有 Canvas 組件）")]
+    [SerializeField]
+    private GameObject target;
+
+    [Tooltip("觸發面板的按鈕物件（需有 Button 組件）")]
+    [SerializeField]
+    private GameObject button;
+
+    [Tooltip("是否始終顯示目標面板，忽略點擊切換")]
+    [SerializeField]
+    private bool alwaysShowTarget = false;
+
+    [Header("隱藏物件管理")]
+    [Tooltip("點擊按鈕後要隱藏或顯示的物件陣列")]
+    [SerializeField]
+    private GameObject[] hideWhileClick;
+
+    [Header("動畫控制")]
+    [Tooltip("觸發點擊後執行的動畫列表")]
     [SerializeField]
     private List<OnClickAnimation> AnimationList;
-    private Button btn;
 
+    [Header("輸入設置")]
+    [Tooltip("用於觸發面板的輸入動作（例如鍵盤或手把按鍵）")]
     [SerializeField]
     private InputAction pressButton;
+    #endregion
 
-    /// <summary>
-    /// 需隱藏的面板是否顯示
-    /// </summary>
+    // 其他私有變數（不會出現在 Inspector 中）
+    private Button btn;
     private bool IsHiddenShow = true;
 
     void Start()

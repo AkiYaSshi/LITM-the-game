@@ -42,13 +42,13 @@ public class gameplay_RoomShift : MonoBehaviour
         {
             RightbtnClick?.Invoke();
             Turn.Disable();
-            Invoke("EnableButton", 0.5f);
+            Invoke("EnableButton", 0.45f);
         }
         if(context.ReadValue<float>() < -0.8f)
         {
             LeftbtnClick?.Invoke();
             Turn.Disable();
-            Invoke("EnableButton", 0.5f);
+            Invoke("EnableButton", 0.45f);
         }
     }
     void EnableButton()

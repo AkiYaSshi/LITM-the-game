@@ -9,6 +9,8 @@ public class HideListAfterButtonClick : MonoBehaviour
     public static event Action ShowHidden;
     [SerializeField]
     private List<OnClickAnimation> onClickAnimation;
+    [SerializeField]
+    private bool alwaysShowTarget = false;
 
     [SerializeField]
     private GameObject target;
@@ -23,6 +25,9 @@ public class HideListAfterButtonClick : MonoBehaviour
             }
         }
         ShowHidden?.Invoke();
-        target.GetComponent<Canvas>().enabled = false;
+        if (!alwaysShowTarget)
+        {
+            target.GetComponent<Canvas>().enabled = false;
+        }
     }
 }
