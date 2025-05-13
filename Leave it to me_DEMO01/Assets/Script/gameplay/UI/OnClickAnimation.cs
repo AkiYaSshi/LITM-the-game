@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Net.NetworkInformation;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.WSA;
 
 /// <summary>
 /// 處理按鈕點擊後的動畫效果
@@ -61,6 +63,9 @@ public class OnClickAnimation : MonoBehaviour
     [Tooltip("用於計算螢幕座標的攝影機（若為空則使用主攝影機）")]
     [SerializeField]
     private Camera cam;
+    [Tooltip("用於計算位移量的圖層")]
+    [SerializeField]
+    private Canvas canvas;
 
     [Tooltip("用於基準顯示的參考物件（例如顯示的標準位置）")]
     [SerializeField]
@@ -72,6 +77,8 @@ public class OnClickAnimation : MonoBehaviour
     private Vector3 LastTransform;
     private Vector3 BackDirection;
     private bool reverse = false;
+    private bool isUI;
+    private CanvasScaler scaler;
 
     /// <summary>
     /// 啟動動畫執行
@@ -80,59 +87,73 @@ public class OnClickAnimation : MonoBehaviour
     {
         if (!reverse)
         {
-            foreach (GameObject item in Targets)
-            {
-                LastTransform = ToScreenMovement(item);
-                Hashtable hashtable = SetHash();
-                switch (animationType)
-                {
-                    case AnimationType.SLIDE:
-                        iTween.MoveBy(item, hashtable);
-                        break;
-                    case AnimationType.SCALE:
-                        iTween.ScaleBy(item, hashtable);
-                        break;
-                }
-            }
+            Animation();
             reverse = true;
             return;
         }
         else //設定相反方向的改變
         {
-
-            foreach (GameObject item in Targets)
-            {
-                LastTransform = -ToScreenMovement(item);
-                Hashtable hashtable = SetHash();
-                switch (animationType)
-                {
-                    case AnimationType.SLIDE:
-                        iTween.MoveBy(item, hashtable);
-                        break;
-                    case AnimationType.SCALE:
-                        iTween.ScaleBy(item, hashtable);
-                        break;
-                }
-            }
+            Animation(-1);
             reverse = false;
         }
     }
 
+    private void Animation(int dire = 1)
+    {
+        foreach (GameObject item in Targets)
+        {
+            if (!isUI) LastTransform = Object3DMovement(item) * dire; //非UI物件
+            else if (isUI) LastTransform = UIMovement(item) * dire; //UI物件
+            Hashtable hashtable = SetHash();
+            switch (animationType)
+            {
+                case AnimationType.SLIDE:
+                    iTween.MoveBy(item, hashtable);
+                    break;
+                case AnimationType.SCALE:
+                    iTween.ScaleBy(item, hashtable);
+                    break;
+            }
+        }
+    }
+
+    #region 座標換算
     /// <summary>
     /// 將移動方向轉換為螢幕座標
     /// </summary>
-    private Vector3 ToScreenMovement(GameObject _obj)
+    private Vector3 Object3DMovement(GameObject _obj)
     {
         if (moveInScreenSpace && _obj.layer != 5)
         {
             Vector3 screenPosition = cam.WorldToScreenPoint(_obj.transform.position); //物件世界座標轉到螢幕座標
 
             Vector3 targetScreenPosition = screenPosition + Direction; //在螢幕視角位移
+            targetScreenPosition.x = screenPosition.x + (Direction.x / 1920) * Screen.width;
+            targetScreenPosition.y = screenPosition.y + (Direction.y / 1080) * Screen.height;
 
             return cam.ScreenToWorldPoint(targetScreenPosition) - _obj.transform.position; //將移動後位置減去當前座標，轉為世界向量
         }
         return Direction;
     }
+    /// <summary>
+    /// UI的對螢幕位移計算
+    /// </summary>
+    /// <param name="_obj"></param>
+    /// <returns></returns>
+    private Vector3 UIMovement(GameObject _obj)
+    {
+        Vector2 refResolution = scaler.referenceResolution;
+        float scaleFactor = scaler.scaleFactor;
+        Vector2 screenSize = new Vector2(Screen.width, Screen.height);
+
+        // 將相對位移量（比例）轉換為 Canvas 單位
+        float displacementX = Direction.x / refResolution.x * screenSize.x;
+        float displacementY = Direction.y / refResolution.y * screenSize.y;
+        float displacementZ = Direction.z;
+
+        return new Vector3(displacementX, displacementY, displacementZ);
+    }
+    #endregion
 
     /// <summary>
     /// 設置 iTween 的 Hash 表參數
@@ -155,6 +176,16 @@ public class OnClickAnimation : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
+        if(canvas != null)
+        {
+            isUI = true;
+            scaler = canvas.GetComponent<CanvasScaler>();
+            if (scaler == null || scaler.referenceResolution == Vector2.zero)
+            {
+                Debug.LogError("CanvasScaler 或 Reference Resolution 未正確設置！");
+                return;
+            }
+        }
         space = UseGlobalPosition ? Space.World : Space.Self;
     }
 

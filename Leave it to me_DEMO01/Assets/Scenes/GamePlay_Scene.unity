@@ -986,12 +986,13 @@ MonoBehaviour:
   - {fileID: 209747064}
   animationType: 0
   BetweenType: 24
-  Direction: {x: 0, y: 80, z: 0}
+  Direction: {x: 0, y: 180, z: 0}
   AnimationTime: 0.4
   Delay: 0
   moveInScreenSpace: 0
   UseGlobalPosition: 1
   cam: {fileID: 0}
+  canvas: {fileID: 1556289468}
   ShowObjStandard: {fileID: 1556289464}
 --- !u!114 &324359871
 MonoBehaviour:
@@ -2302,7 +2303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 0.5
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
@@ -3236,7 +3237,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -2
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &829458652
 GameObject:
@@ -3994,13 +3995,14 @@ MonoBehaviour:
   Targets:
   - {fileID: 1333956361}
   animationType: 0
-  BetweenType: 10
-  Direction: {x: -170, y: 0, z: 0}
+  BetweenType: 26
+  Direction: {x: -250, y: 0, z: 0}
   AnimationTime: 0.3
   Delay: 0
   moveInScreenSpace: 1
   UseGlobalPosition: 0
   cam: {fileID: 0}
+  canvas: {fileID: 0}
   ShowObjStandard: {fileID: 601862122}
 --- !u!114 &1226353197
 MonoBehaviour:
@@ -4031,13 +4033,14 @@ MonoBehaviour:
   Targets:
   - {fileID: 1837411033}
   animationType: 0
-  BetweenType: 16
-  Direction: {x: -380, y: 0, z: 0}
+  BetweenType: 26
+  Direction: {x: -625, y: 0, z: 0}
   AnimationTime: 0.3
   Delay: 0
   moveInScreenSpace: 0
   UseGlobalPosition: 0
   cam: {fileID: 0}
+  canvas: {fileID: 601862126}
   ShowObjStandard: {fileID: 601862122}
 --- !u!1 &1240052417
 GameObject:
@@ -5538,10 +5541,10 @@ RectTransform:
   - {fileID: 1964729997}
   m_Father: {fileID: 601862123}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1252, y: 0.68640137}
-  m_SizeDelta: {x: -535.4506, y: -17.8484}
+  m_AnchoredPosition: {x: 292, y: 19.686401}
+  m_SizeDelta: {x: 1384.5493, y: -143.84839}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1837411035
 MonoBehaviour:
