@@ -42,11 +42,10 @@ public class SummonObjectManager : MonoBehaviour
         SetObjectData(newObject, ObjectData.objectsData[selectedObjectIndex]);
         SetChildLayer(newObject);
         newObject.transform.position = grid.CellToWorld(gridPos);
-
     }
 
     /// <summary>
-    /// 將Scriptable Object內的原始物件資料儲存至生成的物件
+    /// 將S需要的component儲存至生成的物件
     /// </summary>
     /// <param name="newObject">生成物件</param>
     /// <param name="origin">原始物件類別</param>
@@ -60,6 +59,7 @@ public class SummonObjectManager : MonoBehaviour
         newObject.AddComponent<SnapToGrid>();
         newObject.AddComponent<ObjectTransformer>();
         newObject.AddComponent<DetactCollision>();
+        newObject.AddComponent<SavGameObject>();
 
         //TODO: 處理旋轉時fowardAxis跑掉的問題
         //IsDisplay isDisplay = newObject.AddComponent<IsDisplay>();

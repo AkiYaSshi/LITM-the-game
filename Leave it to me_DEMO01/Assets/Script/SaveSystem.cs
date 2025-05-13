@@ -3,63 +3,44 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
-public static class SaveSystem
+public class SaveSystem
 {
+    private List<SavGameObject> objects = new();
+    private List<SavRoom> rooms = new();
+    private string savePath = "/saves/user.json";
+
+    public void AddObject(SavGameObject obj) => objects.Add(obj);
+    public void AddRoom(SavRoom room) => rooms.Add(room);
 
     /// <summary>
-    /// 儲存角色名稱、房間資訊
+    /// 在空的save data內丟入物件並存檔
     /// </summary>
-    /// <param name="playerData"></param>
-    /// <param name="room"></param>
-    public static void SavePlayer(PlayerData playerData, gameplay_RoomShift room)
+    public void SaveGame()
     {
-        NewFolder();
+        SaveData saveData = new SaveData();
 
-        BinaryFormatter formatter = new BinaryFormatter(); //新建一個轉檔工具
+        foreach (var obj in objects)
+            saveData.AddMemento(obj.Create());
+        foreach (var room in rooms)
+            saveData.AddMemento(room.Create());
 
-        string path = Application.persistentDataPath + "/saves/player.sleep"; //檔案儲存位置
-        FileStream stream = new FileStream(path, FileMode.Create); //新建檔案處理物件，在path上新建檔案
-
-        SaveData data = new SaveData(playerData, room); //新建Savedata物件，arg填入要存的資料
-
-        formatter.Serialize(stream, data); //存檔魔法
-        stream.Close();
-
-        Debug.Log("SaveSystem存檔路徑測試：" + path);
+        saveData.SaveToFile(Application.persistentDataPath +  savePath);
     }
 
-    public static SaveData LoadSaveData()
+    public void LoadGame()
     {
-        string path = Application.persistentDataPath + "/saves/player.sleep"; //檔案儲存位置
-        if (File.Exists(path))
+        SaveData saveData = SaveData.LoadFromFile(Application.persistentDataPath + savePath);
+        foreach (var obj in objects)
         {
-            BinaryFormatter formatter = new BinaryFormatter(); //新建一個轉檔工具
-            FileStream stream = new FileStream(path, FileMode.Open); //新建檔案處理物件，在path上開啟檔案
-
-            SaveData data = formatter.Deserialize(stream) as SaveData; //使用轉檔工具，將Binary轉為SaveData檔，存入SaveData變數
-            stream.Close();
-
-            return data;
+            Memento memento = saveData.GetMemento(obj.ObjectId, "Object");
+            if(memento != null) obj.Restore(memento);
         }
-        else
+        foreach (var room in rooms)
         {
-            Debug.LogError("檔案儲存：" + path + "內沒有任何存檔");
-            return null;
-        }
-    }
-
-    /// <summary>
-    /// 檢查路境內是否存在saves資料夾，若無，創建一個
-    /// </summary>
-    public static void NewFolder()
-    {
-        string path = Application.persistentDataPath;
-
-        if (!File.Exists(path))
-        {
-            string folderPath = Path.Combine(Application.persistentDataPath, "saves");
-            Directory.CreateDirectory(folderPath);
+            Memento memento = saveData.GetMemento(room.ObjectId, "Room");
+            if(memento !=null) room.Restore(memento);
         }
     }
 }

@@ -102,15 +102,12 @@ public class ObjectTransformer : MonoBehaviour
     #region Input Sleep Functions
     private void InputSleep(float time)
     {
-        Debug.Log($"Disable rotate button");
         rotation.Disable();
         Invoke("InputAwake", time + 0.01f);
     }
     void InputAwake()
     {
         rotation.Enable();
-        Debug.Log($"Enable rotate button");
-
     }
     #endregion
 
@@ -138,6 +135,7 @@ public class ObjectTransformer : MonoBehaviour
     }
     #endregion
 }
+
 
 /// <summary>
 /// 執行物件的動畫
@@ -189,3 +187,4 @@ public class TransformerAnimation : MonoBehaviour
         ObjectTransformer.RotateAnimation -= PlayCollisionAnimation;
     }
 }
+

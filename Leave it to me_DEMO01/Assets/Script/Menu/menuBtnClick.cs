@@ -1,9 +1,13 @@
 using System.IO;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
+using TMPro;
+using System;
 
 public class menuBtnClick : MonoBehaviour
 {
+    public static event Action LoadFile;
+
     public GameObject loadBtn;
     public GameObject newBtn;
     public GameObject sumitPlayerName;
@@ -20,13 +24,7 @@ public class menuBtnClick : MonoBehaviour
     }
     public void LoadExistingGame() //載入檔案
     {
-        SaveData data = SaveSystem.LoadSaveData();
-
-        playerData.playerName = data.name;
-        //room.m_DIRECTION = (gameplay_RoomShift.DIRECTION)data.direction;
-
         SceneManager_script.ToScene(1);
-        playerData.InfoShow();
     }
 
     private bool DetactSaves() //檢查是否有存檔過

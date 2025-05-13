@@ -1,20 +1,21 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class SaveBtnClick : MonoBehaviour
 {
-    public PlayerData playerData;
-    public gameplay_RoomShift room;
-
     public TextMeshProUGUI buttonText;
 
     private void Start()
     {
         buttonText.text = "Save";
     }
+
+    /// <summary>
+    /// «ö¤USave«ö¶s
+    /// </summary>
     public void SaveButton()
     {
-        SaveSystem.SavePlayer(playerData, room);
         buttonText.text = "Save Done!";
         Invoke("status", 2f);
     }
