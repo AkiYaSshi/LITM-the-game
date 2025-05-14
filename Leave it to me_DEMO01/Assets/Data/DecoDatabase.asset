@@ -48,3 +48,13 @@ MonoBehaviour:
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 6256406935555529579, guid: 840f1a311458c294bb4e6871b507557e, type: 3}
     <FowardAxis>k__BackingField: 1
+  - <Name>k__BackingField: warddrope
+    <ID>k__BackingField: 6
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 6256406935555529579, guid: 840f1a311458c294bb4e6871b507557e, type: 3}
+    <FowardAxis>k__BackingField: 1
+  - <Name>k__BackingField: bed
+    <ID>k__BackingField: 6
+    <Size>k__BackingField: {x: 4, y: 1, z: 4}
+    <Prefab>k__BackingField: {fileID: 6256406935555529579, guid: 840f1a311458c294bb4e6871b507557e, type: 3}
+    <FowardAxis>k__BackingField: 1
