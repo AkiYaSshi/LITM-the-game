@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2923010827309291764
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 22.097204
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 22.097204
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 22.097204
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.4867985
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1634659
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.37577796
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6072503924201322688, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d3a2984e4b0cc44e8dca785985d3148, type: 2}
+    - target: {fileID: 919132149155446097, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_Name
+      value: suspender skirt (outline)
+      objectReference: {fileID: 0}
+    - target: {fileID: 994436014165283195, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.03324
+      objectReference: {fileID: 0}
+    - target: {fileID: 2615516174700815923, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ce75a805641c1a46abdfd66a8e5ccd4, type: 2}
+    - target: {fileID: 3754434045537346079, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d3a2984e4b0cc44e8dca785985d3148, type: 2}
+    - target: {fileID: 5107387133517225687, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d3a2984e4b0cc44e8dca785985d3148, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7dff204eca2f3240a97838d88f48caf, type: 3}
