@@ -6,6 +6,7 @@ TagManager:
   tags:
   - No Lapping
   - Focus
+  - Room
   layers:
   - Default
   - TransparentFX

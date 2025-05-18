@@ -28,7 +28,7 @@ public class SummonObjectManager : MonoBehaviour
     /// <summary>
     /// 按下按鈕時，生成對應物件在房間中央
     /// </summary>
-    public void SummonObject(int ID)
+    public GameObject SummonObject(int ID)
     {
         selectedObjectIndex = ObjectData.objectsData.FindIndex(data => data.ID == ID);
         if (selectedObjectIndex < 0)
@@ -42,6 +42,8 @@ public class SummonObjectManager : MonoBehaviour
         SetObjectData(newObject, ObjectData.objectsData[selectedObjectIndex]);
         SetChildLayer(newObject);
         newObject.transform.position = grid.CellToWorld(gridPos);
+
+        return newObject;
     }
 
     /// <summary>

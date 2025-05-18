@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ObjectDataSO : ScriptableObject
 {
-    public List<ObjectData> objectsData = new List<ObjectData>();
+    public List<ObjectData> objectsData = new();
 }
 /// <summary>
 /// ³Ã­Ñ¸ê®Æ<br />

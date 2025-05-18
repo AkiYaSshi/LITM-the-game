@@ -109,6 +109,8 @@ public class IsDisplay : MonoBehaviour
         gameplay_RoomShift.RightbtnClick += assignDirection;
         gameplay_RoomShift.LeftbtnClick += RayDireAdjustLeft;
         gameplay_RoomShift.RightbtnClick += RayDireAdjustRight;
+        RoomData.LoadRoom += assignDirection;
+        RoomData.LoadRoom += raycastDetact;
         gameplay_RoomShift.LeftbtnClick += raycastDetact;
         gameplay_RoomShift.RightbtnClick += raycastDetact;
     }
@@ -118,6 +120,8 @@ public class IsDisplay : MonoBehaviour
         gameplay_RoomShift.RightbtnClick -= assignDirection;
         gameplay_RoomShift.LeftbtnClick -= RayDireAdjustLeft;
         gameplay_RoomShift.RightbtnClick += RayDireAdjustRight;
+        RoomData.LoadRoom -= assignDirection;
+        RoomData.LoadRoom -= raycastDetact;
         gameplay_RoomShift.LeftbtnClick -= raycastDetact;
         gameplay_RoomShift.RightbtnClick -= raycastDetact;
 
