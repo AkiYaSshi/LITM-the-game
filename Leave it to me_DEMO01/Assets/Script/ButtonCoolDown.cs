@@ -1,11 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 管理按鈕的冷卻功能，限制按鈕在指定時間內無法再次點擊。
+/// </summary>
 public class ButtonCoolDown : MonoBehaviour
 {
-    [SerializeField] float time;
-    [SerializeField] GameObject button;
+    [Header("按鈕設置")]
+    [Tooltip("按鈕冷卻時間（單位：秒），決定按鈕無法點擊的持續時間")]
+    [SerializeField] private float time;
 
+    [Tooltip("目標按鈕的 GameObject，需包含 Button 組件")]
+    [SerializeField] private GameObject button;
+
+    // 私有變數，不顯示於 Inspector
     private Button btn;
 
     void Start()
@@ -19,7 +27,7 @@ public class ButtonCoolDown : MonoBehaviour
     /// </summary>
     void OnButtonClick()
     {
-        btn.interactable = false;          
+        btn.interactable = false;
         Invoke("EnableButton", time);
     }
 

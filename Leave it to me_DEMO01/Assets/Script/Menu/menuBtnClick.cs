@@ -6,8 +6,6 @@ using System;
 
 public class menuBtnClick : MonoBehaviour
 {
-    public static event Action LoadFile;
-
     public GameObject loadBtn;
     public GameObject newBtn;
     public GameObject sumitPlayerName;

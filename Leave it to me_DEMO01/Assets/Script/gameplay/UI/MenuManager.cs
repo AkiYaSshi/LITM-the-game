@@ -28,11 +28,6 @@ public class MenuManager : MonoBehaviour
     {
         selectObject(menuGroups[2].SelectFirst);
     }
-
-    private void CloseAll()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-    }
     private void OnEnable()
     {
         foreach (var group in menuGroups)
