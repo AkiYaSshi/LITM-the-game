@@ -59,7 +59,6 @@ public class SummonObjectManager : MonoBehaviour
         newObject.AddComponent<SnapToGrid>();
         newObject.AddComponent<ObjectTransformer>();
         newObject.AddComponent<DetactCollision>();
-        newObject.AddComponent<SavGameObject>();
 
         Rigidbody body = newObject.AddComponent<Rigidbody>();
         body.constraints = RigidbodyConstraints.FreezeAll;

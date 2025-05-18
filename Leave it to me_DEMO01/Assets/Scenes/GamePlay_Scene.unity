@@ -593,6 +593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 161847213}
   - component: {fileID: 161847214}
+  - component: {fileID: 161847215}
   m_Layer: 0
   m_Name: rotateCenter_tar
   m_TagString: Untagged
@@ -631,6 +632,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animTime: 0.4
+--- !u!114 &161847215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161847212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5b867662e97ae4e9c5364d99b7a3d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  objectId: 
 --- !u!1 &167966152
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,7 +969,6 @@ GameObject:
   - component: {fileID: 230168706}
   - component: {fileID: 230168705}
   - component: {fileID: 230168704}
-  - component: {fileID: 230168703}
   - component: {fileID: 230168702}
   m_Layer: 5
   m_Name: Load_Btn_UI
@@ -996,18 +1010,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 623129356}
---- !u!114 &230168703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230168700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 384318df2e40e2a4483dab2cf73be107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &230168704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,19 +1053,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 230168705}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 230168703}
-        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: LoadGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &230168705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3639,7 +3629,6 @@ GameObject:
   - component: {fileID: 733969051}
   - component: {fileID: 733969050}
   - component: {fileID: 733969049}
-  - component: {fileID: 733969052}
   - component: {fileID: 733969048}
   m_Layer: 5
   m_Name: Save_Btn_UI
@@ -3737,7 +3726,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 733969052}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
         m_MethodName: SaveGame
         m_Mode: 1
@@ -3787,18 +3776,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733969046}
   m_CullTransparentMesh: 1
---- !u!114 &733969052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733969046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 384318df2e40e2a4483dab2cf73be107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &739264032
 GameObject:
   m_ObjectHideFlags: 0
