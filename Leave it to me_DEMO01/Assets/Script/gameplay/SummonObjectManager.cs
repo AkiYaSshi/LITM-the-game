@@ -61,10 +61,6 @@ public class SummonObjectManager : MonoBehaviour
         newObject.AddComponent<DetactCollision>();
         newObject.AddComponent<SavGameObject>();
 
-        //TODO: 處理旋轉時fowardAxis跑掉的問題
-        //IsDisplay isDisplay = newObject.AddComponent<IsDisplay>();
-        //isDisplay.fowardAxis = origin.FowardAxis;
-
         Rigidbody body = newObject.AddComponent<Rigidbody>();
         body.constraints = RigidbodyConstraints.FreezeAll;
 
