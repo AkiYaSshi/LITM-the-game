@@ -23,10 +23,12 @@ public static class SaveSystem
     /// </summary>
     public static void SaveGame()
     {
+        Directory.CreateDirectory("/saves");
+
         SaveObject(Objects.GetAllObjectSave());
         SaveRoom(GameObject.FindGameObjectWithTag("Room").GetComponent<RoomData>());
-        Debug.Log($"時空碑已銘刻，記憶封印完成：{Application.persistentDataPath + objectPath}！\n" +
-            $"時空碑已銘刻，記憶封印完成：{Application.persistentDataPath + roomPath}！");
+        Debug.Log($"時空碑已銘刻，記憶封印完成：{UnityEngine.Application.persistentDataPath + objectPath}！\n" +
+            $"時空碑已銘刻，記憶封印完成：{UnityEngine.Application.persistentDataPath + roomPath}！");
     }
 
     /// <summary>
@@ -58,7 +60,7 @@ public static class SaveSystem
     public static void SaveObject(List<ObjectSave> obj)
     {
         BinaryFormatter formatter = new();
-        FileStream stream = new(Application.persistentDataPath + objectPath, FileMode.Create);
+        FileStream stream = new(UnityEngine.Application.persistentDataPath + objectPath, FileMode.Create);
 
         List<ObjectSave> save = new(obj);
 
@@ -72,10 +74,10 @@ public static class SaveSystem
     /// <returns>單魂之記憶，若時空未刻印則返回虛無</returns>
     public static List<ObjectSave> LoadObject()
     {
-        if (File.Exists(Application.persistentDataPath + objectPath))
+        if (File.Exists(UnityEngine.Application.persistentDataPath + objectPath))
         {
             BinaryFormatter formatter = new();
-            FileStream stream = new(Application.persistentDataPath + objectPath, FileMode.Open);
+            FileStream stream = new(UnityEngine.Application.persistentDataPath + objectPath, FileMode.Open);
 
             List<ObjectSave> save = formatter.Deserialize(stream) as List<ObjectSave>;
             stream.Close();
@@ -93,7 +95,7 @@ public static class SaveSystem
     public static void SaveRoom(RoomData room)
     {
         BinaryFormatter formatter = new();
-        FileStream stream = new(Application.persistentDataPath + roomPath, FileMode.Create);
+        FileStream stream = new(UnityEngine.Application.persistentDataPath + roomPath, FileMode.Create);
 
         RoomSave save = new(room);
 
@@ -103,10 +105,10 @@ public static class SaveSystem
 
     public static RoomSave LoadRoom()
     {
-        if (File.Exists(Application.persistentDataPath + roomPath))
+        if (File.Exists(UnityEngine.Application.persistentDataPath + roomPath))
         {
             BinaryFormatter formatter = new();
-            FileStream stream = new(Application.persistentDataPath + roomPath, FileMode.Open);
+            FileStream stream = new(UnityEngine.Application.persistentDataPath + roomPath, FileMode.Open);
 
             RoomSave save = formatter.Deserialize(stream) as RoomSave;
             stream.Close();

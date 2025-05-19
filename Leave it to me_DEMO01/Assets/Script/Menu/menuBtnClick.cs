@@ -27,7 +27,7 @@ public class menuBtnClick : MonoBehaviour
 
     private bool DetactSaves() //檢查是否有存檔過
     {
-        string path = Application.persistentDataPath + "/saves";
+        string path = UnityEngine.Application.persistentDataPath + "/saves";
         return Directory.Exists(path) && Directory.EnumerateFiles(path, "player*").Any();
     }
 
