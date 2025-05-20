@@ -53,7 +53,6 @@ public class DetactCollision: MonoBehaviour
                 }
                 if(hasCollider.Count > 0) //沒有任何point碰到碰撞箱才可回傳False
                 {
-                    UnityEngine.Debug.Log(hasCollider.Count);
                     return true;
                 }
             }
