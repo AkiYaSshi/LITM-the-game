@@ -23,7 +23,7 @@ public static class SaveSystem
     /// </summary>
     public static void SaveGame()
     {
-        Directory.CreateDirectory("/saves");
+        Directory.CreateDirectory(UnityEngine.Application.persistentDataPath + "/saves");
 
         SaveObject(Objects.GetAllObjectSave());
         SaveRoom(GameObject.FindGameObjectWithTag("Room").GetComponent<RoomData>());
