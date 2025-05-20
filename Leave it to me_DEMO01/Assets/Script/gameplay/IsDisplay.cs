@@ -2,13 +2,13 @@ using UnityEngine;
 using static iTween;
 
 /// <summary>
-/// ¨Ì¾Úª«¥ó®g¥Xªºªk½u¡A§PÂ_ª«¥ó¬O§_´ÂµÛ¿Ã¹õ<br />
-/// ¨S¦³«hÁôÂÃ
+/// ??????g?X???k?u?A?P?_????O?_???ˆ{?<br />
+/// ?S???h????
 /// </summary>
 public class IsDisplay : MonoBehaviour
 {
     /// <summary>
-    /// ª«¥ó¥¿­±­±´Â¤è¦V
+    /// ??????????V
     /// </summary>
     public enum FowardAxis
     {
@@ -42,8 +42,8 @@ public class IsDisplay : MonoBehaviour
     }
 
     /// <summary>
-    /// ±qª«¥ó¤¤¤ßÂIªudirection¤è¦V¥´¥X¹p®g<br />
-    /// ­Y¦³¥´¤¤¹ïÀ³¹Ï¼h¤ºªºcollider«hÁôÂÃª«¥ó
+    /// ?q??????I?udirection??V???X?p?g<br />
+    /// ?Y????????????h????collider?h???ˆ§???
     /// </summary>
     void raycastDetact()
     {
@@ -60,7 +60,7 @@ public class IsDisplay : MonoBehaviour
     }
 
     /// <summary>
-    /// ¦V¥k±ÛÂà®É¡Aªk½u¤]¹w¥ý¦V¥k±ÛÂà
+    /// ?V?k????ˆ¨A?k?u?]?w???V?k????
     /// </summary>
     void RayDireAdjustRight()
     {
@@ -68,7 +68,7 @@ public class IsDisplay : MonoBehaviour
     }
 
     /// <summary>
-    /// ¦V¥ª±ÛÂà®É¡Aªk½u¤]¹w¥ý¦V¥ª±ÛÂà
+    /// ?V??????ˆ¨A?k?u?]?w???V??????
     /// </summary>
     void RayDireAdjustLeft() 
     {
@@ -76,7 +76,7 @@ public class IsDisplay : MonoBehaviour
     }
 
     /// <summary>
-    /// ¨Ì¾Ú±qunity¶Ç¤JªºFoward AxisÃþ«¬¨M©w®g½u¦V«e¤è¦ì
+    /// ???qunity??J??Foward Axis?????M?w?g?u?V?e???
     /// </summary>
     void assignDirection()
     {
@@ -129,14 +129,14 @@ public class IsDisplay : MonoBehaviour
 }
 
 /// <summary>
-/// ¦b¹CÀ¸¶}©lÀx¦sª«¥óªº­ì©l¤j¤p
+/// ?b?C???}?l?x?s?????l?j?p
 /// </summary>
 public class OriginalSize: MonoBehaviour
 {
     public Vector3 Size;
 
     /// <summary>
-    /// Àx¦sª«¥ó­ì©l¤j¤p
+    /// ?x?s?????l?j?p
     /// </summary>
     public void GetLocalScale()
     {

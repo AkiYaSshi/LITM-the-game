@@ -13,7 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 6
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -190,7 +190,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.21108924, g: 0.22264141, b: 0.19953711, a: 1}
     - _Color: {r: 0.2110892, g: 0.22264138, b: 0.19953707, a: 1}
-    - _EmissionColor: {r: 0.051157013, g: 0.052657276, b: 0.05660379, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}

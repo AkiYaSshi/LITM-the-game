@@ -27,7 +27,7 @@ Material:
   m_ValidKeywords:
   - _NORMALMAP
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 6
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -204,7 +204,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.5396226, g: 0.40066418, b: 0.19446778, a: 1}
     - _Color: {r: 0.5396226, g: 0.40066415, b: 0.19446775, a: 1}
-    - _EmissionColor: {r: 0.3132075, g: 0.1294197, b: 0.1294197, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.87169814, g: 0.79768604, b: 0.61018866, a: 1}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
