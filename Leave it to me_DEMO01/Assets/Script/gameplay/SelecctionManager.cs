@@ -76,11 +76,11 @@ public class SelecctionManager : MonoBehaviour
         obj.tag = Tag;
         obj.layer = LayerIndex;
 
-        MeshRenderer[] mesh = obj.GetComponentsInChildren<MeshRenderer>();
+        Transform[] transformMeshes = obj.GetComponentsInChildren<Transform>();
 
-        foreach(MeshRenderer childMesh in mesh)
+        foreach(Transform childtransform in transformMeshes)
         {
-            GameObject child = childMesh.gameObject;
+            GameObject child = childtransform.gameObject;
             child.layer = LayerIndex;
         }
 
