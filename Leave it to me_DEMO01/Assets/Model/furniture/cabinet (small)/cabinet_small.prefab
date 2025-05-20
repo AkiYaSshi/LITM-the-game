@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1224605297453338691}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.070916, y: -0.04322052, z: 0.5255193}
+  m_LocalPosition: {x: -0.9165998, y: -0.8177002, z: -1.1006}
   m_LocalScale: {x: 6.865017, y: 8.014357, z: 8.014357}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -98,7 +98,7 @@ GameObject:
   m_Layer: 0
   m_Name: cabinet_small
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 7144292094177112287}
   - component: {fileID: 6091756607815942010}
   - component: {fileID: 8317782451976997808}
+  - component: {fileID: 3089550331216548286}
   m_Layer: 0
   m_Name: cabinet (1)
   m_TagString: Untagged
@@ -146,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 7525039310374873701}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.058316, y: -0.022520304, z: 0.5411193}
+  m_LocalPosition: {x: -0.904, y: -0.797, z: -1.085}
   m_LocalScale: {x: 6.7695665, y: 7.9029255, z: 7.9029255}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -205,3 +206,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3089550331216548286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7525039310374873701}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.11153964, y: 0.30006188, z: 0.12617306}
+  m_Center: {x: 0.13150422, y: 0.18501273, z: 0.13953188}

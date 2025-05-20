@@ -24,8 +24,11 @@ public class SelecctionManager : MonoBehaviour
     [Tooltip("選取時的圖層，用於標記選取物件")]
     [SerializeField] private LayerMask selectLayer;
 
-    [Tooltip("未選取時的標籤名稱")]
+    [Tooltip("未選取時的標籤名稱(不可重疊)")]
     [SerializeField] private string noLapTag = "No Lapping";
+
+    [Tooltip("未選取時的標籤名稱(可重疊)")]
+    [SerializeField] private string LapTag = "Lapping";
 
     [Tooltip("選取時的標籤名稱")]
     [SerializeField] private string focusTag = "Focus";
@@ -101,7 +104,10 @@ public class SelecctionManager : MonoBehaviour
         GameObject[] focusObjects = GameObject.FindGameObjectsWithTag(focusTag);
         foreach (GameObject obj in focusObjects)
         {
-            SwitchSelection(obj, noLapTag, unselectIndex);
+            if(obj.GetComponent<ObjectRef>().objectData.noCollision)
+                SwitchSelection(obj, LapTag, unselectIndex);
+            else
+                SwitchSelection(obj, noLapTag, unselectIndex);
         }
         FocusChange?.Invoke(null);
     }

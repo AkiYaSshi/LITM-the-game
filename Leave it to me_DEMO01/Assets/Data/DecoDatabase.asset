@@ -17,49 +17,65 @@ MonoBehaviour:
     <ID>k__BackingField: 0
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 6992362628493817737, guid: 653051c1ba565824b81be38e20e5fdb1, type: 3}
+    <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 4
   - <Name>k__BackingField: cabinet
     <ID>k__BackingField: 1
     <Size>k__BackingField: {x: 2, y: 3, z: 1}
     <Prefab>k__BackingField: {fileID: 4621697575356550108, guid: 5c3b0e5615c3dc241b9fce5dcae4bd3a, type: 3}
+    <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 4
   - <Name>k__BackingField: chair
     <ID>k__BackingField: 2
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 172449231135223276, guid: 3221c406723e4224cb02aa3ec15cb6cc, type: 3}
+    <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 4
   - <Name>k__BackingField: closet
     <ID>k__BackingField: 3
     <Size>k__BackingField: {x: 1, y: 4, z: 2}
     <Prefab>k__BackingField: {fileID: 5640114120675170156, guid: 6a6a324416e38074fa183b0d52880594, type: 3}
+    <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 1
   - <Name>k__BackingField: suitcase
     <ID>k__BackingField: 4
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 4040495376793090702, guid: 52dc4d9a8a50dd841a00164d29aa1229, type: 3}
+    <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: TV
     <ID>k__BackingField: 5
     <Size>k__BackingField: {x: 1, y: 1, z: 2}
     <Prefab>k__BackingField: {fileID: 7977200198017571321, guid: 7fa9bd66ce2384548bdde158f53cf482, type: 3}
+    <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 1
   - <Name>k__BackingField: warddrope
     <ID>k__BackingField: 6
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 6256406935555529579, guid: 840f1a311458c294bb4e6871b507557e, type: 3}
-    <FowardAxis>k__BackingField: 1
-  - <Name>k__BackingField: warddrope
-    <ID>k__BackingField: 6
-    <Size>k__BackingField: {x: 1, y: 1, z: 1}
-    <Prefab>k__BackingField: {fileID: 6256406935555529579, guid: 840f1a311458c294bb4e6871b507557e, type: 3}
+    <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 1
   - <Name>k__BackingField: bed(single)
     <ID>k__BackingField: 7
     <Size>k__BackingField: {x: 4, y: 1, z: 2}
     <Prefab>k__BackingField: {fileID: 6388055282754173545, guid: ff10b72ffbe1d90409a454c0b6366fae, type: 3}
-    <FowardAxis>k__BackingField: 1
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: bed(double)
     <ID>k__BackingField: 8
     <Size>k__BackingField: {x: 4, y: 1, z: 4}
     <Prefab>k__BackingField: {fileID: 1478938801759744176, guid: 3df422cfa54d61e4c88375fc06b30661, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: cabinet (small)
+    <ID>k__BackingField: 9
+    <Size>k__BackingField: {x: 1, y: 2, z: 1}
+    <Prefab>k__BackingField: {fileID: 1402130961810934311, guid: fcde837fc87d677418415cdfa2202072, type: 3}
+    <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 1
+  - <Name>k__BackingField: carpet
+    <ID>k__BackingField: 10
+    <Size>k__BackingField: {x: 3, y: 1, z: 4}
+    <Prefab>k__BackingField: {fileID: 4936540796711642605, guid: 4a812318ec7706e4ca1a9f583cae8f93, type: 3}
+    <noCollision>k__BackingField: 1
+    <FowardAxis>k__BackingField: 0

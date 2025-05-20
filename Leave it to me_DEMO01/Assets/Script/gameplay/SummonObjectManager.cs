@@ -15,6 +15,10 @@ public class SummonObjectManager : MonoBehaviour
     [SerializeField] 
     private GameObject objectSpawnAt;
     [SerializeField] private LayerMask objectLayerMask;
+    [SerializeField]
+    private string LapTag = "Lapping";
+    [SerializeField]
+    private string NoLapTag = "No Lapping";
 
     [SerializeField]
     private ObjectDataSO ObjectData;
@@ -57,6 +61,9 @@ public class SummonObjectManager : MonoBehaviour
         ObjectRef objectRef = newObject.AddComponent<ObjectRef>();
         objectRef.objectData = origin;
 
+        //上Tag
+        SetObjectTag(newObject);
+
         //將所需component附加到生成的物件
         newObject.AddComponent<SnapToGrid>();
         newObject.AddComponent<ObjectTransformer>();
@@ -91,13 +98,19 @@ public class SummonObjectManager : MonoBehaviour
                 setChildComponent(childTransform);
             }
         }
-        
+
+
         //重複為子物件加上附件
         void setChildComponent(Transform childTransform)
         {
             GameObject child2 = childTransform.gameObject;
             child2.layer = objectLayerMask;
         }
+    }
+    private void SetObjectTag(GameObject obj)
+    {
+        if (obj.GetComponent<ObjectRef>().objectData.noCollision)
+            obj.tag = LapTag;
     }
 
 }

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using UnityEngine;
 
 public class DetactCollision: MonoBehaviour
@@ -7,6 +9,9 @@ public class DetactCollision: MonoBehaviour
     [SerializeField] private float sphereRadius = 0.1f; // 球的半徑
     [SerializeField] private Color pointColor = Color.red; // 點的顏色
     private List<Vector3> pointToMark = new();
+
+    [SerializeField]
+    private string LapTag = "Lapping";
 
     [SerializeField]
     private LayerMask layerMask = 1 << 8; //不可重疊的圖層: As Grid&Insantiate
@@ -27,12 +32,28 @@ public class DetactCollision: MonoBehaviour
     {
         if (gameObject.CompareTag("Focus"))
         {
+            //如果物件設定為可重疊，直接回傳false
+            if(gameObject.GetComponent<ObjectRef>().objectData.noCollision)
+                return false;
+
             List<Vector3> points = CalObjectPoint(pos, quaternion);
             foreach (var point in points)
             {
                 Collider[] hitColliders = Physics.OverlapBox(point, size, Quaternion.Euler(0, 0, 0), layerMask);
-                if(hitColliders.Length > 0) //沒有任何point碰到碰撞箱才可回傳False
+
+                List<Collider> hasCollider = new();
+
+                foreach (var hit in hitColliders)
                 {
+                    if (!hit.transform.parent.CompareTag(LapTag))
+                    {
+                        hasCollider.Add(hit);
+                        UnityEngine.Debug.Log(hit.transform.gameObject.name);
+                    }
+                }
+                if(hasCollider.Count > 0) //沒有任何point碰到碰撞箱才可回傳False
+                {
+                    UnityEngine.Debug.Log(hasCollider.Count);
                     return true;
                 }
             }
@@ -79,9 +100,9 @@ public class DetactCollision: MonoBehaviour
     {
         foreach (Vector3 point in pointToMark)
         {
-            Debug.DrawRay(point, Vector3.up * sphereRadius, pointColor, 1/60f);
-            Debug.DrawRay(point, Vector3.forward * sphereRadius, pointColor, 1 / 60f);
-            Debug.DrawRay(point, Vector3.right * sphereRadius, pointColor, 1 / 60f);
+            UnityEngine.Debug.DrawRay(point, Vector3.up * sphereRadius, pointColor, 1/60f);
+            UnityEngine.Debug.DrawRay(point, Vector3.forward * sphereRadius, pointColor, 1 / 60f);
+            UnityEngine.Debug.DrawRay(point, Vector3.right * sphereRadius, pointColor, 1 / 60f);
         }
         pointToMark.Clear();
     }

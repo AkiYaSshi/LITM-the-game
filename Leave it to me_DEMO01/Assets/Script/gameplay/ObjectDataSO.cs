@@ -36,6 +36,11 @@ public class ObjectData
     [field: SerializeField]
     public GameObject Prefab { get; private set; }
 
+    [Header("重疊設置")]
+    [Tooltip("物件是否能與其他物件重疊")]
+    [field: SerializeField]
+    public bool noCollision { get; private set; }
+
     [Header("顯示設置")]
     [Tooltip("物件的前進軸方向（用於顯示控制）")]
     [field: SerializeField]
