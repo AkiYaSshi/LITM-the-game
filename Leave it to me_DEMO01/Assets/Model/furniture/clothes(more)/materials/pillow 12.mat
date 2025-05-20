@@ -21,24 +21,22 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: pillow 12
-  m_Shader: {fileID: -6465566751694194690, guid: edd7abf643fa4bc4e8561d4c280c97cf, type: 3}
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: 22655c19ff66ed849bcdfea9ba136690, type: 2}
   m_ModifiedSerializedProperties: 8
-  m_ValidKeywords:
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - TCP2_REFLECTIONS
   - TCP2_REFLECTIONS_FRESNEL
   - TCP2_RIM_LIGHTING_LIGHTMASK
   - TCP2_SHADOW_LIGHT_COLOR
-  m_InvalidKeywords:
   - TCP2_UV_NORMALS_FULL
-  - _METALLICSPECGLOSSMAP
-  - _OCCLUSIONMAP
-  - _PARALLAXMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -46,6 +44,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1.18}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1.18}
         m_Offset: {x: 0, y: 0}
@@ -66,6 +68,7 @@ Material:
     - _UseRim: 0
     m_Colors:
     - _BaseColor: {r: 0.70299035, g: 0.9245283, b: 0.83423793, a: 1}
+    - _Color: {r: 0.70299035, g: 0.9245283, b: 0.83423793, a: 1}
     - _HColor: {r: 0.94716984, g: 0.92751163, b: 0.92751163, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectionColor: {r: 0.5098825, g: 0.5630146, b: 0.82641506, a: 1}

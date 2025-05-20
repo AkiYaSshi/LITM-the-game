@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 0
   m_Name: cushion_blue
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5128694989978337753}
   - component: {fileID: 8107345189723639420}
   - component: {fileID: 6298253529629063862}
+  - component: {fileID: 7146525042053440205}
   m_Layer: 0
   m_Name: cushion_blue
   m_TagString: Untagged
@@ -60,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 5505395762777578339}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3464786, y: 1.4434648, z: 2.6044497}
+  m_LocalPosition: {x: -0.095, y: -0.454, z: -0.123}
   m_LocalScale: {x: 15.047425, y: 15.047425, z: 15.047425}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -119,6 +120,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7146525042053440205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505395762777578339}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.07686283, y: 0.019457841, z: 0.07584163}
+  m_Center: {x: 0.007932371, y: 0.0009915503, z: 0.010113771}
 --- !u!1001 &8963017193570386979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,15 +151,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4872856892326549742, guid: f73e71f83b466e34dabcffbfa2bdab99, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3464786
+      value: -0.095
       objectReference: {fileID: 0}
     - target: {fileID: 4872856892326549742, guid: f73e71f83b466e34dabcffbfa2bdab99, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4434648
+      value: -0.45400003
       objectReference: {fileID: 0}
     - target: {fileID: 4872856892326549742, guid: f73e71f83b466e34dabcffbfa2bdab99, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.6044497
+      value: -0.12299991
       objectReference: {fileID: 0}
     - target: {fileID: 4872856892326549742, guid: f73e71f83b466e34dabcffbfa2bdab99, type: 3}
       propertyPath: m_LocalRotation.w

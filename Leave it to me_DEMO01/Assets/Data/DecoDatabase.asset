@@ -79,3 +79,27 @@ MonoBehaviour:
     <Prefab>k__BackingField: {fileID: 4936540796711642605, guid: 4a812318ec7706e4ca1a9f583cae8f93, type: 3}
     <noCollision>k__BackingField: 1
     <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: cloak
+    <ID>k__BackingField: 11
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 1757715749798590557, guid: 9590d2c6c7f778e41aac62b8f2860d4b, type: 3}
+    <noCollision>k__BackingField: 1
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: skirt
+    <ID>k__BackingField: 12
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 3736325074111636032, guid: fb4b0c44dea008f40afd454f30397079, type: 3}
+    <noCollision>k__BackingField: 1
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: sweater
+    <ID>k__BackingField: 13
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 8408977739815715799, guid: 5a788cf8ab33806418efb3b89ae9d8a1, type: 3}
+    <noCollision>k__BackingField: 1
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: clothes1
+    <ID>k__BackingField: 14
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 3788164177819725770, guid: ee0d36fb0d5abc348adab196009302ab, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
