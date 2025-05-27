@@ -1,0 +1,1314 @@
+fileFormatVersion: 2
+guid: 60fb328904d168143a2304fe0b21c385
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dark_Image
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 2846
+        width: 238
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c7ef2d37b1a7e47a07f4f4383d599a
+      internalID: 1024037472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pick_Image
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 2812
+        width: 268
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a80cde83ce1524db32d279a31435a9
+      internalID: 236394100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light_Image
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 2751
+        width: 315
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404cb03cf37b5ff4a9ced6c7f82c796b
+      internalID: 839862174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day_Image
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 2777
+        width: 399
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff08d04d66cc0434fa25b32812db06cc
+      internalID: -888469497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenShot_Image
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 2833
+        width: 340
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245eac5f42c146b4f9349cae1e21aa64
+      internalID: 1795751364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueStripe_Image
+      rect:
+        serializedVersion: 2
+        x: 4247
+        y: 3007
+        width: 340
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2edbba7aaa4c944a1587fed5e5fcfa
+      internalID: -915057863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowStripe_Image
+      rect:
+        serializedVersion: 2
+        x: 4063
+        y: 2907
+        width: 524
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c5e9da482a07f4a9f8519a22f0f7b8
+      internalID: -1347590885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mute_Image
+      rect:
+        serializedVersion: 2
+        x: 3578
+        y: 2660
+        width: 86
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5907361aa77cb40934b9a91751d9b0
+      internalID: 830365983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unmute_Image
+      rect:
+        serializedVersion: 2
+        x: 3777
+        y: 2662
+        width: 137
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3151b15102449dc4f819eee77ac64c23
+      internalID: 596225203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Off_Image
+      rect:
+        serializedVersion: 2
+        x: 4159
+        y: 2651
+        width: 197
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8235cda11fc6bac4ca39dd8a2a1a8123
+      internalID: -73418281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: On_Image
+      rect:
+        serializedVersion: 2
+        x: 4385
+        y: 2658
+        width: 198
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d917f7279c6d3ed4695efa8b008aaec9
+      internalID: 1122309422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Close_Image
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 2286
+        width: 446
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab010bb8cbbd8c47af4d081d4e0b978
+      internalID: -2098164025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_33"
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 2286
+        width: 488
+        height: 369
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd2228dc8677d04cb64cf25401f1656
+      internalID: 1660910097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notification_Image
+      rect:
+        serializedVersion: 2
+        x: 4086
+        y: 2447
+        width: 42
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06ecb36e1baaf146b1ad698b5e3bdd1
+      internalID: 1214161204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancel_Image
+      rect:
+        serializedVersion: 2
+        x: 4277
+        y: 2469
+        width: 101
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071435864bffff442ad8b1231e129431
+      internalID: -1392964737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accept_Image
+      rect:
+        serializedVersion: 2
+        x: 4406
+        y: 2474
+        width: 97
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e60dba70bd76d04a891f38302e5b59d
+      internalID: 803569482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Suitcase_Image
+      rect:
+        serializedVersion: 2
+        x: 2777
+        y: 1916
+        width: 268
+        height: 374
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89f9dbe847f2d14b8a82ba5e621199d
+      internalID: 1288036286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shark_Image
+      rect:
+        serializedVersion: 2
+        x: 4075
+        y: 2120
+        width: 208
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f7fcb6ea5f19f4d8c9b0389f98fca4
+      internalID: 1452344457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OK_Image
+      rect:
+        serializedVersion: 2
+        x: 4356
+        y: 2272
+        width: 165
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb2663d996902649ae917827043035e
+      internalID: 2018212397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chair_Image
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1821
+        width: 302
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd6f2c0c5d036f4ca59191660bba562
+      internalID: 684932576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pillow_Image
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1893
+        width: 392
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d05ef6aebec07549ba988a2c60cc01a
+      internalID: -134723633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Cabinet_Image
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1852
+        width: 206
+        height: 397
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09dfbc159d63e454e90efd115489f813
+      internalID: -1315219926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crusion_Image
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 1920
+        width: 401
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f7e20264693ea4dacd60965b0e49de
+      internalID: 2097927206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blanket_Image
+      rect:
+        serializedVersion: 2
+        x: 2226
+        y: 1930
+        width: 376
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8177a23af6a88a54ebc166036ec38ea8
+      internalID: 35498807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bear_Image
+      rect:
+        serializedVersion: 2
+        x: 4147
+        y: 1902
+        width: 148
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6a9c58ee9807d48908bdee14598d43
+      internalID: -32411167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shirt_Image
+      rect:
+        serializedVersion: 2
+        x: 4349
+        y: 2059
+        width: 115
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40181acdf393a164498cba16c506d68f
+      internalID: 870600451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skirt_Image
+      rect:
+        serializedVersion: 2
+        x: 4435
+        y: 1960
+        width: 127
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71eb2cd18864db41a3874e94cc6c92e
+      internalID: 1460062998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Image
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1396
+        width: 358
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2042490894f32ff4c9e54c0d20976852
+      internalID: -610199123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Redo_Image
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1439
+        width: 310
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1585c5afb6af8464b9708e77271254a6
+      internalID: -1139482797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undo_Image
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1428
+        width: 311
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b853e58fe668ff748998a52cdae4e634
+      internalID: 1126816476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: R_Spin_Image
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1415
+        width: 274
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d318734c74ff447b72479e362ac7b2
+      internalID: 1325077025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: L_Spin_Image
+      rect:
+        serializedVersion: 2
+        x: 2117
+        y: 1401
+        width: 272
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a5d2b8c56fb1d4a9ecbad6b57bc809
+      internalID: 633155228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mission_Image
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 1383
+        width: 347
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098aa92b7c5ffd247ae9c3458b57d42d
+      internalID: -477598044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pointer_Image
+      rect:
+        serializedVersion: 2
+        x: 4385
+        y: 1557
+        width: 170
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac094bdbb7d5d204baed072634f7d962
+      internalID: 77162037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Closet_Image
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 848
+        width: 251
+        height: 476
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6623759ebdede4eb9d05b074349ee9
+      internalID: -282119245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_57"
+      rect:
+        serializedVersion: 2
+        x: 1993
+        y: 1274
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785148f46fccb6c4ea6ca56dcabe9959
+      internalID: 1020711319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Suspender_Image
+      rect:
+        serializedVersion: 2
+        x: 2913
+        y: 866
+        width: 152
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b98ecae5804a2ae41a684cc63dcd50a3
+      internalID: -263681519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box_Image
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 936
+        width: 411
+        height: 311
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc00d3570948b9b428718aff856ef5da
+      internalID: -840205243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bed_Image
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 961
+        width: 445
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7adfea6533b80674fbf498b13de21682
+      internalID: 1890152952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TV_Image
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 1008
+        width: 316
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc270f75370a6fb4e99232a7f519758e
+      internalID: 275148981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warddrope_Image
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 1052
+        width: 372
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d04516305a132040ababfc41d9169b3
+      internalID: -370782415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beret_Image
+      rect:
+        serializedVersion: 2
+        x: 3315
+        y: 977
+        width: 295
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea15ad52c3cb9b44b3f6e7fef96f5f1
+      internalID: 1231163676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cap_Image
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 949
+        width: 263
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8414023f8ad7e3a47a5926a0c21f96d8
+      internalID: -33584169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GarbageCan_Image
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 341
+        width: 204
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ab77fd4dab43240b2b8b0c815ca415
+      internalID: -368591316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kit_Image
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 335
+        width: 379
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9485634e5aef1a04bba599f7691dc087
+      internalID: 1767714297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tissue_Image
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 385
+        width: 334
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1aaa2796ba9448468e30f5e1d59debf
+      internalID: -2021223761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloths_Image
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 424
+        width: 288
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4f60c747bc7f6488eed8ec6fab1f94
+      internalID: 1932884949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sweater_Image
+      rect:
+        serializedVersion: 2
+        x: 2335
+        y: 466
+        width: 250
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 882224a133d438840a62e52b22d4374e
+      internalID: 1109222033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloak_Image
+      rect:
+        serializedVersion: 2
+        x: 2794
+        y: 498
+        width: 355
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb382d060651c2641be864ff98c34c9f
+      internalID: 2125968826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatHat_Image
+      rect:
+        serializedVersion: 2
+        x: 3344
+        y: 507
+        width: 267
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c5a136898dc814b83b5cae8b313eaa
+      internalID: -856236905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BucketHat_Image
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 514
+        width: 313
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c8571ff5b033043be2f8c419fa3433
+      internalID: -1627113138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a422ef370778c9c4a9e136c2678efad8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Accept_Image: 803569482
+      Bear_Image: -32411167
+      Bed_Image: 1890152952
+      Beret_Image: 1231163676
+      Blanket_Image: 35498807
+      BlueStripe_Image: -915057863
+      Box_Image: -840205243
+      BucketHat_Image: -1627113138
+      Cancel_Image: -1392964737
+      Cap_Image: -33584169
+      CatHat_Image: -856236905
+      Chair_Image: 684932576
+      Cloak_Image: 2125968826
+      Closet_Image: -282119245
+      Cloths_Image: 1932884949
+      Crusion_Image: 2097927206
+      Dark_Image: 1024037472
+      Day_Image: -888469497
+      GarbageCan_Image: -368591316
+      Item_Close_Image: -2098164025
+      Kit_Image: 1767714297
+      L_Spin_Image: 633155228
+      Light_Image: 839862174
+      Mission_Image: -477598044
+      Mute_Image: 830365983
+      Notification_Image: 1214161204
+      OK_Image: 2018212397
+      Off_Image: -73418281
+      On_Image: 1122309422
+      Pick_Image: 236394100
+      Pillow_Image: -134723633
+      Pointer_Image: 77162037
+      PonCPonPonPonPonPoPp: 1214161204
+      R_Spin_Image: 1325077025
+      Redo_Image: -1139482797
+      S_Cabinet_Image: -1315219926
+      ScreenShot_Image: 1795751364
+      Setting_Image: -610199123
+      Shark_Image: 1452344457
+      Skirt_Image: 1460062998
+      Suitcase_Image: 1288036286
+      Suspender_Image: -263681519
+      Sweater_Image: 1109222033
+      TV_Image: 275148981
+      Tissue_Image: -2021223761
+      Undo_Image: 1126816476
+      Unmute_Image: 596225203
+      Warddrope_Image: -370782415
+      YellowStripe_Image: -1347590885
+      shirt_Image: 870600451
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_0": 549934869
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_1": -446264749
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_11": -2143590318
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_14": 1819832582
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_15": -1705425500
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_17": 1065665790
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_18": 161854031
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_19": 495306463
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_2": -1612447476
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_20": 1832095972
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_21": 361142636
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_22": 768159954
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_23": -1966519618
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_25": 448205196
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_26": -2139528687
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_28": -1110159637
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_31": -210747689
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_33": 1660910097
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_37": -2062494382
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_4": 1847190069
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_57": 1020711319
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_6": 1085369460
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_73": 787250342
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_8": 930477488
+      "\u5716\u6A19\uFF08\u529F\u80FD\u5341\u7269\u54C1_\u900F\u660E_9": 2027521121
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

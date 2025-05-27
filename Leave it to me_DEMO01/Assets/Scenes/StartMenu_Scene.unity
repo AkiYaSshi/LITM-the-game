@@ -315,9 +315,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1477321561}
   button: {fileID: 152514018}
+  alwaysShowTarget: 0
   hideWhileClick:
   - {fileID: 831250668}
-  alwaysShowTarget: 0
   AnimationList: []
   pressButton:
     m_Name: Press Button
