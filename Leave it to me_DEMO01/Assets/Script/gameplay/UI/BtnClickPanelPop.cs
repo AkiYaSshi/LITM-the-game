@@ -15,7 +15,7 @@ public class BtnClickPanelPop : MonoBehaviour
 {
     #region 變數宣告
     [Header("面板與按鈕設置")]
-    [Tooltip("顯示或隱藏的目標面板物件（需有 Canvas 組件）")]
+    [Tooltip("顯示的目標面板物件（需有 Canvas 組件）")]
     [SerializeField]
     private GameObject target;
 
@@ -28,7 +28,7 @@ public class BtnClickPanelPop : MonoBehaviour
     private bool alwaysShowTarget = false;
 
     [Header("隱藏物件管理")]
-    [Tooltip("點擊按鈕後要隱藏或顯示的物件陣列")]
+    [Tooltip("點擊按鈕後要隱藏的物件陣列")]
     [SerializeField]
     private GameObject[] hideWhileClick;
 

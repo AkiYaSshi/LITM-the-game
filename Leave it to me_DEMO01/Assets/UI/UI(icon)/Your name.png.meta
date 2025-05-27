@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_4517_0
+      name: Naming_Panel_Image
       rect:
         serializedVersion: 2
         x: 391
@@ -105,7 +105,7 @@ TextureImporter:
         width: 1186
         height: 689
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_4517_0: -139382210
+      Naming_Panel_Image: -139382210
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

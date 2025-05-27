@@ -10,4 +10,8 @@ public class GameSaveManager : MonoBehaviour
     {
         SaveSystem.LoadGame();
     }
+    private void Start()
+    {
+        LoadGame();
+    }
 }

@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_4509_0
+      name: capy_Image
       rect:
         serializedVersion: 2
         x: 0
@@ -105,7 +105,7 @@ TextureImporter:
         width: 392
         height: 340
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_4509_0: 547967971
+      capy_Image: 547967971
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

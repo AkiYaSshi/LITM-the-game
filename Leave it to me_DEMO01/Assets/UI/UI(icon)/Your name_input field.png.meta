@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_4518_0
+      name: namin_box_Image
       rect:
         serializedVersion: 2
         x: 803
@@ -105,7 +105,7 @@ TextureImporter:
         width: 375
         height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_4518_0: -755762005
+      namin_box_Image: -755762005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

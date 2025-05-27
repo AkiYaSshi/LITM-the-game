@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RoomData : MonoBehaviour
 {
+    [Tooltip("回溯房間旋轉資料時呼叫的委派")]
     public static event Action LoadRoom;
     public void restore(RoomSave roomSave)
     {

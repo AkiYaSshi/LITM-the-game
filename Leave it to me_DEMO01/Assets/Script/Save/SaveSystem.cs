@@ -13,9 +13,6 @@ public static class SaveSystem
 {
     public static event Action<List<ObjectSave>> InitObj;
     public static event Action<RoomSave> InitRoom;
-
-    private static string objectPath = "/saves/Objects.design";  // 時空封印的秘徑，深藏於混沌之中！
-    private static string roomPath = "/saves/Room.design";
     private const string PARENTNAME = "Insantiate_geo";     // 聖地之名，眾魂寄宿之地！
 
     /// <summary>
@@ -23,19 +20,31 @@ public static class SaveSystem
     /// </summary>
     public static void SaveGame()
     {
-        Directory.CreateDirectory(UnityEngine.Application.persistentDataPath + "/saves");
+        SaveFileManager.SetSavePath();
 
-        SaveObject(Objects.GetAllObjectSave());
-        SaveRoom(GameObject.FindGameObjectWithTag("Room").GetComponent<RoomData>());
-        Debug.Log($"時空碑已銘刻，記憶封印完成：{UnityEngine.Application.persistentDataPath + objectPath}！\n" +
-            $"時空碑已銘刻，記憶封印完成：{UnityEngine.Application.persistentDataPath + roomPath}！");
+        Directory.CreateDirectory(SaveFileManager.saveDirectory);
+
+        SaveAny(new TimeAndSaveSave(GameObject.Find("Time and Save Data").GetComponent<TimaAndSaveData>()),
+                SaveFileManager.timePath);
+
+        SaveAny(new RoomSave(GameObject.FindGameObjectWithTag("Room").GetComponent<RoomData>()), SaveFileManager.roomPath);
+
+        SaveAny(Objects.GetAllObjectSave(), SaveFileManager.objectPath);
+
+        Debug.Log($"時空碑已銘刻，記憶封印完成：{PersistentPath() + SaveFileManager.objectPath}！\n" +
+            $"時空碑已銘刻，記憶封印完成：{PersistentPath() + SaveFileManager.roomPath}！");
     }
+
 
     /// <summary>
     /// 解放「時空之鎖」！喚醒沉睡的記憶，將眾魂之姿重現於現世！
     /// </summary>
     public static void LoadGame()
     {
+        //設定當前檔案路徑
+        SaveFileManager.SetSavePath();
+
+        //載入遊戲物件
         List<ObjectSave> saves = LoadObject();
         foreach (ObjectSave save in saves)
         {
@@ -45,6 +54,7 @@ public static class SaveSystem
                 $"= = = = 魂之復甦 = = = =");
         }
 
+        //載入房間
         RoomSave room = LoadRoom();
 
         InitRoom?.Invoke(room);
@@ -60,7 +70,7 @@ public static class SaveSystem
     public static void SaveObject(List<ObjectSave> obj)
     {
         BinaryFormatter formatter = new();
-        FileStream stream = new(UnityEngine.Application.persistentDataPath + objectPath, FileMode.Create);
+        FileStream stream = new(PersistentPath() + SaveFileManager.objectPath, FileMode.Create);
 
         List<ObjectSave> save = new(obj);
 
@@ -74,10 +84,10 @@ public static class SaveSystem
     /// <returns>單魂之記憶，若時空未刻印則返回虛無</returns>
     public static List<ObjectSave> LoadObject()
     {
-        if (File.Exists(UnityEngine.Application.persistentDataPath + objectPath))
+        if (File.Exists(PersistentPath() + SaveFileManager.objectPath))
         {
             BinaryFormatter formatter = new();
-            FileStream stream = new(UnityEngine.Application.persistentDataPath + objectPath, FileMode.Open);
+            FileStream stream = new(PersistentPath() + SaveFileManager.objectPath, FileMode.Open);
 
             List<ObjectSave> save = formatter.Deserialize(stream) as List<ObjectSave>;
             stream.Close();
@@ -86,7 +96,7 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogError($"時空碑未刻印，魂之記憶無從喚醒：{objectPath}！");
+            Debug.LogError($"時空碑未刻印，魂之記憶無從喚醒：{PersistentPath() + SaveFileManager.objectPath}！");
             return null;
         }
     }
@@ -95,7 +105,7 @@ public static class SaveSystem
     public static void SaveRoom(RoomData room)
     {
         BinaryFormatter formatter = new();
-        FileStream stream = new(UnityEngine.Application.persistentDataPath + roomPath, FileMode.Create);
+        FileStream stream = new(PersistentPath() + SaveFileManager.roomPath, FileMode.Create);
 
         RoomSave save = new(room);
 
@@ -105,10 +115,10 @@ public static class SaveSystem
 
     public static RoomSave LoadRoom()
     {
-        if (File.Exists(UnityEngine.Application.persistentDataPath + roomPath))
+        if (File.Exists(PersistentPath() + SaveFileManager.roomPath))
         {
             BinaryFormatter formatter = new();
-            FileStream stream = new(UnityEngine.Application.persistentDataPath + roomPath, FileMode.Open);
+            FileStream stream = new(PersistentPath() + SaveFileManager.roomPath, FileMode.Open);
 
             RoomSave save = formatter.Deserialize(stream) as RoomSave;
             stream.Close();
@@ -117,10 +127,29 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogError($"時空碑未刻印，魂之記憶無從喚醒：{roomPath}！");
+            Debug.LogError($"時空碑未刻印，魂之記憶無從喚醒：{SaveFileManager.roomPath}！");
             return null;
         }
     }
     #endregion
+    #region Save
+    public static void SaveAny<T>(T save, string savePath) 
+    where T : class
+    {
+        BinaryFormatter formatter = new();
+        FileStream stream = new(PersistentPath() +  savePath, FileMode.Create);
+
+        formatter.Serialize(stream, save);
+        stream.Close();
+    }
+    #endregion
     //如果要新增更多存檔類型請新增更多函式，最後連回Save Game跟Load Game中
+    /// <summary>
+    /// 取得所有檔案路徑的共同前墜
+    /// </summary>
+    /// <returns></returns>
+    private static string PersistentPath()
+    {
+        return UnityEngine.Application.persistentDataPath;
+    }
 }

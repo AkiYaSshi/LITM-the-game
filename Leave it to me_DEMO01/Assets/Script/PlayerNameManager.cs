@@ -16,7 +16,14 @@ public class PlayerNameManager : MonoBehaviour
     public void SaveName()
     {
         string inputName = nameField.text;
-        playerData.playerName = string.IsNullOrEmpty(inputName) ? "Rookie" : inputName;
+        if (string.IsNullOrEmpty(inputName))
+        {
+            playerData.playerName = inputName;
+        }
+        else
+        {
+            return;
+        }
         playerData.InfoShow();
         SceneManager_script.ToScene(1);
     }

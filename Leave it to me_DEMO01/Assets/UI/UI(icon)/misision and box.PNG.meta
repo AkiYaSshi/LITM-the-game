@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_4524_0
+      name: Mission_Image
       rect:
         serializedVersion: 2
         x: 5
@@ -105,7 +105,7 @@ TextureImporter:
         width: 601
         height: 1020
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_4524_1
+      name: greenNot_Image
       rect:
         serializedVersion: 2
         x: 667
@@ -127,7 +127,7 @@ TextureImporter:
         width: 118
         height: 55
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_4524_2
+      name: boxPanel_Image
       rect:
         serializedVersion: 2
         x: 1278
@@ -149,7 +149,7 @@ TextureImporter:
         width: 615
         height: 950
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_4524_3
+      name: redNot_Image
       rect:
         serializedVersion: 2
         x: 669
@@ -171,7 +171,7 @@ TextureImporter:
         width: 118
         height: 55
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_4524_4
+      name: blueNot_Image
       rect:
         serializedVersion: 2
         x: 670
@@ -193,7 +193,7 @@ TextureImporter:
         width: 118
         height: 55
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -220,11 +220,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_4524_0: -1331984172
-      IMG_4524_1: -1710859075
-      IMG_4524_2: 1044357356
-      IMG_4524_3: -1355803231
-      IMG_4524_4: 909948296
+      Mission_Image: -1331984172
+      blueNot_Image: 909948296
+      boxPanel_Image: 1044357356
+      greenNot_Image: -1710859075
+      redNot_Image: -1355803231
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

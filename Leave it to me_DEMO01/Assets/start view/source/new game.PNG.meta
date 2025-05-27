@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_4497_2
+      name: NewGame_Image
       rect:
         serializedVersion: 2
         x: 1169
@@ -105,7 +105,7 @@ TextureImporter:
         width: 485
         height: 251
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,7 +134,7 @@ TextureImporter:
     nameFileIdTable:
       IMG_4497_0: 108098116
       IMG_4497_1: -532298097
-      IMG_4497_2: 1220420660
+      NewGame_Image: 1220420660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
