@@ -22,7 +22,6 @@ public class clickAnyToExit : MonoBehaviour
     /// </summary>
     void OnButtonClick()
     {
-        Debug.Log("clicked on the anywhere");
         if (onClickAnimation != null)
         {
             foreach (var onClickAnimation in onClickAnimation)
