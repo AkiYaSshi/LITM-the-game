@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.WSA;
 
 /// <summary>
 /// 處理按鈕點擊後的動畫效果

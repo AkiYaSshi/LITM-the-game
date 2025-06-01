@@ -12,6 +12,6 @@ public class GameSaveManager : MonoBehaviour
     }
     private void Start()
     {
-        LoadGame();
+        Invoke("LoadGame", 0.01f);
     }
 }
