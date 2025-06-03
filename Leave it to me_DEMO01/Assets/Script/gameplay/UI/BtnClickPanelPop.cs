@@ -49,8 +49,6 @@ public class BtnClickPanelPop : MonoBehaviour
 
     void Start()
     {
-        btn = gameObject.GetComponent<Button>();
-        btn.onClick.AddListener(OnButtonClick);
 
     }
     
@@ -98,6 +96,8 @@ public class BtnClickPanelPop : MonoBehaviour
     }
     private void OnEnable()
     {
+        btn = gameObject.GetComponent<Button>();
+        btn.onClick.AddListener(OnButtonClick);
         pressButton?.Enable();
         pressButton.performed += OnKeyClick;
         HideListAfterButtonClick.ShowHidden += SwitchVisible;

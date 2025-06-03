@@ -19,4 +19,15 @@ public static class SaveInfoLoader
         Debug.LogError($"此檔案尚未被儲存: {path}");
         return string.Empty;
     }
+    /// <summary>
+    /// 檢查指定路徑是否有存檔
+    /// </summary>
+    /// <param name="pathnumber"></param>
+    /// <returns></returns>
+    public static bool IsSaveExisting(int pathnumber)
+    {
+        string path = Path.Combine(UnityEngine.Application.persistentDataPath, $"saves{pathnumber}");
+
+        return Directory.Exists(path);
+    }
 }
