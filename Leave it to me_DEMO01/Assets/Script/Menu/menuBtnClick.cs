@@ -9,8 +9,6 @@ public class menuBtnClick : MonoBehaviour
     public GameObject loadBtn;
     public GameObject newBtn;
     public GameObject sumitPlayerName;
-
-    public PlayerData playerData;
     //public gameplay_RoomShift room;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
