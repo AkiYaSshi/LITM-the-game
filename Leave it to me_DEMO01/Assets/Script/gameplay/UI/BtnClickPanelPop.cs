@@ -46,11 +46,6 @@ public class BtnClickPanelPop : MonoBehaviour
     // 其他私有變數（不會出現在 Inspector 中）
     private Button btn;
     private bool IsHiddenShow = true;
-
-    void Start()
-    {
-
-    }
     
     /// <summary>
     /// 按鈕點擊後，顯示面板並隱藏List內物件
