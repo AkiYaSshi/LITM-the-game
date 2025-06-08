@@ -2,9 +2,16 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
+/// <summary>
+/// 提供選擇存檔UI上的存檔資訊
+/// </summary>
 public static class SaveInfoLoader
 {
-
+    /// <summary>
+    /// 提供儲存時間
+    /// </summary>
+    /// <param name="path"></param>
+    /// <returns></returns>
     public static string LoadTime(string path)
     {
         if (File.Exists(path))
@@ -19,6 +26,22 @@ public static class SaveInfoLoader
         Debug.LogError($"此檔案尚未被儲存: {path}");
         return string.Empty;
     }
+
+    public static string LoadName(string path)
+    {
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new(path, FileMode.Open);
+
+            PlayerSave save = formatter.Deserialize(stream) as PlayerSave;
+            stream.Close();
+            return save.Name;
+        }
+        Debug.LogError($"此檔案尚未被儲存: {path}");
+        return string.Empty;
+    }
+
     /// <summary>
     /// 檢查指定路徑是否有存檔
     /// </summary>

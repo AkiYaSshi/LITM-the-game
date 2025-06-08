@@ -12,7 +12,7 @@ public class SaveDisplay : MonoBehaviour
     [Header("顯示文字")]
     [Tooltip("關卡階段文字")]
     [SerializeField]
-    private TextMeshProUGUI stage;
+    private TextMeshProUGUI playerName;
     [Tooltip("上次存檔時間文字")]
     [SerializeField]
     private TextMeshProUGUI time;
@@ -23,12 +23,12 @@ public class SaveDisplay : MonoBehaviour
 
         if (notEmpty)
         {
-            stage.text = string.Empty;
+            playerName.text = GetPlayerName($"/saves{SaveSlot}/Player.design");
             time.text = GetFileTIme($"/saves{SaveSlot}/Info.design");
         }
         else
         {
-            stage.text = string.Empty;
+            playerName.text = string.Empty;
             time.text = string.Empty;
         }
     }
@@ -42,6 +42,17 @@ public class SaveDisplay : MonoBehaviour
 
         return SaveInfoLoader.LoadTime(path);
 
+    }
+
+    /// <summary>
+    /// 從Save Info Loader取得玩家名稱
+    /// </summary>
+    /// <param name="path"></param>
+    private string GetPlayerName(string path)
+    {
+        path = UnityEngine.Application.persistentDataPath + path;
+
+        return SaveInfoLoader.LoadName(path);
     }
 
     private bool SetEnable(string path)

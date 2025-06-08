@@ -20,6 +20,8 @@ public static class SaveSystem
     /// </summary>
     public static void SaveGame()
     {
+        SaveFileManager.PrepareToFormal();
+
         SaveFileManager.SetSavePath();
 
         Directory.CreateDirectory(SaveFileManager.saveDirectory);
@@ -31,6 +33,8 @@ public static class SaveSystem
 
         SaveAny(Objects.GetAllObjectSave(), SaveFileManager.objectPath);
 
+        SaveAny(new PlayerSave(PlayerData.Name), SaveFileManager.playerPath);
+
         Debug.Log($"時空碑已銘刻，記憶封印完成：{PersistentPath() + SaveFileManager.objectPath}！\n" +
             $"時空碑已銘刻，記憶封印完成：{PersistentPath() + SaveFileManager.roomPath}！");
     }
@@ -41,11 +45,19 @@ public static class SaveSystem
     /// </summary>
     public static void LoadGame()
     {
+
+        if (SaveFileManager.SaveSlot < 1 || SaveFileManager.SaveSlot > 3)
+        {
+            Debug.LogError("存檔路徑無效或是選擇新的遊戲");
+            return;
+        }
+
         //設定當前檔案路徑
         SaveFileManager.SetSavePath();
 
         //載入遊戲物件
-        List<ObjectSave> saves = LoadObject();
+        List<ObjectSave> saves = LoadAny<List<ObjectSave>>(SaveFileManager.objectPath);
+
         foreach (ObjectSave save in saves)
         {
             Debug.Log($"魂之識別碼: {save.objectId} \n" +
@@ -54,85 +66,48 @@ public static class SaveSystem
                 $"= = = = 魂之復甦 = = = =");
         }
 
+        //載入玩家名稱
+        PlayerSave player = LoadAny<PlayerSave>(SaveFileManager.playerPath);
+
         //載入房間
-        RoomSave room = LoadRoom();
+        RoomSave room = LoadAny<RoomSave>(SaveFileManager.roomPath);
 
         InitRoom?.Invoke(room);
 
         //生成場上物件、確定方向
         InitObj?.Invoke(saves);
     }
-    #region S/L Object
     /// <summary>
-    /// 施展「魂之封存術」！將眾魂之力封入時空之碑，等待命運的召喚！
+    /// 從指定路徑載入任意類型的存檔資料
     /// </summary>
-    /// <param name="obj">魂之集合，承載眾生的記憶碎片</param>
-    public static void SaveObject(List<ObjectSave> obj)
+    /// <typeparam name="T">要載入的資料類型，必須是引用類型</typeparam>
+    /// <param name="savePath">存檔路徑</param>
+    /// <returns>載入的資料，若無存檔則返回 null</returns>
+    public static T LoadAny<T>(string savePath) where T : class
     {
-        BinaryFormatter formatter = new();
-        FileStream stream = new(PersistentPath() + SaveFileManager.objectPath, FileMode.Create);
-
-        List<ObjectSave> save = new(obj);
-
-        formatter.Serialize(stream, save);
-        stream.Close();
-    }
-
-    /// <summary>
-    /// 喚醒「單魂之記憶」！從時空之碑中提取一縷魂之力，揭開其真相！
-    /// </summary>
-    /// <returns>單魂之記憶，若時空未刻印則返回虛無</returns>
-    public static List<ObjectSave> LoadObject()
-    {
-        if (File.Exists(PersistentPath() + SaveFileManager.objectPath))
+        if (File.Exists(PersistentPath() + savePath))
         {
             BinaryFormatter formatter = new();
-            FileStream stream = new(PersistentPath() + SaveFileManager.objectPath, FileMode.Open);
+            FileStream stream = new(PersistentPath() + savePath, FileMode.Open);
 
-            List<ObjectSave> save = formatter.Deserialize(stream) as List<ObjectSave>;
+            T save = formatter.Deserialize(stream) as T;
             stream.Close();
 
             return save;
         }
         else
         {
-            Debug.LogError($"時空碑未刻印，魂之記憶無從喚醒：{PersistentPath() + SaveFileManager.objectPath}！");
+            Debug.LogError($"路徑上沒有檔案：{savePath}");
             return null;
         }
     }
-    #endregion
-    #region S/L Room
-    public static void SaveRoom(RoomData room)
-    {
-        BinaryFormatter formatter = new();
-        FileStream stream = new(PersistentPath() + SaveFileManager.roomPath, FileMode.Create);
 
-        RoomSave save = new(room);
-
-        formatter.Serialize(stream, save);
-        stream.Close();
-    }
-
-    public static RoomSave LoadRoom()
-    {
-        if (File.Exists(PersistentPath() + SaveFileManager.roomPath))
-        {
-            BinaryFormatter formatter = new();
-            FileStream stream = new(PersistentPath() + SaveFileManager.roomPath, FileMode.Open);
-
-            RoomSave save = formatter.Deserialize(stream) as RoomSave;
-            stream.Close();
-
-            return save;
-        }
-        else
-        {
-            Debug.LogError($"時空碑未刻印，魂之記憶無從喚醒：{SaveFileManager.roomPath}！");
-            return null;
-        }
-    }
-    #endregion
-    #region Save
+    /// <summary>
+    /// 在指定路徑儲存任意類型的存檔資料
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="save">存檔資料類型</param>
+    /// <param name="savePath">存檔路徑</param>
     public static void SaveAny<T>(T save, string savePath) 
     where T : class
     {
@@ -142,8 +117,7 @@ public static class SaveSystem
         formatter.Serialize(stream, save);
         stream.Close();
     }
-    #endregion
-    //如果要新增更多存檔類型請新增更多函式，最後連回Save Game跟Load Game中
+
     /// <summary>
     /// 取得所有檔案路徑的共同前墜
     /// </summary>

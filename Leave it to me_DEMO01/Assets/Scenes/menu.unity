@@ -731,6 +731,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1583792372}
+        m_TargetAssemblyTypeName: MenuSaveSelector, Assembly-CSharp
+        m_MethodName: OnSelectPrepareSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &195078639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,7 +794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveSlot: 2
-  stage: {fileID: 1183332512}
+  playerName: {fileID: 1183332512}
   time: {fileID: 153401071}
 --- !u!1 &218733144
 GameObject:
@@ -1930,8 +1942,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5eb36f5cee984454fad22420c4521827, type: 2}
+  m_sharedMaterial: {fileID: 6886607184398230399, guid: 5eb36f5cee984454fad22420c4521827, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2134,8 +2146,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5eb36f5cee984454fad22420c4521827, type: 2}
+  m_sharedMaterial: {fileID: 6886607184398230399, guid: 5eb36f5cee984454fad22420c4521827, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3200,7 +3212,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1583792372}
         m_TargetAssemblyTypeName: MenuSaveSelector, Assembly-CSharp
-        m_MethodName: OnSaveSlotSelected
+        m_MethodName: OnSelectPrepareSlot
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3218,6 +3230,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1583792372}
+        m_TargetAssemblyTypeName: MenuSaveSelector, Assembly-CSharp
+        m_MethodName: OnSaveSlotSelected
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3664,6 +3688,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1583792372}
+        m_TargetAssemblyTypeName: MenuSaveSelector, Assembly-CSharp
+        m_MethodName: OnSelectPrepareSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &889708007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3715,7 +3751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveSlot: 1
-  stage: {fileID: 565630668}
+  playerName: {fileID: 565630668}
   time: {fileID: 218733146}
 --- !u!1 &899182581
 GameObject:
@@ -4084,6 +4120,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1583792372}
+        m_TargetAssemblyTypeName: MenuSaveSelector, Assembly-CSharp
+        m_MethodName: OnSelectPrepareSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1034586323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4135,7 +4183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveSlot: 3
-  stage: {fileID: 446310389}
+  playerName: {fileID: 446310389}
   time: {fileID: 1514320957}
 --- !u!1 &1040044425
 GameObject:
@@ -5068,8 +5116,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5eb36f5cee984454fad22420c4521827, type: 2}
+  m_sharedMaterial: {fileID: 6886607184398230399, guid: 5eb36f5cee984454fad22420c4521827, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5540,7 +5588,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1583792372}
         m_TargetAssemblyTypeName: MenuSaveSelector, Assembly-CSharp
-        m_MethodName: OnSaveSlotSelected
+        m_MethodName: OnSelectPrepareSlot
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5558,6 +5606,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1583792372}
+        m_TargetAssemblyTypeName: MenuSaveSelector, Assembly-CSharp
+        m_MethodName: OnSaveSlotSelected
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6549,7 +6609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0405efe8b59106b439c246d95ec15ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputSlot: 0
 --- !u!4 &1583792373
 Transform:
   m_ObjectHideFlags: 0
@@ -7603,7 +7662,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1583792372}
         m_TargetAssemblyTypeName: MenuSaveSelector, Assembly-CSharp
-        m_MethodName: OnSaveSlotSelected
+        m_MethodName: OnSelectPrepareSlot
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7621,6 +7680,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1583792372}
+        m_TargetAssemblyTypeName: MenuSaveSelector, Assembly-CSharp
+        m_MethodName: OnSaveSlotSelected
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

@@ -11,4 +11,8 @@ public static class PlayerData
     {
         Name = name;
     }
+    public static void restore(PlayerSave save)
+    {
+        Name = save.Name;
+    }
 }

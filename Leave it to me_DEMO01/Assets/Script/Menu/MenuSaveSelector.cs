@@ -3,9 +3,6 @@ using UnityEngine.UI;
 
 public class MenuSaveSelector : MonoBehaviour
 {
-    [Tooltip("測試需要的場合，輸入這裡之後跳到gameplay即可存檔")]
-    [SerializeField]
-    private int inputSlot;
     /// <summary>
     /// 透過呼叫save file manager 設定存檔編號
     /// </summary>
@@ -13,8 +10,8 @@ public class MenuSaveSelector : MonoBehaviour
     {
         SaveFileManager.SetSaveSlot(slot);
     }   
-    public void InpuSetSaveSlot()
+    public void OnSelectPrepareSlot(int slot)
     {
-        SaveFileManager.SetSaveSlot(inputSlot);
+        SaveFileManager.SetPrepareSlot(slot);
     }
 }
