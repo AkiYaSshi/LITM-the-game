@@ -26,6 +26,7 @@ public class ObjectTransformer : MonoBehaviour
     public static event Func<Vector3, Vector3> DraggingObject;
 
     public static event Action<GameObject, Vector3> RotateAnimation;
+    public static event Action DownObject;
     [SerializeField]
     private Camera mainCam;
 
@@ -58,7 +59,10 @@ public class ObjectTransformer : MonoBehaviour
         }
         
     }
-
+    private void OnMouseUp()
+    {
+        DownObject.Invoke();
+    }
     /// <summary>
     /// ª«¥ó±ÛÂà
     /// </summary>

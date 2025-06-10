@@ -9,4 +9,6 @@ public class DialogueData
     public string npcName;
     [Tooltip("對話內容")]
     [TextArea] public string dialogueText; // 對話內容
+    [Tooltip("是否為選項")]
+    public bool chooseable = false;
 }

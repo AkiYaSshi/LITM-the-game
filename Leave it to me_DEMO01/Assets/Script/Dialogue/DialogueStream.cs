@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
+using System;
 
 public class DialogueStream : MonoBehaviour
 {
@@ -42,17 +43,19 @@ public class DialogueStream : MonoBehaviour
     private int currentIndex = 0;
     private Coroutine typingCoroutine;
 
+    public static event Action nextDialogue;
+
     void Awake()
     {
-        simpleDialoguePanel.SetActive(false);
-        complexDialoguePanel.SetActive(false);
+        simpleDialoguePanel?.SetActive(false);
+        complexDialoguePanel?.SetActive(false);
         this.gameObject.SetActive(false);
     }
 
     public void StartDialogue()
     {
-        simpleDialoguePanel.SetActive(!isComplexMode);
-        complexDialoguePanel.SetActive(isComplexMode);
+        simpleDialoguePanel?.SetActive(!isComplexMode);
+        complexDialoguePanel?.SetActive(isComplexMode);
 
         currentIndex = 0;
         ShowNextDialogue();
@@ -95,13 +98,16 @@ public class DialogueStream : MonoBehaviour
             return; 
         }
 
+        nextDialogue?.Invoke();
         DialogueData data = dialogueList[currentIndex];
         if (isComplexMode)
         {
             complexNpcIcon.sprite = data.npcIcon;
-            complexNpcName.text = data.npcName == "System" ? "" : data.npcName;
             SetIconTransparency(complexNpcIcon, data.npcIcon != null);
+
+            complexNpcName.text = data.npcName == "System" ? "" : data.npcName;
             complexDialogueText.color = data.npcName == "System" ? Color.red : Color.black;
+
             typingCoroutine = StartCoroutine(TypeText(complexDialogueText, data.dialogueText));
             arrowIndicator.SetActive(true);
         }
