@@ -95,16 +95,6 @@ public class DetactCollision: MonoBehaviour
         pointToMark = pointInObj;
         return pointInObj;
     }
-    private void FixedUpdate()
-    {
-        foreach (Vector3 point in pointToMark)
-        {
-            UnityEngine.Debug.DrawRay(point, Vector3.up * sphereRadius, pointColor, 1/60f);
-            UnityEngine.Debug.DrawRay(point, Vector3.forward * sphereRadius, pointColor, 1 / 60f);
-            UnityEngine.Debug.DrawRay(point, Vector3.right * sphereRadius, pointColor, 1 / 60f);
-        }
-        pointToMark.Clear();
-    }
     private void Start()
     {
         //取得選取物件的大小

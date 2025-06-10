@@ -74,7 +74,7 @@ public class OnClickAnimation : MonoBehaviour
     private Space space;
     private Vector3 LastTransform;
     private Vector3 BackDirection;
-    private bool reverse = false;
+    public bool reverse = false;
     private bool isUI;
     private CanvasScaler scaler;
 

@@ -103,3 +103,45 @@ MonoBehaviour:
     <Prefab>k__BackingField: {fileID: 3788164177819725770, guid: ee0d36fb0d5abc348adab196009302ab, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: trashCan
+    <ID>k__BackingField: 15
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 7549611516311206886, guid: 2faaec0d3d83c0541b87e70ce3cb0a7c, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: cushion
+    <ID>k__BackingField: 16
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 4974485017246838316, guid: a5d5e79d530d0a24d9d1379ed72c5415, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: hat
+    <ID>k__BackingField: 17
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 8777022730362871755, guid: 07439fd8e037a604d85fcd65e390a9e1, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: medicine
+    <ID>k__BackingField: 18
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 5310391387203618744, guid: 8ba2bf5bd667e2f4d9a0569f4b24cd48, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: pillow
+    <ID>k__BackingField: 19
+    <Size>k__BackingField: {x: 1, y: 1, z: 2}
+    <Prefab>k__BackingField: {fileID: 5132788925649227798, guid: 6eddaa79ee0b22a4890420ca6363838b, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: Quillt
+    <ID>k__BackingField: 20
+    <Size>k__BackingField: {x: 2, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 3055507117137263096, guid: 1ab971fe353d634408d702b9135229ae, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: tissue
+    <ID>k__BackingField: 21
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 1447869536331739034, guid: fb32abebb80588642b8491dd2feb5baa, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0

@@ -48,7 +48,7 @@ public static class SaveSystem
 
         if (SaveFileManager.SaveSlot < 1 || SaveFileManager.SaveSlot > 3)
         {
-            Debug.LogError("存檔路徑無效或是選擇新的遊戲");
+            Debug.LogWarning("存檔路徑無效或是選擇新的遊戲");
             return;
         }
 

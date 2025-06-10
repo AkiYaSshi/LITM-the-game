@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -23,6 +24,8 @@ public class SummonObjectManager : MonoBehaviour
     private ObjectDataSO ObjectData;
     private int selectedObjectIndex = -1;
 
+    public static event Action NewObject;
+
     private void Start()
     {
         objectLayerMask = 8;
@@ -37,6 +40,7 @@ public class SummonObjectManager : MonoBehaviour
         if (selectedObjectIndex < 0)
         {
             Debug.LogError("No ID found " + ID);
+            return null;
         }
 
         Vector3Int gridPos = grid.WorldToCell(objectSpawnAt.transform.position);
@@ -46,6 +50,8 @@ public class SummonObjectManager : MonoBehaviour
         SetChildLayer(newObject);
         newObject.transform.position = grid.CellToWorld(gridPos);
 
+        NewObject?.Invoke();
+        
         return newObject;
     }
 

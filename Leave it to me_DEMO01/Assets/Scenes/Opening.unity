@@ -3617,6 +3617,12 @@ MonoBehaviour:
   arrowIndicator: {fileID: 1609338306}
   textSpeed: 0.05
   dialogueList:
+  - npcIcon: {fileID: 1690838334, guid: d4a65adcacb8c944fad5d9748e5dbd63, type: 3}
+    npcName: Pimon
+    dialogueText: "\u9019\u662F\u6211\u756B\u7684!\u5B83\u53EB\u8525\u82B1!\r\r"
+  - npcIcon: {fileID: 547967971, guid: efb81d80b7499b0428036363424a553f, type: 3}
+    npcName: Capy
+    dialogueText: "\u62B1\u6B49...\u5979\u6709\u9EDE\u5435\r\r"
   - npcIcon: {fileID: 547967971, guid: efb81d80b7499b0428036363424a553f, type: 3}
     npcName: Capy
     dialogueText: "\u6211\u5011\u76F4\u63A5\u5E36\u60A8\u53BB\u73FE\u5834\u770B\u770B\u5427\r"
