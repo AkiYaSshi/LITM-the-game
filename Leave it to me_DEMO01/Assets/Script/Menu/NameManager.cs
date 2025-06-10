@@ -20,7 +20,8 @@ public class NameManager : MonoBehaviour
     [Tooltip("預設名字")]
     [SerializeField]
     private TMP_InputField defaultName;
-    
+
+    public static string inGameName { get;private set; }
 
     private void OnEnable()
     {
@@ -35,6 +36,7 @@ public class NameManager : MonoBehaviour
             Debug.Log($"設為預設名稱");
             return;
         }
+        inGameName = nameInput.text;
         PlayerData.SetName(nameInput.text);
         Debug.Log($"名義已設定：【{nameInput.text}】");
     }

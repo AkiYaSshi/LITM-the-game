@@ -52,14 +52,14 @@ public class BGMManager : MonoBehaviour
 
     private void OnEnable()
     {
-        DialogueStream.nextDialogue += DialoguePop;
-        DialogueStream.nextDialogue += Speaking;
+        DialogueStream.NextDialogue += DialoguePop;
+        DialogueStream.NextDialogue += Speaking;
         ObjectTransformer.DownObject += SetObject;
     }
     private void OnDisable()
     {
-        DialogueStream.nextDialogue -= DialoguePop;
-        DialogueStream.nextDialogue -= Speaking;
+        DialogueStream.NextDialogue -= DialoguePop;
+        DialogueStream.NextDialogue -= Speaking;
         ObjectTransformer.DownObject -= SetObject;
     }
 }

@@ -43,23 +43,26 @@ public class DialogueStream : MonoBehaviour
     private int currentIndex = 0;
     private Coroutine typingCoroutine;
 
-    public static event Action nextDialogue;
+    [Tooltip("切換至下一個對話時呼叫的事件")]
+    public static event Action NextDialogue;
+    public static event Action<string, string> AddHistory;
 
     void Awake()
     {
-        simpleDialoguePanel?.SetActive(false);
-        complexDialoguePanel?.SetActive(false);
+        if (simpleDialoguePanel != null) simpleDialoguePanel?.SetActive(false);
+        if (complexDialoguePanel != null) complexDialoguePanel?.SetActive(false);
         this.gameObject.SetActive(false);
     }
 
     public void StartDialogue()
     {
-        simpleDialoguePanel?.SetActive(!isComplexMode);
-        complexDialoguePanel?.SetActive(isComplexMode);
+        if (simpleDialoguePanel != null) simpleDialoguePanel?.SetActive(!isComplexMode);
+        if(complexDialoguePanel != null) complexDialoguePanel?.SetActive(isComplexMode);
 
         currentIndex = 0;
         ShowNextDialogue();
-        StartCoroutine(BlinkArrow());
+
+        if (isComplexMode) StartCoroutine(BlinkArrow());
     }
 
     void Update()
@@ -74,6 +77,7 @@ public class DialogueStream : MonoBehaviour
 
                 if (isComplexMode) complexDialogueText.text = dialogueList[currentIndex].dialogueText;
                 else simpleDialogueText.text = dialogueList[currentIndex].dialogueText;
+
 
                 typingCoroutine = null;
             }
@@ -98,7 +102,8 @@ public class DialogueStream : MonoBehaviour
             return; 
         }
 
-        nextDialogue?.Invoke();
+        NextDialogue?.Invoke();
+        AddHistory?.Invoke(dialogueList[currentIndex].npcName, dialogueList[currentIndex].dialogueText);
         DialogueData data = dialogueList[currentIndex];
         if (isComplexMode)
         {

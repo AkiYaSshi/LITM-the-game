@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
 using System;
+using UnityEngine.Events;
 
 public class TaskManager : MonoBehaviour
 {
@@ -61,6 +62,7 @@ public class TaskManager : MonoBehaviour
 
                 UpdateTaskList();
 
+                tasks[i].OnTaskComplete.Invoke();
                 ShowCompletionPopup($"{tasks[i].shortName} 已達成！");
             }
         }
@@ -137,4 +139,6 @@ public class TaskData
     public bool isCompleted;
     [Tooltip("任務達成條件")]
     public System.Func<bool> condition;
+    [Tooltip("任務達成發生事件")]
+    public UnityEvent OnTaskComplete;
 }
