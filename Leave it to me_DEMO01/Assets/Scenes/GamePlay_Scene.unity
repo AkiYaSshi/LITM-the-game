@@ -4045,7 +4045,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &818390069
 GameObject:
@@ -5630,7 +5630,8 @@ MonoBehaviour:
   target: {fileID: 601862122}
   button: {fileID: 1226353190}
   alwaysShowTarget: 1
-  hideWhileClick: []
+  hideWhileClick:
+  - {fileID: 810214764}
   AnimationList:
   - {fileID: 1226353196}
   - {fileID: 1226353198}
@@ -7146,7 +7147,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &1607701647
 GameObject:
