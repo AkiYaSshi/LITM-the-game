@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class DetactCollision: MonoBehaviour
 {
-    [SerializeField] private float sphereRadius = 0.1f; // 球的半徑
     [SerializeField] private Color pointColor = Color.red; // 點的顏色
     private List<Vector3> pointToMark = new();
 

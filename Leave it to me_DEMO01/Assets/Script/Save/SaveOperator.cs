@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameSaveManager : MonoBehaviour
+public class SaveOperator : MonoBehaviour
 {
     public void SaveGame()
     {

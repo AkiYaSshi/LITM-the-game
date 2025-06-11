@@ -17,9 +17,6 @@ public class SummonObjectManager : MonoBehaviour
     [SerializeField]
     private string LapTag = "Lapping";
     [SerializeField]
-    private string NoLapTag = "No Lapping";
-
-    [SerializeField]
     private ObjectDataSO ObjectData;
     private int selectedObjectIndex = -1;
 

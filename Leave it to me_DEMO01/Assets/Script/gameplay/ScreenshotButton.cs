@@ -29,6 +29,7 @@ public class ScreenshotButton : MonoBehaviour
         foreach (Camera cam in cameras)
         {
             cam.enabled = false;
+            cam.GetComponent<AudioListener>().enabled = false;
         }
 
         // 綁定按鈕點擊事件

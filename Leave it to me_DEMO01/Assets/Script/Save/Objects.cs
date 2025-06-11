@@ -19,8 +19,12 @@ public static class Objects
         foreach (Transform child in GameObject.Find(PARENTNAME).transform)
         {
             ObjectRef objectRef = child.GetComponent<ObjectRef>();
-            ObjectSave save = new(objectRef);
-            objectSaves.Add(save);
+
+            if(objectRef != null) 
+            {            
+                ObjectSave save = new(objectRef);
+                objectSaves.Add(save);
+            }
         }
         return objectSaves;
     }
