@@ -36,7 +36,6 @@ public class MenuManager : MonoBehaviour
         }
         menuGroups[0].trigger.performed += OpenSettingMenu;
         menuGroups[1].trigger.performed += OpenItemMenu;
-        menuGroups[2].trigger.performed += OpenToolMenu;
     }
     private void OnDisable()
     {
@@ -46,7 +45,6 @@ public class MenuManager : MonoBehaviour
         }
         menuGroups[0].trigger.performed -= OpenSettingMenu;
         menuGroups[1].trigger.performed -= OpenItemMenu;
-        menuGroups[2].trigger.performed -= OpenToolMenu;
     }
 }
 

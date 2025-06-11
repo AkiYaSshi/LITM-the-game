@@ -145,3 +145,21 @@ MonoBehaviour:
     <Prefab>k__BackingField: {fileID: 1447869536331739034, guid: fb32abebb80588642b8491dd2feb5baa, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: hat4
+    <ID>k__BackingField: 22
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 105889496346150312, guid: 14af896a9c9e5d5499026648a1631054, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: hat1
+    <ID>k__BackingField: 23
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 2959864550157926750, guid: 41e77fadcfa71bc4fb02d5cda61a8a23, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: hat3
+    <ID>k__BackingField: 24
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 8393502018253048731, guid: ff673ebd391ac9b48ba7e9e996a8afec, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
