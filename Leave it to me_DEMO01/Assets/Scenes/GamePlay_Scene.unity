@@ -1457,7 +1457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618233573556084342, guid: 20245d94873e39f459d8350e3c204157, type: 3}
       propertyPath: m_Name
-      value: room 1
+      value: room
       objectReference: {fileID: 0}
     - target: {fileID: 6618233573556084342, guid: 20245d94873e39f459d8350e3c204157, type: 3}
       propertyPath: m_Layer
