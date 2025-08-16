@@ -83,19 +83,19 @@ MonoBehaviour:
     <ID>k__BackingField: 11
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 1757715749798590557, guid: 9590d2c6c7f778e41aac62b8f2860d4b, type: 3}
-    <noCollision>k__BackingField: 1
+    <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: skirt
     <ID>k__BackingField: 12
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 3736325074111636032, guid: fb4b0c44dea008f40afd454f30397079, type: 3}
-    <noCollision>k__BackingField: 1
+    <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: sweater
     <ID>k__BackingField: 13
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 8408977739815715799, guid: 5a788cf8ab33806418efb3b89ae9d8a1, type: 3}
-    <noCollision>k__BackingField: 1
+    <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: clothes1
     <ID>k__BackingField: 14
@@ -161,5 +161,53 @@ MonoBehaviour:
     <ID>k__BackingField: 24
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 8393502018253048731, guid: ff673ebd391ac9b48ba7e9e996a8afec, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: clothes2
+    <ID>k__BackingField: 25
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 3511046400045491702, guid: 36b782e62056d6e48b2825b66bb82d77, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: clothes3
+    <ID>k__BackingField: 26
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 8101349331264588521, guid: df1507380f79d774693593c750513d50, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: pillow2
+    <ID>k__BackingField: 27
+    <Size>k__BackingField: {x: 1, y: 1, z: 2}
+    <Prefab>k__BackingField: {fileID: 5921568089711014794, guid: f35dae944db9b0944bbd2ddc0ec02ff8, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: pillow3
+    <ID>k__BackingField: 28
+    <Size>k__BackingField: {x: 1, y: 1, z: 2}
+    <Prefab>k__BackingField: {fileID: 863551832149770433, guid: 95e3aa56796f4bc4f80bd864b6c8217c, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: crusion2
+    <ID>k__BackingField: 29
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 5227100939857216745, guid: 226e4b74a38f14646997a83125251105, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: crusion3
+    <ID>k__BackingField: 30
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 3941643068669624378, guid: 2f0f05d7f107cef448d08ca5c3419f1a, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: Quillt2
+    <ID>k__BackingField: 31
+    <Size>k__BackingField: {x: 2, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 6442283897480566005, guid: ee335ea1e0137d04c8ae47727c91f9d6, type: 3}
+    <noCollision>k__BackingField: 0
+    <FowardAxis>k__BackingField: 0
+  - <Name>k__BackingField: Quillt3
+    <ID>k__BackingField: 32
+    <Size>k__BackingField: {x: 2, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 3827629250502613678, guid: 765b324e84d148048b1ddc80cb5ff816, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0

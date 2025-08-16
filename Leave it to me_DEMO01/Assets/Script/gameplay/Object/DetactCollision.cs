@@ -10,14 +10,20 @@ public class DetactCollision: MonoBehaviour
     private List<Vector3> pointToMark = new();
 
     [SerializeField]
-    private string LapTag = "Lapping";
+    private string LapTag_obj = "Lapping";
+    //[SerializeField]
+    //private string LapTag_room = 
 
     [SerializeField]
-    private LayerMask layerMask = 1 << 8; //不可重疊的圖層: As Grid&Insantiate
+    private LayerMask layerMask = (1 << 8) + (1 << 7); //不可重疊的圖層: As Grid&Insantiate
 
-    private static readonly float boxSize = GridMovement.unit * 0.5f;
-    private Vector3 size = new Vector3(boxSize, boxSize, boxSize);
+    [SerializeField]
+    [Tooltip("碰撞偵測的誤差值")]
+    private Vector3 tolerance = new Vector3(0.03f, 0.03f, 0.03f);
 
+    private static float boxSize = GridMovement.unit * 0.5f;
+
+    Vector3 size = new Vector3(boxSize, boxSize, boxSize);
 
     private ObjectData data;
 
@@ -31,31 +37,28 @@ public class DetactCollision: MonoBehaviour
     {
         if (gameObject.CompareTag("Focus"))
         {
-            //如果物件設定為可重疊，直接回傳false
-            if(gameObject.GetComponent<ObjectRef>().objectData.noCollision)
-                return false;
-
             List<Vector3> points = CalObjectPoint(pos, quaternion);
             foreach (var point in points)
             {
-                Collider[] hitColliders = Physics.OverlapBox(point, size, Quaternion.Euler(0, 0, 0), layerMask);
+                Collider[] hitColliders = Physics.OverlapBox(point, size - tolerance, Quaternion.Euler(0, 0, 0), layerMask);
 
                 List<Collider> hasCollider = new();
 
                 foreach (var hit in hitColliders)
                 {
-                    if (!hit.transform.parent.CompareTag(LapTag))
+                    if (!hit.transform.parent.CompareTag(LapTag_obj))
                     {
                         hasCollider.Add(hit);
                         UnityEngine.Debug.Log(hit.transform.gameObject.name);
                     }
                 }
-                if(hasCollider.Count > 0) //沒有任何point碰到碰撞箱才可回傳False
+                if(hasCollider.Count > 0) 
                 {
                     return true;
                 }
             }
         }
+        //沒有任何point碰到碰撞箱才可回傳False
         return false;
     }
     /// <summary>
@@ -98,6 +101,10 @@ public class DetactCollision: MonoBehaviour
     {
         //取得選取物件的大小
         data = gameObject.GetComponent<ObjectRef>().objectData;
-    }
+        if(data.ID == 10)
+        {
+            layerMask = 1 << 7;
+        }
+}
 }
 
