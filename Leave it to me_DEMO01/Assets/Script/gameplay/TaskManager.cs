@@ -10,7 +10,7 @@ using UnityEngine.Events;
 public class TaskManager : MonoBehaviour
 {
     [Tooltip("任務列表的 Canvas 物件")]
-    [SerializeField] private Canvas taskCanvas;
+    [SerializeField] private GameObject taskCanvas;
     [Tooltip("任務完成提示的 UI Image")]
     [SerializeField] private Image completionPopup;
     [Tooltip("完成提示文字")]
@@ -114,6 +114,8 @@ public class TaskManager : MonoBehaviour
                                    || ObjectScanner.DetectObject(8) && ObjectScanner.DetectObject(15);
 
         tasks[4].condition = () => ObjectScanner.DetectObject(4);
+        tasks[5].condition = () => ObjectScanner.ObjectCount(20) + ObjectScanner.ObjectCount(31) + ObjectScanner.ObjectCount(32) >= 3
+                                   && ObjectScanner.ObjectCount(19) + ObjectScanner.ObjectCount(27) + ObjectScanner.ObjectCount(28) >= 3;
     }
     private void OnEnable()
     {

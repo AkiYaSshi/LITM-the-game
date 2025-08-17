@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 97388731}
   - component: {fileID: 97388730}
   m_Layer: 0
-  m_Name: Task_0 (3)
+  m_Name: Task_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1930,7 +1930,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417614753}
+      - m_Target: {fileID: 758575831}
         m_TargetAssemblyTypeName: DropDownMenu, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -3725,7 +3725,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417614753}
+      - m_Target: {fileID: 1924134650}
         m_TargetAssemblyTypeName: DropDownMenu, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -5402,7 +5402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &707293047
 Transform:
   m_ObjectHideFlags: 0
@@ -5411,8 +5411,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707293046}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0049901875, y: -0.9290948, z: 0.36959514, w: 0.012549939}
-  m_LocalPosition: {x: 0.23616071, y: 5.70205, z: 2.8470328}
+  m_LocalRotation: {x: -0.35452273, y: 0.3920021, z: -0.16684447, w: -0.8323527}
+  m_LocalPosition: {x: 7.0472593, y: 8.954502, z: -7.160002}
   m_LocalScale: {x: 0.9528719, y: 0.9528721, z: 0.95287174}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5477,18 +5477,18 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707293046}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
+  m_projectionMatrixMode: 2
   m_GateFitMode: 2
   m_FOVAxisMode: 0
   m_Iso: 200
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -5503,7 +5503,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -6541,6 +6541,127 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0.3
   button: {fileID: 758575826}
+--- !u!1 &767251116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 767251117}
+  - component: {fileID: 767251121}
+  - component: {fileID: 767251120}
+  - component: {fileID: 767251119}
+  - component: {fileID: 767251118}
+  m_Layer: 0
+  m_Name: MissionArea_UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &767251117
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767251116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 901384081}
+  m_Father: {fileID: 830380277}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1249.0239, y: 3.948}
+  m_SizeDelta: {x: 346.5145, y: 621.6932}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &767251118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767251116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
+--- !u!114 &767251119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767251116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 901384081}
+  m_Horizontal: 1
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 5
+  m_Viewport: {fileID: 0}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 0}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &767251120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767251116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &767251121
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767251116}
+  m_CullTransparentMesh: 1
 --- !u!1 &770322639
 GameObject:
   m_ObjectHideFlags: 0
@@ -6745,7 +6866,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417614753}
+      - m_Target: {fileID: 1924134650}
         m_TargetAssemblyTypeName: DropDownMenu, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -7230,7 +7351,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417614753}
+      - m_Target: {fileID: 758575831}
         m_TargetAssemblyTypeName: DropDownMenu, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -7360,6 +7481,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1021127246}
+  - {fileID: 767251117}
   m_Father: {fileID: 1400364564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8055,6 +8177,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897822835}
   m_CullTransparentMesh: 1
+--- !u!1 &901384080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 901384081}
+  m_Layer: 0
+  m_Name: MissionList_GP_UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &901384081
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901384080}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -12.263602}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 767251117}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.00090408, y: -69.70834}
+  m_SizeDelta: {x: 346.52, y: 761.1167}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &908129591
 GameObject:
   m_ObjectHideFlags: 0
@@ -8173,7 +8330,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417614753}
+      - m_Target: {fileID: 1853836775}
         m_TargetAssemblyTypeName: DropDownMenu, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -9104,7 +9261,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417614753}
+      - m_Target: {fileID: 1853836775}
         m_TargetAssemblyTypeName: DropDownMenu, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -11915,6 +12072,7 @@ Transform:
   - {fileID: 1542787583}
   - {fileID: 97388731}
   - {fileID: 1818505870}
+  - {fileID: 2002453264}
   - {fileID: 2104450501}
   - {fileID: 1738248174}
   - {fileID: 1444979417}
@@ -12578,7 +12736,7 @@ GameObject:
   - component: {fileID: 1542787583}
   - component: {fileID: 1542787582}
   m_Layer: 0
-  m_Name: Task_0 (2)
+  m_Name: Task_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13131,7 +13289,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417614753}
+      - m_Target: {fileID: 758575831}
         m_TargetAssemblyTypeName: DropDownMenu, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -14959,7 +15117,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417614753}
+      - m_Target: {fileID: 1853836775}
         m_TargetAssemblyTypeName: DropDownMenu, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -15111,7 +15269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b0021a20c184b44a27f981c6f68bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskCanvas: {fileID: 830380280}
+  taskCanvas: {fileID: 901384080}
   completionPopup: {fileID: 1948750834}
   completionText: {fileID: 703030509}
   missionText: {fileID: 1721639755911068263, guid: 6ed3c1fb8cd6ab74aa9445641045cfd1, type: 3}
@@ -15242,6 +15400,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - name: "\u7761\u89BA\u4E00\u5B9A\u8981\u6709\u90A3\u500B\u5427!"
+    shortName: "\u6E96\u5099\u5C31\u7DD2"
+    isCompleted: 0
+    OnTaskComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2002453263}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 2002453265}
+          m_TargetAssemblyTypeName: DialogueStream, Assembly-CSharp
+          m_MethodName: StartDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1772898754
 GameObject:
   m_ObjectHideFlags: 0
@@ -15342,7 +15530,7 @@ GameObject:
   - component: {fileID: 1818505870}
   - component: {fileID: 1818505871}
   m_Layer: 0
-  m_Name: Task_0 (4)
+  m_Name: Task_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16940,6 +17128,77 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &2002453263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2002453264}
+  - component: {fileID: 2002453265}
+  m_Layer: 0
+  m_Name: Task_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2002453264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002453263}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1287.3654, y: -427.55103, z: 10.538897}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1438741634}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2002453265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002453263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6184c7c287e6e474b9bb808fdc7f88f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleDialoguePanel: {fileID: 734699972}
+  simpleNpcIcon: {fileID: 2018768013}
+  simpleDialogueText: {fileID: 198862584}
+  simpleBubble: {fileID: 2086837457}
+  complexDialoguePanel: {fileID: 0}
+  complexNpcIcon: {fileID: 2018768013}
+  complexNpcName: {fileID: 198862584}
+  complexDialogueText: {fileID: 198862584}
+  arrowIndicator: {fileID: 2086837457}
+  textSpeed: 0.05
+  dialogueList:
+  - npcIcon: {fileID: 1690838334, guid: d4a65adcacb8c944fad5d9748e5dbd63, type: 3}
+    npcName: Pimon
+    dialogueText: "\u60F3\u63DB\u88AB\u5957\u4E86...\r"
+    chooseable: 0
+  - npcIcon: {fileID: 547967971, guid: efb81d80b7499b0428036363424a553f, type: 3}
+    npcName: Capy
+    dialogueText: "\u6211\u4E5F\u662F\uFF0C\u518D\u627E\u6642\u9593\u53BB\u8CB7\u5427\r"
+    chooseable: 0
+  - npcIcon: {fileID: 519464823, guid: 59ccbb863dd10224f992d40031e6c123, type: 3}
+    npcName: Yuda
+    dialogueText: "\u6AB8\u6AAC\u6AB8\u6AAC~\r"
+    chooseable: 0
+  isComplexMode: 0
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2018768010
 GameObject:
   m_ObjectHideFlags: 0
@@ -17462,7 +17721,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417614753}
+      - m_Target: {fileID: 1924134650}
         m_TargetAssemblyTypeName: DropDownMenu, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
