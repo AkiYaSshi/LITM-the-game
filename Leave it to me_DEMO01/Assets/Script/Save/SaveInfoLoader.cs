@@ -42,6 +42,24 @@ public static class SaveInfoLoader
         return string.Empty;
     }
 
+    public static bool LoadTutorial(string path)
+    {
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new(path, FileMode.Open);
+
+            PlayerSave save = formatter.Deserialize(stream) as PlayerSave;
+            stream.Close();
+
+            PlayerData.restore(save);
+
+            return save.tutorial;
+        }
+        Debug.LogError($"此檔案尚未被儲存: {path}");
+        return true;
+    }
+
     /// <summary>
     /// 檢查指定路徑是否有存檔
     /// </summary>

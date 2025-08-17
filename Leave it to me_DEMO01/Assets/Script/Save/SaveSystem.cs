@@ -13,6 +13,8 @@ public static class SaveSystem
 {
     public static event Action<List<ObjectSave>> InitObj;
     public static event Action<RoomSave> InitRoom;
+    public static event Action<TasksSave> InitTasks;
+
     private const string PARENTNAME = "Insantiate_geo";     // 聖地之名，眾魂寄宿之地！
 
     /// <summary>
@@ -33,10 +35,11 @@ public static class SaveSystem
 
         SaveAny(Objects.GetAllObjectSave(), SaveFileManager.objectPath);
 
-        SaveAny(new PlayerSave(PlayerData.Name), SaveFileManager.playerPath);
+        SaveAny(new PlayerSave(PlayerData.Name, PlayerData.needTutorial), SaveFileManager.playerPath);
 
-        Debug.Log($"時空碑已銘刻，記憶封印完成：{PersistentPath() + SaveFileManager.objectPath}！\n" +
-            $"時空碑已銘刻，記憶封印完成：{PersistentPath() + SaveFileManager.roomPath}！");
+        SaveAny(new TasksSave(TasksData.tasksComplete), SaveFileManager.tasksPath);
+
+        Debug.Log($"{PersistentPath() + SaveFileManager.objectPath}");
     }
 
 
@@ -58,23 +61,19 @@ public static class SaveSystem
         //載入遊戲物件
         List<ObjectSave> saves = LoadAny<List<ObjectSave>>(SaveFileManager.objectPath);
 
-        foreach (ObjectSave save in saves)
-        {
-            Debug.Log($"魂之識別碼: {save.objectId} \n" +
-                $"時空座標 x: {save.position[0]}, y: {save.position[1]}, z: {save.position[2]}\n" +
-                $"旋轉之秘 x: {save.rotation[0]}, y: {save.rotation[1]}, z: {save.rotation[2]}, w: {save.rotation[3]}\n" +
-                $"= = = = 魂之復甦 = = = =");
-        }
-
         //載入玩家名稱
         PlayerSave player = LoadAny<PlayerSave>(SaveFileManager.playerPath);
 
         //載入房間
         RoomSave room = LoadAny<RoomSave>(SaveFileManager.roomPath);
 
-        InitRoom?.Invoke(room);
+        //載入任務完成狀態
+        TasksSave tasks = LoadAny<TasksSave>(SaveFileManager.tasksPath);
+
 
         //生成場上物件、確定方向
+        InitTasks?.Invoke(tasks);
+        InitRoom?.Invoke(room);
         InitObj?.Invoke(saves);
     }
     /// <summary>

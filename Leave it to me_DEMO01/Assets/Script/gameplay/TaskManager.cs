@@ -57,17 +57,22 @@ public class TaskManager : MonoBehaviour
             {
                 TaskFinished ++;
 
-                Debug.Log($"{tasks[i].name}已達成！");
                 tasks[i].isCompleted = true;
 
-                UpdateTaskList();
 
                 tasks[i].OnTaskComplete.Invoke();
                 ShowCompletionPopup($"{tasks[i].shortName} 已達成！");
+
+                TasksData.SetCompletement(i);
             }
         }
+
+        UpdateTaskList();
     }
 
+    /// <summary>
+    /// 更新任務文字顏色
+    /// </summary>
     void UpdateTaskList()
     {
         foreach (Transform child in taskCanvas.transform)
@@ -98,6 +103,33 @@ public class TaskManager : MonoBehaviour
 
         completionPopup.gameObject.SetActive(false);
     }
+    private void RestoreComplete(TasksSave save)
+    {
+        int taskComplete = 0;
+
+        SetTaskContent();
+            if (tasks == null)
+            {
+                Debug.Log("找不到任務清單");
+                Debug.Log(tasks);
+            }
+            if (save.tasksComplete == null)
+            {
+                Debug.Log("找不到任務存檔");
+                Debug.Log(save.tasksComplete);
+            }
+
+        for (int i = 0; i < tasks.Count; i++)
+        {
+            tasks[i].isCompleted = save.tasksComplete[i];
+            if (tasks[i].isCompleted == true)
+            {
+                taskComplete++;
+            }
+        }
+
+        if (taskComplete == tasks.Count) AllComplete?.Invoke();
+    }
 
     void SetTaskContent()
     {
@@ -120,10 +152,14 @@ public class TaskManager : MonoBehaviour
     private void OnEnable()
     {
         SummonObjectManager.NewObject += CheckTaskCompletion;
+        SaveSystem.InitTasks += RestoreComplete;
     }
+
+
     private void OnDisable()
     {
         SummonObjectManager.NewObject -= CheckTaskCompletion;
+        SaveSystem.InitTasks -= RestoreComplete;
     }
 }
 

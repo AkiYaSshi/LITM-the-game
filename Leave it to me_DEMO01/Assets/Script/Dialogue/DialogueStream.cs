@@ -71,8 +71,6 @@ public class DialogueStream : MonoBehaviour
         {
             if (typingCoroutine != null)
             {
-                Debug.LogWarning("提早結束次對話");
-
                 StopCoroutine(typingCoroutine);
 
                 if (isComplexMode) complexDialogueText.text = dialogueList[currentIndex].dialogueText;
@@ -88,7 +86,6 @@ public class DialogueStream : MonoBehaviour
             }
             else
             {
-                Debug.Log("此對話串已結束");
                 EndDialogue();
             }
         }

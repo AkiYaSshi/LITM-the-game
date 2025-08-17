@@ -18,6 +18,7 @@ public static class SaveFileManager
     public static string timePath;
     public static string playerPath;
     public static string saveDirectory;
+    public static string tasksPath;
 
 
     public static void SetSaveSlot(int slot)
@@ -58,6 +59,7 @@ public static class SaveFileManager
         roomPath = $"/saves{SaveSlot}/Room.design";
         timePath = $"/saves{SaveSlot}/Info.design";
         playerPath = $"/saves{SaveSlot}/Player.design";
+        tasksPath = $"/saves{SaveSlot}/Tasks.design";
 
     }
 }

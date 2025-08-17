@@ -1,8 +1,5 @@
 using System.Collections;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
-using UnityEngine.UIElements;
 using static iTween;
 
 public class DropDownMenu : MonoBehaviour
@@ -33,8 +30,6 @@ public class DropDownMenu : MonoBehaviour
         maskSize = mask.GetComponent<RectTransform>();
 
         min = GetSizeMin();
-
-        Debug.Log(menuIsShow);
 
         SetHash();
     }

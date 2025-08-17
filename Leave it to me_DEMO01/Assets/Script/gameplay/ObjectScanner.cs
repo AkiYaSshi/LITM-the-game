@@ -20,7 +20,6 @@ public class ObjectScanner : MonoBehaviour
     {
         if (standard == null)
         {
-            Debug.LogError("掃描基準父物件無效");
             return false;
         }
 
@@ -30,16 +29,13 @@ public class ObjectScanner : MonoBehaviour
             if (obj.objectData != null && obj.objectData.ID == id)
                 return true;
         }
-        Debug.LogError($"沒有找到相符的物件：{id}");
         return false;
     }
 
     // 計算指定 ID 的物件數量
     public static int ObjectCount(int id)
     {
-        Debug.Log($"掃描物件數量，物件id：{id}");
         if (standard == null) {
-            Debug.LogError("掃描基準父物件無效");
             return 0; 
         }
 
@@ -50,7 +46,6 @@ public class ObjectScanner : MonoBehaviour
             if (obj.objectData != null && obj.objectData.ID == id)
                 count++;
         }
-        Debug.Log($"id為{id}的物件共有：{count}個");
         return count;
     }
 }
