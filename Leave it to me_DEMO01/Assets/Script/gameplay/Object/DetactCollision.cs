@@ -15,11 +15,11 @@ public class DetactCollision: MonoBehaviour
     //private string LapTag_room = 
 
     [SerializeField]
-    private LayerMask layerMask = (1 << 8) + (1 << 7); //不可重疊的圖層: As Grid&Insantiate
+    private LayerMask layerMask = (1 << 8) + (1 << 2); //不可重疊的圖層: Ignore Raycast Layer&Insantiate
 
     [SerializeField]
     [Tooltip("碰撞偵測的誤差值")]
-    private Vector3 tolerance = new Vector3(0.03f, 0.03f, 0.03f);
+    private Vector3 tolerance = new Vector3(0.1f, 0.1f, 0.1f);
 
     private static float boxSize = GridMovement.unit * 0.5f;
 
@@ -49,7 +49,6 @@ public class DetactCollision: MonoBehaviour
                     if (!hit.transform.parent.CompareTag(LapTag_obj))
                     {
                         hasCollider.Add(hit);
-                        UnityEngine.Debug.Log(hit.transform.gameObject.name);
                     }
                 }
                 if(hasCollider.Count > 0) 
@@ -103,7 +102,7 @@ public class DetactCollision: MonoBehaviour
         data = gameObject.GetComponent<ObjectRef>().objectData;
         if(data.ID == 10)
         {
-            layerMask = 1 << 7;
+            layerMask = 1 << 2;
         }
 }
 }

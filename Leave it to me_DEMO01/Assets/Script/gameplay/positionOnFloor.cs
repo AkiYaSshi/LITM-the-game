@@ -24,7 +24,6 @@ public class positionOnFloor : MonoBehaviour
     public Vector3 MouseToFloorPosition()
     {
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = sceneCam.nearClipPlane;
 
         Ray ray = sceneCam.ScreenPointToRay(mousePos);
         RaycastHit hit;
@@ -33,6 +32,7 @@ public class positionOnFloor : MonoBehaviour
         {
             lastPosition = hit.point;
             Debug.DrawRay(mousePos, hit.point*100, Color.cyan);
+
         }
         else 
         {
