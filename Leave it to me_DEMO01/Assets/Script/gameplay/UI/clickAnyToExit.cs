@@ -20,7 +20,7 @@ public class clickAnyToExit : MonoBehaviour
     /// <summary>
     /// 點擊螢幕任意一處離開
     /// </summary>
-    void OnButtonClick()
+    public void OnButtonClick()
     {
         if (onClickAnimation != null)
         {

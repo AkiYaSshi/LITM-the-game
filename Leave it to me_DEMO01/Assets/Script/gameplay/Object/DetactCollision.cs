@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class DetactCollision: MonoBehaviour
 {
-    [SerializeField] private Color pointColor = Color.red; // 點的顏色
+    [Header("開啟中心點輔助")]
+    [Tooltip("勾選時會顯示有碰撞判定的區域")]
+    [SerializeField] private bool openTest = true;
     private List<Vector3> pointToMark = new();
 
     [SerializeField]
@@ -76,26 +78,41 @@ public class DetactCollision: MonoBehaviour
                 for(int k = 0; k < data.Size.z; k++)
                 {
                     //得到物件內各單位距離中心點的偏移
-                    Vector3 childpoint = new(i * GridMovement.unit, 
-                                             j * GridMovement.unit, 
+                    Vector3 childpoint = new(i * GridMovement.unit,
+                                             j * GridMovement.unit,
                                              k * GridMovement.unit);
 
                     //將單位內中心點加入物件的旋轉
                     Vector3 pointWithRotate = gameObject.transform.rotation * childpoint;
 
-                    if(quaternion.HasValue)pointWithRotate = quaternion.Value * pointWithRotate;
+                    if (quaternion.HasValue) pointWithRotate = quaternion.Value * pointWithRotate;
 
 
                     //將中心點加上偏移，得到世界座標
                     Vector3 pointToWorld = gridpos + pointWithRotate;
                     pointInObj.Add(pointToWorld);
 
+                    if (openTest)
+                    {
+                        DrawTest(pointToWorld);
+                    }
+
                 }
             }
         }
+
+
         pointToMark = pointInObj;
         return pointInObj;
     }
+
+    private static void DrawTest(Vector3 pointToWorld)
+    {
+        UnityEngine.Debug.DrawLine(pointToWorld, pointToWorld + Vector3.up * 0.1f, Color.blue, 0.015f);
+        UnityEngine.Debug.DrawLine(pointToWorld, pointToWorld + Vector3.right * 0.1f, Color.green, 0.015f);
+        UnityEngine.Debug.DrawLine(pointToWorld, pointToWorld + Vector3.forward * 0.1f, Color.red, 0.015f);
+    }
+
     private void Start()
     {
         //取得選取物件的大小

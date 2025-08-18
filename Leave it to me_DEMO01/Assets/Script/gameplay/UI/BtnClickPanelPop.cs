@@ -23,6 +23,11 @@ public class BtnClickPanelPop : MonoBehaviour
     [SerializeField]
     private GameObject button;
 
+    [Header("呼叫隱藏清單")]
+    [Tooltip("呼叫CloseObject時特定的代號")]
+    [SerializeField]
+    private string OnCallText = "unset";
+
     [Tooltip("是否始終顯示目標面板，忽略點擊切換")]
     [SerializeField]
     private bool alwaysShowTarget = false;
@@ -41,6 +46,7 @@ public class BtnClickPanelPop : MonoBehaviour
     [Tooltip("用於觸發面板的輸入動作（例如鍵盤或手把按鍵）")]
     [SerializeField]
     private InputAction pressButton;
+
     #endregion
 
     // 其他私有變數（不會出現在 Inspector 中）
@@ -75,6 +81,15 @@ public class BtnClickPanelPop : MonoBehaviour
         OnButtonClick();
     }
 
+    void CloseObject(string code)
+    {
+        if (code == OnCallText)
+        {
+            SwitchVisible();
+        }
+
+    }
+
     /// <summary>
     /// 切換List內物件
     /// </summary>
@@ -95,7 +110,8 @@ public class BtnClickPanelPop : MonoBehaviour
         btn.onClick.AddListener(OnButtonClick);
         pressButton?.Enable();
         pressButton.performed += OnKeyClick;
-        HideListAfterButtonClick.ShowHidden += SwitchVisible;
+        HideListAfterButtonClick.ShowHidden += CloseObject;
+        DisableCanvasOnClick.DCC_click += CloseObject;
     }
 
 
@@ -103,7 +119,8 @@ public class BtnClickPanelPop : MonoBehaviour
     {
         pressButton?.Disable();
         pressButton.performed -= OnKeyClick;
-        HideListAfterButtonClick.ShowHidden -= SwitchVisible;
         btn.onClick?.RemoveListener(OnButtonClick);
+        HideListAfterButtonClick.ShowHidden -= CloseObject;
+        DisableCanvasOnClick.DCC_click -= CloseObject;
     }
 }

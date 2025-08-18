@@ -15,7 +15,7 @@ MonoBehaviour:
   objectsData:
   - <Name>k__BackingField: Box
     <ID>k__BackingField: 0
-    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Size>k__BackingField: {x: 2, y: 2, z: 2}
     <Prefab>k__BackingField: {fileID: 6992362628493817737, guid: 653051c1ba565824b81be38e20e5fdb1, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 4
