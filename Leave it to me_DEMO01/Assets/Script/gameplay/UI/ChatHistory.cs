@@ -1,31 +1,25 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChatHistory : MonoBehaviour
 {
-    [Tooltip("用於顯示文字的物件")]
-    [SerializeField]
-    private TextMeshProUGUI logText;
+    [SerializeField] private RectTransform content;
+    [SerializeField] private GameObject messagePrefab;
+    [SerializeField] private ScrollRect scrollRect;
 
-    private Stack<string> historyLog = new();
-
-    private void Start()
-    {
-        logText.text = string.Empty;
-    }
 
     void UpdateHistory(string name, string context)
     {
-        logText.text = "";
+        GameObject newLog = Instantiate(messagePrefab, content);
+        TextMeshProUGUI text = newLog.GetComponent<TextMeshProUGUI>();
 
-        string history = $"{name}：{context}\n";
-        historyLog.Push(history);
+        text.text = $"{name}：{context}";
 
-        foreach (var item in historyLog)
-        {
-            logText.text += item;
-        }
+        Canvas.ForceUpdateCanvases();
+        scrollRect.verticalNormalizedPosition = 0f;
+
     }
     private void OnEnable()
     {
