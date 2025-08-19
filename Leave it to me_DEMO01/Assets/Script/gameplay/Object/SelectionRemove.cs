@@ -22,10 +22,12 @@ public class SelectionRemove : MonoBehaviour
     private void DeleteObject(InputAction.CallbackContext context)
     {
         GameObject target = GameObject.FindGameObjectWithTag(FOCUS);
-        objectReference = target?.GetComponent<ObjectRef>();
+        if (target != null)
+        {
+            objectReference = target?.GetComponent<ObjectRef>();
 
-        Destroy(target, timeDelay);
-        Debug.Log($"destroy {objectReference.objectData.Name}.");
+            Destroy(target, timeDelay);
+        }
     }
     private void Awake()
     {

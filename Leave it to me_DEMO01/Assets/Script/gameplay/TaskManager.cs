@@ -85,7 +85,7 @@ public class TaskManager : MonoBehaviour
             }
         }
 
-        if(TaskFinished == tasks.Count) AllComplete?.Invoke();
+        if(TaskFinished >= tasks.Count - 2) AllComplete?.Invoke();
 
     }
 
