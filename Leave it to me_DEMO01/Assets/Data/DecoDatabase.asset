@@ -15,93 +15,93 @@ MonoBehaviour:
   objectsData:
   - <Name>k__BackingField: Box
     <ID>k__BackingField: 0
-    <Size>k__BackingField: {x: 2, y: 2, z: 2}
+    <Size>k__BackingField: {x: 2, y: 1, z: 2}
     <Prefab>k__BackingField: {fileID: 6992362628493817737, guid: 653051c1ba565824b81be38e20e5fdb1, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 4
   - <Name>k__BackingField: cabinet
     <ID>k__BackingField: 1
-    <Size>k__BackingField: {x: 2, y: 3, z: 1}
+    <Size>k__BackingField: {x: 4, y: 6, z: 2}
     <Prefab>k__BackingField: {fileID: 4621697575356550108, guid: 5c3b0e5615c3dc241b9fce5dcae4bd3a, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 4
   - <Name>k__BackingField: chair
     <ID>k__BackingField: 2
-    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Size>k__BackingField: {x: 3, y: 3, z: 2}
     <Prefab>k__BackingField: {fileID: 172449231135223276, guid: 3221c406723e4224cb02aa3ec15cb6cc, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 4
   - <Name>k__BackingField: closet
     <ID>k__BackingField: 3
-    <Size>k__BackingField: {x: 1, y: 4, z: 2}
+    <Size>k__BackingField: {x: 2, y: 8, z: 4}
     <Prefab>k__BackingField: {fileID: 5640114120675170156, guid: 6a6a324416e38074fa183b0d52880594, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 1
   - <Name>k__BackingField: suitcase
     <ID>k__BackingField: 4
-    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Size>k__BackingField: {x: 2, y: 3, z: 2}
     <Prefab>k__BackingField: {fileID: 4040495376793090702, guid: 52dc4d9a8a50dd841a00164d29aa1229, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: TV
     <ID>k__BackingField: 5
-    <Size>k__BackingField: {x: 1, y: 1, z: 2}
+    <Size>k__BackingField: {x: 1, y: 2, z: 3}
     <Prefab>k__BackingField: {fileID: 7977200198017571321, guid: 7fa9bd66ce2384548bdde158f53cf482, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 1
   - <Name>k__BackingField: warddrope
     <ID>k__BackingField: 6
-    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Size>k__BackingField: {x: 1, y: 1, z: 2}
     <Prefab>k__BackingField: {fileID: 6256406935555529579, guid: 840f1a311458c294bb4e6871b507557e, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 1
   - <Name>k__BackingField: bed(single)
     <ID>k__BackingField: 7
-    <Size>k__BackingField: {x: 4, y: 1, z: 2}
+    <Size>k__BackingField: {x: 8, y: 1, z: 4}
     <Prefab>k__BackingField: {fileID: 6388055282754173545, guid: ff10b72ffbe1d90409a454c0b6366fae, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: bed(double)
     <ID>k__BackingField: 8
-    <Size>k__BackingField: {x: 4, y: 1, z: 4}
+    <Size>k__BackingField: {x: 8, y: 1, z: 7}
     <Prefab>k__BackingField: {fileID: 1478938801759744176, guid: 3df422cfa54d61e4c88375fc06b30661, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: cabinet (small)
     <ID>k__BackingField: 9
-    <Size>k__BackingField: {x: 1, y: 2, z: 1}
+    <Size>k__BackingField: {x: 2, y: 5, z: 2}
     <Prefab>k__BackingField: {fileID: 1402130961810934311, guid: fcde837fc87d677418415cdfa2202072, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 1
   - <Name>k__BackingField: carpet
     <ID>k__BackingField: 10
-    <Size>k__BackingField: {x: 3, y: 1, z: 4}
+    <Size>k__BackingField: {x: 6, y: 1, z: 8}
     <Prefab>k__BackingField: {fileID: 4936540796711642605, guid: 4a812318ec7706e4ca1a9f583cae8f93, type: 3}
     <noCollision>k__BackingField: 1
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: cloak
     <ID>k__BackingField: 11
-    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Size>k__BackingField: {x: 1, y: 2, z: 2}
     <Prefab>k__BackingField: {fileID: 1757715749798590557, guid: 9590d2c6c7f778e41aac62b8f2860d4b, type: 3}
-    <noCollision>k__BackingField: 0
+    <noCollision>k__BackingField: 1
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: skirt
     <ID>k__BackingField: 12
-    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Size>k__BackingField: {x: 1, y: 3, z: 1}
     <Prefab>k__BackingField: {fileID: 3736325074111636032, guid: fb4b0c44dea008f40afd454f30397079, type: 3}
-    <noCollision>k__BackingField: 0
+    <noCollision>k__BackingField: 1
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: sweater
     <ID>k__BackingField: 13
-    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Size>k__BackingField: {x: 1, y: 2, z: 2}
     <Prefab>k__BackingField: {fileID: 8408977739815715799, guid: 5a788cf8ab33806418efb3b89ae9d8a1, type: 3}
-    <noCollision>k__BackingField: 0
+    <noCollision>k__BackingField: 1
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: clothes1
     <ID>k__BackingField: 14
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 3788164177819725770, guid: ee0d36fb0d5abc348adab196009302ab, type: 3}
-    <noCollision>k__BackingField: 0
+    <noCollision>k__BackingField: 1
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: trashCan
     <ID>k__BackingField: 15
@@ -111,7 +111,7 @@ MonoBehaviour:
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: cushion
     <ID>k__BackingField: 16
-    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Size>k__BackingField: {x: 2, y: 1, z: 2}
     <Prefab>k__BackingField: {fileID: 4974485017246838316, guid: a5d5e79d530d0a24d9d1379ed72c5415, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
     <ID>k__BackingField: 17
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 8777022730362871755, guid: 07439fd8e037a604d85fcd65e390a9e1, type: 3}
-    <noCollision>k__BackingField: 0
+    <noCollision>k__BackingField: 1
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: medicine
     <ID>k__BackingField: 18
@@ -129,13 +129,13 @@ MonoBehaviour:
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: pillow
     <ID>k__BackingField: 19
-    <Size>k__BackingField: {x: 1, y: 1, z: 2}
+    <Size>k__BackingField: {x: 2, y: 1, z: 3}
     <Prefab>k__BackingField: {fileID: 5132788925649227798, guid: 6eddaa79ee0b22a4890420ca6363838b, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: Quillt
     <ID>k__BackingField: 20
-    <Size>k__BackingField: {x: 2, y: 1, z: 1}
+    <Size>k__BackingField: {x: 4, y: 2, z: 3}
     <Prefab>k__BackingField: {fileID: 3055507117137263096, guid: 1ab971fe353d634408d702b9135229ae, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
@@ -149,19 +149,19 @@ MonoBehaviour:
     <ID>k__BackingField: 22
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 105889496346150312, guid: 14af896a9c9e5d5499026648a1631054, type: 3}
-    <noCollision>k__BackingField: 0
+    <noCollision>k__BackingField: 1
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: hat1
     <ID>k__BackingField: 23
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 2959864550157926750, guid: 41e77fadcfa71bc4fb02d5cda61a8a23, type: 3}
-    <noCollision>k__BackingField: 0
+    <noCollision>k__BackingField: 1
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: hat3
     <ID>k__BackingField: 24
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 8393502018253048731, guid: ff673ebd391ac9b48ba7e9e996a8afec, type: 3}
-    <noCollision>k__BackingField: 0
+    <noCollision>k__BackingField: 1
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: clothes2
     <ID>k__BackingField: 25
@@ -177,37 +177,37 @@ MonoBehaviour:
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: pillow2
     <ID>k__BackingField: 27
-    <Size>k__BackingField: {x: 1, y: 1, z: 2}
+    <Size>k__BackingField: {x: 2, y: 1, z: 3}
     <Prefab>k__BackingField: {fileID: 5921568089711014794, guid: f35dae944db9b0944bbd2ddc0ec02ff8, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: pillow3
     <ID>k__BackingField: 28
-    <Size>k__BackingField: {x: 1, y: 1, z: 2}
+    <Size>k__BackingField: {x: 2, y: 1, z: 3}
     <Prefab>k__BackingField: {fileID: 863551832149770433, guid: 95e3aa56796f4bc4f80bd864b6c8217c, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: crusion2
     <ID>k__BackingField: 29
-    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Size>k__BackingField: {x: 2, y: 1, z: 2}
     <Prefab>k__BackingField: {fileID: 5227100939857216745, guid: 226e4b74a38f14646997a83125251105, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: crusion3
     <ID>k__BackingField: 30
-    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Size>k__BackingField: {x: 2, y: 1, z: 2}
     <Prefab>k__BackingField: {fileID: 3941643068669624378, guid: 2f0f05d7f107cef448d08ca5c3419f1a, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: Quillt2
     <ID>k__BackingField: 31
-    <Size>k__BackingField: {x: 2, y: 1, z: 1}
+    <Size>k__BackingField: {x: 4, y: 2, z: 3}
     <Prefab>k__BackingField: {fileID: 6442283897480566005, guid: ee335ea1e0137d04c8ae47727c91f9d6, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
   - <Name>k__BackingField: Quillt3
     <ID>k__BackingField: 32
-    <Size>k__BackingField: {x: 2, y: 1, z: 1}
+    <Size>k__BackingField: {x: 4, y: 2, z: 3}
     <Prefab>k__BackingField: {fileID: 3827629250502613678, guid: 765b324e84d148048b1ddc80cb5ff816, type: 3}
     <noCollision>k__BackingField: 0
     <FowardAxis>k__BackingField: 0
