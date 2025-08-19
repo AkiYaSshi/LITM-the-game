@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private List<DialogueStream> streams;
+    [SerializeField] private List<DialogueStream> sp_stream;
 
     [Tooltip("對話串的目錄")]
     private int index = 0;
@@ -28,6 +29,12 @@ public class DialogueManager : MonoBehaviour
         streams[index]?.gameObject.SetActive(true);
         streams[index]?.StartDialogue();
         index++;
+    }
+
+    public void InvokeSpecialDialogue(int index)
+    {
+        sp_stream[index]?.gameObject.SetActive(true);
+        sp_stream[index]?.StartDialogue();
     }
 }
 

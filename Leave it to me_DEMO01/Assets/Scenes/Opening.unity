@@ -831,6 +831,9 @@ MonoBehaviour:
   - {fileID: 558364675}
   - {fileID: 2060409768}
   - {fileID: 1449021550}
+  sp_stream:
+  - {fileID: 882375313}
+  - {fileID: 2144830099}
 --- !u!1 &322535947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,6 +2142,98 @@ RectTransform:
   m_AnchoredPosition: {x: -108.5, y: 30}
   m_SizeDelta: {x: 95.36969, y: 82.71861}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &882375312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882375314}
+  - component: {fileID: 882375313}
+  m_Layer: 0
+  m_Name: WithCilen_sp_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &882375313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882375312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6184c7c287e6e474b9bb808fdc7f88f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleDialoguePanel: {fileID: 1421283665}
+  simpleNpcIcon: {fileID: 2049825419}
+  simpleDialogueText: {fileID: 1543991604}
+  simpleBubble: {fileID: 1421283665}
+  complexDialoguePanel: {fileID: 1421283665}
+  complexNpcIcon: {fileID: 2049825419}
+  complexNpcName: {fileID: 1863193586}
+  complexDialogueText: {fileID: 1543991604}
+  arrowIndicator: {fileID: 1609338306}
+  textSpeed: 0.05
+  dialogueList:
+  - npcIcon: {fileID: 1690838334, guid: d4a65adcacb8c944fad5d9748e5dbd63, type: 3}
+    npcName: Pimon
+    dialogueText: "\u8001......\u8001\u5E2B(\u2299\u02CD\u2299)!?"
+    chooseable: 0
+  - npcIcon: {fileID: 1690838334, guid: d4a65adcacb8c944fad5d9748e5dbd63, type: 3}
+    npcName: Pimon
+    dialogueText: "\u8001\u5E2B\u600E\u9EBC\u6703\u51FA\u73FE\u5728\u9019\u88E1\u03A3(\u3063
+      \xB0\u0414 \xB0;)\u3063"
+    chooseable: 0
+  - npcIcon: {fileID: 547967971, guid: efb81d80b7499b0428036363424a553f, type: 3}
+    npcName: Capy
+    dialogueText: "\u55EF\uFF1F\u9019\u500B\u4EBA\u662F\u5B78\u6821\u88E1\u7684\u8AB0\u55CE"
+    chooseable: 0
+  - npcIcon: {fileID: 519464823, guid: 59ccbb863dd10224f992d40031e6c123, type: 3}
+    npcName: Yuda
+    dialogueText: "\u662F\u55CE\uFF0C\u53EF\u80FD\u662F\u8A8D\u932F\u4E86\u5427\r"
+    chooseable: 0
+  - npcIcon: {fileID: 519464823, guid: 59ccbb863dd10224f992d40031e6c123, type: 3}
+    npcName: Yuda
+    dialogueText: "\u56DE\u6B78\u6B63\u984C\uFF0C\u9019\u662F\u623F\u9593\u793A\u610F\u5716\u548C\u9700\u6C42\u6E05\u55AE\r"
+    chooseable: 0
+  isComplexMode: 1
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1509541689}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!4 &882375314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882375312}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 63.13977, y: 310.63464, z: -1.8285189}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1447954517}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942394702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,6 +3422,8 @@ Transform:
   - {fileID: 107395982}
   - {fileID: 558364674}
   - {fileID: 2060409767}
+  - {fileID: 882375314}
+  - {fileID: 2144830100}
   - {fileID: 1449021549}
   - {fileID: 1174901879}
   m_Father: {fileID: 0}
@@ -5138,6 +5235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2060409767}
   - component: {fileID: 2060409768}
+  - component: {fileID: 2060409769}
   m_Layer: 0
   m_Name: WithCilen_3
   m_TagString: Untagged
@@ -5215,6 +5313,48 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &2060409769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060409766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a15fd405394cac489c6043ae5f7de44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 318625018}
+  TeacherName:
+  - "\u674E\u4FCA\u9038"
+  - "\u9673\u6C38\u8CE2"
+  - "\u5289\u5BB6\u4F36"
+  - "\u4F55\u4FCA\u9054"
+  - "\u5F35\u7DAD\u5FE0"
+  - "\u9673\u5EFA\u5B8F"
+  - "\u6797\u9752\u8431"
+  - "\u99AC\u745E\u514B"
+  - "\u694A\u857E"
+  - "\u8A79\u5609\u83EF"
+  - "\u6D2A\u6DF3\u4FEE"
+  - "\u6C5F\u632F\u7DAD"
+  - "\u5F35\u6674\u96EF"
+  - "\u5433\u81F3\u6B63"
+  - "\u8521\u79C9\u6A3A"
+  - "\u6797\u73A0\u5747"
+  - "\u8607\u5A1F\u5A1F"
+  - "\u80E1\u7F8E\u5B0C"
+  - "\u8D99\u5927\u5A01"
+  - "\u674E\u7FBF\u4F36"
+  - "\u6797\u6708\u840D"
+  - "\u963F\u5B8F"
+  - "\u963F\u9054"
+  - "\u7F8A\u738B"
+  president:
+  - "\u9418\u4E16\u51F1"
+  - "\u4E16\u51F1"
+  TeacherLastName: []
 --- !u!1 &2063107775
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,6 +5434,98 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063107775}
   m_CullTransparentMesh: 1
+--- !u!1 &2144830098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2144830100}
+  - component: {fileID: 2144830099}
+  m_Layer: 0
+  m_Name: WithCilen_sp02_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2144830099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144830098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6184c7c287e6e474b9bb808fdc7f88f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleDialoguePanel: {fileID: 1421283665}
+  simpleNpcIcon: {fileID: 2049825419}
+  simpleDialogueText: {fileID: 1543991604}
+  simpleBubble: {fileID: 1421283665}
+  complexDialoguePanel: {fileID: 1421283665}
+  complexNpcIcon: {fileID: 2049825419}
+  complexNpcName: {fileID: 1863193586}
+  complexDialogueText: {fileID: 1543991604}
+  arrowIndicator: {fileID: 1609338306}
+  textSpeed: 0.05
+  dialogueList:
+  - npcIcon: {fileID: 1690838334, guid: d4a65adcacb8c944fad5d9748e5dbd63, type: 3}
+    npcName: Pimon
+    dialogueText: "\u6821......\u6821\u9577(\u2299\u02CD\u2299)!?"
+    chooseable: 0
+  - npcIcon: {fileID: 1690838334, guid: d4a65adcacb8c944fad5d9748e5dbd63, type: 3}
+    npcName: Pimon
+    dialogueText: "\u6821\u9577\u600E\u9EBC\u6703\u51FA\u73FE\u5728\u9019\u88E1\u03A3(\u3063
+      \xB0\u0414 \xB0;)\u3063"
+    chooseable: 0
+  - npcIcon: {fileID: 547967971, guid: efb81d80b7499b0428036363424a553f, type: 3}
+    npcName: Capy
+    dialogueText: "\u55EF\uFF1F\u9019\u500B\u4EBA\u662F\u54EA\u500B\u5B78\u6821\u7684\u6821\u9577\u55CE\uFF1F"
+    chooseable: 0
+  - npcIcon: {fileID: 519464823, guid: 59ccbb863dd10224f992d40031e6c123, type: 3}
+    npcName: Yuda
+    dialogueText: "\u662F\u55CE\uFF0C\u53EF\u80FD\u662F\u8A8D\u932F\u4E86\u5427\r"
+    chooseable: 0
+  - npcIcon: {fileID: 519464823, guid: 59ccbb863dd10224f992d40031e6c123, type: 3}
+    npcName: Yuda
+    dialogueText: "\u56DE\u6B78\u6B63\u984C\uFF0C\u9019\u662F\u623F\u9593\u793A\u610F\u5716\u548C\u9700\u6C42\u6E05\u55AE\r"
+    chooseable: 0
+  isComplexMode: 1
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1509541689}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!4 &2144830100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144830098}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 63.13977, y: 310.63464, z: -1.8285189}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1447954517}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!222 &78098180742626425
 CanvasRenderer:
   m_ObjectHideFlags: 0
