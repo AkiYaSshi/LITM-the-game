@@ -7542,9 +7542,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneCam: {fileID: 330585545}
-  rayCastingLayer:
+  secCastingnLayer:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 256
+  mainCastingLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &829458654
 Transform:
   m_ObjectHideFlags: 0

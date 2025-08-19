@@ -13,11 +13,12 @@ public class ObjectTransformer : MonoBehaviour
     private ObjectInteract objectInteract;
     private InputAction rotation;
     private DetactCollision DetactCollision; //物件本身的DetactCollision
+    private ObjectRef objectRef;
 
     /// <summary>
     /// 得到滑鼠位置投影到地板的事件
     /// </summary>
-    public static event Func<Vector3> mousePosition;
+    public static event Func<bool, Vector3> mousePosition;
 
     /// <summary>
     /// 觸發物件吸附網格的事件 <br />
@@ -47,7 +48,7 @@ public class ObjectTransformer : MonoBehaviour
     /// </summary>
     private void OnMouseDrag()
     {
-        PositionMouseToFloor = mousePosition.Invoke();
+        PositionMouseToFloor = mousePosition.Invoke(objectRef.objectData.noCollision);
         PositionMouseToFloor += screenOffset;
 
         PositionSnapToGrid = DraggingObject.Invoke(PositionMouseToFloor);
@@ -99,7 +100,7 @@ public class ObjectTransformer : MonoBehaviour
     /// <returns>偏差值</returns>
     public Vector3 GetOffset()
     {
-        PositionMouseToFloor = mousePosition.Invoke();
+        PositionMouseToFloor = mousePosition.Invoke(objectRef.objectData.noCollision);
         return transform.position - PositionMouseToFloor;
     }
 
@@ -124,6 +125,7 @@ public class ObjectTransformer : MonoBehaviour
     {
         mainCam = Camera.main;
         DetactCollision = gameObject.GetComponent<DetactCollision>();
+        objectRef = gameObject.GetComponent<ObjectRef>();
     }
 
     private void OnEnable()

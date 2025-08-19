@@ -115,12 +115,11 @@ public class DetactCollision: MonoBehaviour
 
     private void Start()
     {
-        //取得選取物件的大小
         data = gameObject.GetComponent<ObjectRef>().objectData;
-        if(data.ID == 10)
+        if(data.noCollision)
         {
             layerMask = 1 << 2;
         }
-}
+    }
 }
 

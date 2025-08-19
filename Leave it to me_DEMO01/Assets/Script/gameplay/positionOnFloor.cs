@@ -10,7 +10,10 @@ public class positionOnFloor : MonoBehaviour
     private Vector3 lastPosition;
 
     [SerializeField]
-    private LayerMask rayCastingLayer;
+    private LayerMask secCastingnLayer;
+
+    [SerializeField]
+    private LayerMask mainCastingLayer;
 
     [SerializeField]
     private const float rayCastingDistance = 20;
@@ -21,14 +24,14 @@ public class positionOnFloor : MonoBehaviour
     /// 滑鼠所在位置投影到地板上
     /// </summary>
     /// <returns>最終位置</returns>
-    public Vector3 MouseToFloorPosition()
+    public Vector3 MouseToFloorPosition(bool noCollision)
     {
         Vector3 mousePos = Input.mousePosition;
 
         Ray ray = sceneCam.ScreenPointToRay(mousePos);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, rayCastingDistance, rayCastingLayer))
+        if (Physics.Raycast(ray, out hit, rayCastingDistance, noCollision? mainCastingLayer : mainCastingLayer + secCastingnLayer))
         {
             lastPosition = hit.point;
             Debug.DrawRay(mousePos, hit.point*100, Color.cyan);
